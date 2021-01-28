@@ -3,10 +3,10 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'react')));
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'react', 'index.html'));
 })
 
 app.listen(process.env.PORT || 8080, () => {
@@ -18,7 +18,7 @@ app.listen(process.env.PORT || 8080, () => {
         console.log(file);
     });
 
-    const testFolder2 = __dirname+'/build';
+    const testFolder2 = __dirname+'/react';
     console.log("\n\n");
 
     fs.readdirSync(testFolder2).forEach(file => {

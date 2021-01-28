@@ -36,7 +36,7 @@ deploy:
     - ls
     - ls frontend
     - ls frontend/build
-    - cp -R frontend/build frontend/app-server
+    - cp -R frontend/build frontend/app-server/react
     - ls frontend/app-server
     - ls frontend/app-server/build
     - cd frontend/app-server
