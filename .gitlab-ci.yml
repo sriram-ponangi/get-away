@@ -38,7 +38,7 @@ deploy:
     - ls frontend/build
     - cp -R frontend/build frontend/app-server/react
     - ls frontend/app-server
-    - ls frontend/app-server/build
+    - ls frontend/app-server/react
     - cd frontend/app-server
     - apt-get update -qy
     - apt-get install -y ruby-dev
