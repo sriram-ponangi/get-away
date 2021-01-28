@@ -1,0 +1,14 @@
+{
+  "name": "app-server",
+  "version": "1.0.0",
+  "description": "Webserver for the react.js application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Group-2",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
