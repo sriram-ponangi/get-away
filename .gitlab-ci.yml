@@ -9,6 +9,10 @@ stages:
 build-frontend:
   type: build
   stage: build-frontend
+  tags:
+    - dalfcs_docker_autoscale
+    - dalfcs_gitlab_docker_ci
+    - dalfcs_docker_kvm
   script:
     - echo "Building React.js App"
     - cd frontend
@@ -22,6 +26,10 @@ build-frontend:
 deploy:
   type: deploy
   stage: deploy
+  tags:
+    - dalfcs_docker_autoscale
+    - dalfcs_gitlab_docker_ci
+    - dalfcs_docker_kvm
   image: ruby:latest
   script:
     - echo "Deploying React.js App"
