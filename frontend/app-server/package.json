@@ -4,11 +4,16 @@
   "description": "Webserver for the react.js application",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Group-2",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "4.15.2", 
+    "npm": "6.14.9" 
   }
 }

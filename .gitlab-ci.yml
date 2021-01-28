@@ -1,0 +1,41 @@
+image: node:latest
+
+stages:
+- build-frontend
+- deploy
+
+
+
+build-frontend:
+  type: build
+  stage: build-frontend
+  script:
+    - echo "Building React.js App"
+    - cd frontend
+    - npm run-script build 
+    - ls build/
+  artifacts:
+    paths:
+    - build/
+    - frontend/app-server
+
+deploy:
+  type: deploy
+  stage: deploy
+  image: ruby:latest
+  script:
+    - echo "Deploying React.js App"
+    - ls
+    - ls ./build
+    - ls ./frontend/app-server
+#       - apt-get update -qy
+#       - apt-get install -y ruby-dev
+#       - gem install dpl
+#       - dpl --provider=heroku --app=$APPNAME_IN_HEROKU --api-key=$API_KEY_FOR_HEROKU_APP
+
+#   only:
+#         - master
+#         - release
+
+
+#   when: manual
