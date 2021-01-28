@@ -21,8 +21,8 @@ build-frontend:
     - ls build/
   artifacts:
     paths:
-    - build/
-    - frontend/app-server
+    - frontend/build/*
+    - frontend/app-server/*
 
 deploy:
   type: deploy
@@ -34,6 +34,7 @@ deploy:
   script:
     - echo "Deploying React.js App"
     - ls
+    - ls frontend
     - ls ./build
     - ls ./frontend/app-server
 #       - apt-get update -qy
