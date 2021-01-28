@@ -39,14 +39,15 @@ deploy:
     - cp -R frontend/build frontend/app-server
     - ls frontend/app-server
     - ls frontend/app-server/build
-#       - apt-get update -qy
-#       - apt-get install -y ruby-dev
-#       - gem install dpl
-#       - dpl --provider=heroku --app=$APPNAME_IN_HEROKU --api-key=$API_KEY_FOR_HEROKU_APP
+    - cd frontend/app-server
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$APPNAME_IN_HEROKU --api-key=$API_KEY_FOR_HEROKU_APP
 
-#   only:
-#         - master
-#         - release
+  only:
+    - master
+    - release
 
 
 #   when: manual
