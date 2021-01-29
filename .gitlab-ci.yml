@@ -35,7 +35,7 @@ deploy:
     - echo "Deploying React.js App"
     - ls
     - cp -R frontend/build ./react
-    - cp -R frontend/app-server ./
+    - cp -R frontend/app-server/* ./
     - ls 
     - rm -rf frontend
     - ls
