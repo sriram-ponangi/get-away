@@ -3,6 +3,8 @@ const path = require('path');
 
 const app = express();
 
+app.set('views', 'react');
+
 app.use(express.static(path.join(__dirname, 'react')));
 
 app.get('/*', (req, res) => {
