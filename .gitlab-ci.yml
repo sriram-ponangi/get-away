@@ -34,12 +34,11 @@ deploy:
   script:
     - echo "Deploying React.js App"
     - ls
-    - ls frontend
-    - ls frontend/build
-    - cp -R frontend/build frontend/app-server/react
-    - ls frontend/app-server
-    - ls frontend/app-server/react
-    - cd frontend/app-server
+    - cp -R frontend/build ./react
+    - cp -R frontend/app-server ./
+    - ls 
+    - rm -rf frontend
+    - ls
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
