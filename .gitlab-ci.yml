@@ -34,13 +34,13 @@ deploy:
   script:
     - echo "Deploying React.js App"
     - ls
-    - mkdir ./frontend/app-server/react
-    - cp -R ./frontend/build/* ./frontend/app-server/react
-    - ls ./frontend/app-server/react
+    - cp -R ./frontend/build ./frontend/app-server
+    - ls ./frontend/app-server/build
     - cd ./frontend/app-server/
     - pwd
     - ls
-    - ls ./react
+    - ls ./build
+    - echo "All React Build Files Copied Correctly."
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
@@ -49,6 +49,5 @@ deploy:
   only:
     - master
     - release
-
 
 #   when: manual
