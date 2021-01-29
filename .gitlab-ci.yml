@@ -34,6 +34,7 @@ deploy:
   script:
     - echo "Deploying React.js App"
     - ls
+    - mkdir ./frontend/app-server/react
     - cp -R ./frontend/build/* ./frontend/app-server/react
     - ls ./frontend/app-server/react
     - cd ./frontend/app-server/
