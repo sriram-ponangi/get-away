@@ -1,0 +1,34 @@
+POST http://localhost:3000/api/auth/register
+content-type: application/json
+
+{
+    "firstName" : "One",
+    "lastName" : "User",
+    "email" : "userOne@email.com",
+    "password" : "User_One"
+}
+###
+
+POST http://localhost:3000/api/auth/register
+content-type: application/json
+
+{
+    "firstName" : "Two",
+    "lastName" : "User",
+    "email" : "userTwo@email.com",
+    "password" : "User_Two"
+}
+###
+
+POST http://localhost:3000/api/auth/login
+content-type: application/json
+
+{
+
+    "email" : "userOne@email.com",
+    "password" : "User_One"
+}
+
+###
+GET http://localhost:3000/api/groups/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDI2MGQxNTA2OGU4ODQzNzQ4ZmFiZDUiLCJpYXQiOjE2MTMxMDcwNzUsImV4cCI6MTYxMzExMDYxNX0.dsvBTJjWcvAabsH3bVmj7btyYPvEe5_2LzNEDuQfbYc
