@@ -1,7 +1,7 @@
 {
-  "name": "auth-server",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Authentication and Authorization + Gateway Server using JWT",
+  "description": "Authentication and Authorization using JWT + Other Backend APIs",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
