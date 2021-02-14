@@ -4,7 +4,7 @@ import Login from '../Login/Login';
 import logo from '../logo.png';
 import Register from '../Register/Register';
 import './ProfileTemplate.css';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import { NavLink, BrowserRouter, Route } from 'react-router-dom';
 
 const ProfileTemplate = () => {    

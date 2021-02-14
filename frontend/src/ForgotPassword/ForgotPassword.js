@@ -12,9 +12,9 @@ const ForgotPassword = () => {
                 </div>
 
                 <div className="form-group col-12">
-                    <input type="email" className="form-control" id="exampleInputEmail1"
+                    <input type="email" className="form-control" id="forgotPasswordInputEmail"
                         aria-describedby="emailHelp" placeholder="Email" required={true} />
-                    <small>If you have a valid account, we will send you an email with the required information. </small>
+                    <small>If your account is valid, we will send you an email with the required information. </small>
                 </div>
 
 

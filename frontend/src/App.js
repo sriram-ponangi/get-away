@@ -6,7 +6,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import ProfileTemplate from './ProfileTemplate/ProfileTemplate';
-import UpdateProfile from './UpdateProfile/UpdateProfile';
+import EditProfile from './EditProfile/EditProfile';
 // import { BrowserRouter, Route, Link } from 'react-router-dom';
 // import $ from 'jquery';
 // import Popper from 'popper.js';
@@ -15,7 +15,7 @@ import UpdateProfile from './UpdateProfile/UpdateProfile';
 function App() {
   return (
     <div className="App">
-      <UpdateProfile userId="One1sd4sd"/>
+      <EditProfile userId="One1sd4sd"/>
       <br/><hr/><br/>
       <ProfileTemplate/>
     </div>
