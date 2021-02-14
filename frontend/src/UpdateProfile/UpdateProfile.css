@@ -1,0 +1,15 @@
+@media screen and (min-width: 768px){
+
+    #mmenu_screen > .row {
+        min-height: 100vh;
+    }
+    
+}
+
+.nav li.active a,
+.nav li a:hover,
+.nav li.active a:focus,
+.nav li.active a:hover,
+.nav-tabs .nav-link.active{
+  background-color:rgba(136, 127, 127, 0.514);
+}
