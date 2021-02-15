@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import './EditProfile.css';
 import logo from '../logo.png';
+import profileLogoWhiteBG from '../profileLogoWhiteBG.png';
+import axios from 'axios';
 
 class EditProfile extends Component {
-    state = {
-        profilePicture: "https://i.pinimg.com/originals/89/64/99/8964998576cfac440b3a14df748fc670.png",
-        firstName: "Sriram",
-        lastName: "Ponangi",
-        email: "sriram.ponangi@dal.ca",
-    }
+
     render() {
+        console.log(this.props.currentUser);
         return (
             <div id="mmenu_screen" className="container-fluid UpdateProfile" >
                 <div className="row" >
@@ -27,28 +25,29 @@ class EditProfile extends Component {
                                 </div>
 
                                 <div className="form-group col-12" align="center">
-                                    <img src={this.state.profilePicture} className="img-fluid" alt="Profile"
+                                    <img src={profileLogoWhiteBG} className="img-fluid mb-2" alt="Profile"
                                         style={{ borderRadius: "50%", width: "200px" }} />
-                                    <br />                                    
+                                    <br />
                                     <button type="button" className="btn btn-outline-dark mr-3 ml-3" disabled>Edit Image</button>
                                     {/* <input type="file" className="form-control form-control-lg mr-3 ml-3" /> */}
                                     <hr />
                                 </div>
                                 <div className="form-group col-12">
                                     <label>Account: </label>
-                                    <input type="text" className="form-control text-dark" style={{pointerEvents:'none'}} value={this.state.email} readOnly={true}/>
+                                    <input type="text" className="form-control text-dark" style={{ pointerEvents: 'none' }}
+                                        value={this.props.currentUser.email} readOnly={true} />
                                     <small>Email-Id cannot be changed.</small>
                                 </div>
                                 <div className="form-group col-12">
                                     <label>First Name: </label>
                                     <input type="text" className="form-control" id="editProfileInputFirstName"
-                                        aria-describedby="emailHelp" placeholder="First Name" defaultValue={this.state.firstName} />
+                                        aria-describedby="emailHelp" placeholder="First Name" defaultValue={this.props.currentUser.firstName} />
                                 </div>
 
                                 <div className="form-group col-12">
                                     <label>Last Name: </label>
                                     <input type="text" className="form-control" id="editProfileInputLastName"
-                                        aria-describedby="emailHelp" placeholder="Last Name" defaultValue={this.state.lastName} />
+                                        aria-describedby="emailHelp" placeholder="Last Name" defaultValue={this.props.currentUser.lastName} />
                                 </div>
 
                                 <div className="form-group col-12">

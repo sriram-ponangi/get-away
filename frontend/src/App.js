@@ -1,25 +1,66 @@
-// import logo from './logo.svg';
+
 import './App.css';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
+
 import ProfileTemplate from './ProfileTemplate/ProfileTemplate';
 import EditProfile from './EditProfile/EditProfile';
-// import { BrowserRouter, Route, Link } from 'react-router-dom';
+import NavBar from './NavBar/NavBar';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import DestinationSearch from './DestinationSearch/DestinationSearch';
+import DestinationSearchResult from './DestinationSearchResult/DestinationSearchResult';
+import DestinationDetails from './DestinationDetails/DestinationDetails';
+import Home from './Home/Home';
+import React, { Component } from 'react';
+import axios from 'axios';
 // import $ from 'jquery';
 // import Popper from 'popper.js';
 
 
-function App() {
-  return (
-    <div className="App">
-      <EditProfile userId="One1sd4sd"/>
-      <br/><hr/><br/>
-      <ProfileTemplate/>
-    </div>
-  );
+class App extends Component {
+  state = {
+    currentUser: undefined
+  };
+
+  componentDidMount = () => {
+    axios.get('user').then(
+      res => {        
+        this.setCurrentUser(res.data);
+      },
+      error => {        
+        console.log(error);
+      }
+    );
+  };
+
+  setCurrentUser = (currentUser) => {
+    
+    this.setState({
+      currentUser: currentUser
+    });
+  };
+
+  render() {
+    return (
+
+      <div className="App">
+        <BrowserRouter>
+          <NavBar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}/>
+          
+            <Route path="/profile/login" exact component={() => <ProfileTemplate setCurrentUser={this.setCurrentUser}/>} />
+            <Route path="/profile/register" exact component={ProfileTemplate} />
+            <Route path="/profile/forgotPassword" exact component={ProfileTemplate} />
+            <Route path="/profile/edit" exact component={() => <EditProfile currentUser={this.state.currentUser} />} />
+            <br />
+            <Route path="/" exact component={() => <Home currentUser={this.state.currentUser} />} />
+            <Route path="/destination/search" exact component={DestinationSearch} />
+            <Route path="/destination/search/result" exact component={DestinationSearchResult} />
+            <Route path="/destination/details" exact component={DestinationDetails} />
+          
+        </BrowserRouter>
+      </div>
+
+    );
+  }
 }
 
 export default App;

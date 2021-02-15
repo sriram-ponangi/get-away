@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const dotenv =  require('dotenv');
 const mongoose = require('mongoose');
+var cors = require('cors');
 
 const authRoutes = require('./users/routes/Auth');
+const userDetailsRoutes = require('./users/routes/Details');
 const groupRoutes = require('./groups/routes/Groups');
 
 dotenv.config();
@@ -15,11 +17,13 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, () => {
     console.log("Database Connection Successful.");
 });
 
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/groups', groupRoutes);
+app.use('/api/user', userDetailsRoutes);
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log('Auth-Server Running on port : ', process.env.PORT || 3000);
+app.listen(process.env.PORT || 4000, () => {
+    console.log('Auth-Server Running on port : ', process.env.PORT || 4000);
 })

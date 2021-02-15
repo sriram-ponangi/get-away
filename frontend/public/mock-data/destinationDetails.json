@@ -1,0 +1,10 @@
+{
+    "title": "Place Name",
+    "carouselImages": [
+        {
+            "id":1,
+            "image": "/destination-images/Canada/Halifax/topview.jpg",
+            "title": "Halifax City Top View"
+        }
+    ]
+}

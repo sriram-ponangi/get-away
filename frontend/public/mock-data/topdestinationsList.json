@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "image": "/destination-images/Canada/Halifax/waterfront_2.jpg",
+        "title": "Place Name",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+    },
+    {
+        "id": 2,
+        "image": "/destination-images/Canada/Halifax/waterfront_2.jpg",
+        "title": "Place Name",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+    },
+    {
+        "id": 3,
+        "image": "/destination-images/Canada/Halifax/waterfront_2.jpg",
+        "title": "Place Name",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+    },
+    {
+        "id": 4,
+        "image": "/destination-images/Canada/Halifax/waterfront_2.jpg",
+        "title": "Place Name",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+    },
+    {
+        "id": 5,
+        "image": "/destination-images/Canada/Halifax/waterfront_2.jpg",
+        "title": "Place Name",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+    },
+    {
+        "id": 6,
+        "image": "/destination-images/Canada/Halifax/waterfront_2.jpg",
+        "title": "Place Name",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+    },
+    {
+        "id": 7,
+        "image": "/destination-images/Canada/Halifax/waterfront_2.jpg",
+        "title": "Place Name",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+    }    
+]
