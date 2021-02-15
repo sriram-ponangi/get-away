@@ -17,7 +17,7 @@ build-frontend:
     - cd frontend
     - ls
     - npm install
-    - npm run-script build 
+    - CI=false npm run-script build
     - ls build/
   artifacts:
     paths:
