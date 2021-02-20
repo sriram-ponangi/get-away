@@ -62,3 +62,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDI2MGQxO
 
 ###
 GET http://localhost:4000/api/groups/all
+
+###
+GET https://csci-5709-backend.herokuapp.com/api/groups/all
