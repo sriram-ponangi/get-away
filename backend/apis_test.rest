@@ -58,3 +58,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDI2MGQxO
 ###
 GET http://localhost:4000/api/user/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDI2MGQxOTA2OGU4ODQzNzQ4ZmFiZDYiLCJpYXQiOjE2MTMzMzg1ODksImV4cCI6MTYxMzM0MjEyOX0.h0jZ1HxfwVrPxbOv83PG18o3g2xhB0ubCOXciDWTZsk
+
+
+###
+GET http://localhost:4000/api/groups/all
