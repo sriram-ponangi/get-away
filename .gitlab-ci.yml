@@ -3,6 +3,7 @@ image: node:latest
 stages:
 - build-frontend
 - deploy-frontend
+- build-backend
 - deploy-backend
 
 
@@ -50,6 +51,24 @@ stages:
 #   only:
 #     - master
 #     - release
+
+# build-backend:
+#   type: build
+#   stage: build-backend
+#   tags:
+#     - dalfcs_docker_kvm
+#     - dalfcs_gitlab_docker_ci
+#   script:
+#     - echo "Building Node.js Backend App"
+#     - cd backend
+#     - ls
+#     - npm install
+#     - CI=false npm install
+#     - ls 
+#   artifacts:
+#     paths:
+#     - backend/*
+
     
 deploy-backend:
   type: deploy
@@ -67,8 +86,7 @@ deploy-backend:
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
-    - npm install
-    - dpl --provider=heroku --app=$APP_BACKEND_NAME_IN_HEROKU --api-key=$API_KEY_FOR_HEROKU_APP 
+    - dpl --provider=heroku --app=$APP_BACKEND_NAME_IN_HEROKU --api-key=$API_KEY_FOR_HEROKU_APP --skip_cleanup
         
   only:
     - master
