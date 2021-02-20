@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './EditProfile.css';
 import logo from '../logo.png';
 import profileLogoWhiteBG from '../profileLogoWhiteBG.png';
-import axios from 'axios';
+// import axios from 'axios';
 
 class EditProfile extends Component {
 

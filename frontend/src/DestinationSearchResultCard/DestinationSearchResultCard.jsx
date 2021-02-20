@@ -13,7 +13,7 @@ class DestinationSearchResultCard extends Component {
                         <h4 className="card-title">{this.props.title}</h4>
                         <p className="card-text">{this.props.text}</p>                        
                         <Link className="btn btn-lg btn-outline-dark" to={{                            
-                            pathname: '/destination/details',
+                            pathname: '/destination/details/about',
                             destinationId: this.props.destinationId                            
                         }}>Read More..</Link>
                     </div>

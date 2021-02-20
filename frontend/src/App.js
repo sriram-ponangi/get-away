@@ -5,7 +5,7 @@ import './App.css';
 import ProfileTemplate from './ProfileTemplate/ProfileTemplate';
 import EditProfile from './EditProfile/EditProfile';
 import NavBar from './NavBar/NavBar';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import DestinationSearch from './DestinationSearch/DestinationSearch';
 import DestinationSearchResult from './DestinationSearchResult/DestinationSearchResult';
 import DestinationDetails from './DestinationDetails/DestinationDetails';
@@ -54,7 +54,7 @@ class App extends Component {
             <Route path="/" exact component={() => <Home currentUser={this.state.currentUser} />} />
             <Route path="/destination/search" exact component={DestinationSearch} />
             <Route path="/destination/search/result" exact component={DestinationSearchResult} />
-            <Route path="/destination/details" exact component={DestinationDetails} />
+            <Route path="/destination/details/about" exact component={DestinationDetails} />
           
         </BrowserRouter>
       </div>
