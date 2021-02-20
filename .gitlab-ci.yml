@@ -3,72 +3,53 @@ image: node:latest
 stages:
 - build-frontend
 - deploy-frontend
-- build-backend
 - deploy-backend
 
 
 
-# build-frontend:
-#   type: build
-#   stage: build-frontend
-#   tags:
-#     - dalfcs_docker_kvm
-#     - dalfcs_gitlab_docker_ci
-#   script:
-#     - echo "Building React.js App"
-#     - cd frontend
-#     - ls
-#     - npm install
-#     - CI=false npm run-script build
-#     - ls build/
-#   artifacts:
-#     paths:
-#     - frontend/build/*
-#     - frontend/app-server/*
+build-frontend:
+  type: build
+  stage: build-frontend
+  tags:
+    - dalfcs_docker_kvm
+    - dalfcs_gitlab_docker_ci
+  script:
+    - echo "Building React.js App"
+    - cd frontend
+    - ls
+    - npm install
+    - CI=false npm run-script build
+    - ls build/
+  artifacts:
+    paths:
+    - frontend/build/*
+    - frontend/app-server/*
 
-# deploy:
-#   type: deploy
-#   stage: deploy-frontend
-#   tags:
-#     - dalfcs_docker_kvm
-#     - dalfcs_gitlab_docker_ci
-#   image: ruby:latest
-#   script:
-#     - echo "Deploying React.js App"
-#     - ls
-#     - cp -R ./frontend/build ./frontend/app-server
-#     - ls ./frontend/app-server/build
-#     - cd ./frontend/app-server/
-#     - pwd
-#     - ls
-#     - ls ./build
-#     - echo "All React Build Files Copied Correctly."
-#     - apt-get update -qy
-#     - apt-get install -y ruby-dev
-#     - gem install dpl
-#     - dpl --provider=heroku --app=$APPNAME_IN_HEROKU --api-key=$API_KEY_FOR_HEROKU_APP --skip_cleanup
+deploy:
+  type: deploy
+  stage: deploy-frontend
+  tags:
+    - dalfcs_docker_kvm
+    - dalfcs_gitlab_docker_ci
+  image: ruby:latest
+  script:
+    - echo "Deploying React.js App"
+    - ls
+    - cp -R ./frontend/build ./frontend/app-server
+    - ls ./frontend/app-server/build
+    - cd ./frontend/app-server/
+    - pwd
+    - ls
+    - ls ./build
+    - echo "All React Build Files Copied Correctly."
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$APPNAME_IN_HEROKU --api-key=$API_KEY_FOR_HEROKU_APP --skip_cleanup
 
-#   only:
-#     - master
-#     - release
-
-# build-backend:
-#   type: build
-#   stage: build-backend
-#   tags:
-#     - dalfcs_docker_kvm
-#     - dalfcs_gitlab_docker_ci
-#   script:
-#     - echo "Building Node.js Backend App"
-#     - cd backend
-#     - ls
-#     - npm install
-#     - CI=false npm install
-#     - ls 
-#   artifacts:
-#     paths:
-#     - backend/*
-
+  only:
+    - master
+    - release
     
 deploy-backend:
   type: deploy

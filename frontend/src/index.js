@@ -15,7 +15,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:4000/api/';
+axios.defaults.baseURL = process.env.API_BASE_URL;
 axios.defaults.headers.common['Authorization'] = 'Bearer '+ localStorage.getItem('jwt');
 
 
