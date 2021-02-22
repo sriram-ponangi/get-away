@@ -2,9 +2,8 @@ import React from 'react';
 // import logo from '../logo.png';
 import './Login.css';
 import axios from 'axios';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Component } from 'react';
-import { Button } from 'bootstrap';
 
 class Login extends Component {
 
@@ -36,6 +35,10 @@ class Login extends Component {
                 }
                 axios.get('user', myHeaderConfig).then(
                     res => {
+                        localStorage.setItem('firstName', res.data.firstName);
+                        localStorage.setItem('lastName', res.data.lastName);
+                        localStorage.setItem('role', res.data.role);
+                        localStorage.setItem('email', res.data.email);
                         this.props.setCurrentUser(res.data);
                     },
                     error => {                        

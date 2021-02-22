@@ -5,7 +5,7 @@ import { Component } from 'react';
 import DestinationDetailsCard from '../DestinationDetailsCard/DestinationDetailsCard';
 
 
-import { NavLink, BrowserRouter, Route, Link, Redirect } from 'react-router-dom';
+import { NavLink, BrowserRouter, Route, Redirect } from 'react-router-dom';
 
 class DestinationDetails extends Component {
     state = {
@@ -26,26 +26,31 @@ class DestinationDetails extends Component {
     }
 
     showHighlights = () => {
-        return (
-            <NavLink className=" btn btn-outline-light text-dark" onClick={this.highlightsRedirect}
-            to={"/"} style={{ fontFamily: 'Verdana' }}><b>Highlights</b></NavLink>
-        );
+        
+        if(localStorage.getItem('firstName')){
+            return (
+                <NavLink className=" btn btn-outline-light text-dark" onClick={this.highlightsRedirect}
+                    to={"/"} style={{ fontFamily: 'Verdana' }}><b>Highlights</b></NavLink>
+            );
+        }
+        
     }
+
 
     highlightsRedirect = () => {
 
         this.props.history.push(
-            { 
+            {
                 pathname: '/'
                 // countryName: this.state.counrtyName
             }
         );
-       
+
     }
 
     render() {
 
-        if (this.props.location.destinationId != undefined) {
+        if (this.props.location.destinationId !== undefined) {
 
 
 

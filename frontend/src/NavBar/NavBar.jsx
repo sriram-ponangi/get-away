@@ -1,5 +1,5 @@
 import logo from '../profileLogoBlackBG.png';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
 // import axios from 'axios';
 
@@ -46,11 +46,11 @@ class NavBar extends Component {
       return (
         <li className="nav-item ">
           <NavLink className="font-weight-bold text-light" to="/profile/edit"
-        style={{ fontFamily: 'Verdana' }}>Welcome, {this.props.currentUser.firstName}</NavLink>
+            style={{ fontFamily: 'Verdana' }}>Welcome, {this.props.currentUser.firstName}</NavLink>
         </li>
-      //   <li className="nav-item">
-      //   <NavLink className="navbar-brand" to="/" style={{ color: 'white' }}>Welcome, {this.props.currentUser.firstName}</NavLink>
-      // </li>
+        //   <li className="nav-item">
+        //   <NavLink className="navbar-brand" to="/" style={{ color: 'white' }}>Welcome, {this.props.currentUser.firstName}</NavLink>
+        // </li>
       );
 
     }
@@ -99,11 +99,11 @@ class NavBar extends Component {
               }
             </ul>
             <ul className="nav navbar-nav ">
-              
+
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink"
                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src={logo} width="40" height="40" className="rounded-circle" />
+                  <img src={logo} alt="Logo" width="40" height="40" className="rounded-circle" />
                 </a>
                 {
                   this.dropdownNavLinks()
@@ -119,7 +119,7 @@ class NavBar extends Component {
     );
   }
 
-  
+
 }
 
 export default NavBar;

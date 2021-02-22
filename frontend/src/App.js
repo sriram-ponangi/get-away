@@ -52,9 +52,10 @@ class App extends Component {
             <Route path="/profile/edit" exact component={() => <EditProfile currentUser={this.state.currentUser} />} />
             <br />
             <Route path="/" exact component={() => <Home currentUser={this.state.currentUser} />} />
-            <Route path="/destination/search" exact component={DestinationSearch} />
+            <Route path="/destination/search" exact component={DestinationSearch} />            
             <Route path="/destination/search/result" exact component={DestinationSearchResult} />
             <Route path="/destination/details/about" exact component={DestinationDetails} />
+            
           
         </BrowserRouter>
       </div>

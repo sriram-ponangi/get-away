@@ -18,7 +18,7 @@ class DestinationSearchResult extends Component {
 
 
     render() {
-        if (this.props.location.countryName != undefined) {
+        if (this.props.location.countryName !== undefined) {
             return (
                 <div className="container">
                     <h2 className="font-weight-bold text-dark" style={{ fontFamily: 'Verdana' }}>
@@ -34,6 +34,7 @@ class DestinationSearchResult extends Component {
                                         title={result.title}
                                         text={result.text}
                                         destinationId={result.id}
+                                        // currentUser={this.props.location.currentUser}
                                     />
                                 </div>
                             ))

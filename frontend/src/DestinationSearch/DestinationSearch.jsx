@@ -14,7 +14,8 @@ class DestinationSearch extends Component {
         this.props.history.push(
             { 
                 pathname: '/destination/search/result',
-                countryName: this.state.counrtyName
+                countryName: this.state.counrtyName,
+                // currentUser: this.props.currentUser
             }
         );
 

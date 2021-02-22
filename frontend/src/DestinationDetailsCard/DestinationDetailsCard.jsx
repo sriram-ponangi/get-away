@@ -1,10 +1,10 @@
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './DestinationDetailsCard.css';
 
 class DestinationDetailsCard extends Component {
 
     render() {
+        console.log('displayContent');
         console.log(this.props.displayContent);
         if (this.props.displayContent && this.props.displayContent.length > 0) {
             return (
