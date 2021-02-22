@@ -1,5 +1,5 @@
 import logo from '../profileLogoBlackBG.png';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
 // import axios from 'axios';
 
@@ -41,6 +41,21 @@ class NavBar extends Component {
     this.props.setCurrentUser(null);
   }
 
+  welcomeMessage = () => {
+    if (this.props.currentUser && this.props.currentUser.firstName) {
+      return (
+        <li className="nav-item ">
+          <NavLink className="font-weight-bold text-light" to="/profile/edit"
+        style={{ fontFamily: 'Verdana' }}>Welcome, {this.props.currentUser.firstName}</NavLink>
+        </li>
+      //   <li className="nav-item">
+      //   <NavLink className="navbar-brand" to="/" style={{ color: 'white' }}>Welcome, {this.props.currentUser.firstName}</NavLink>
+      // </li>
+      );
+
+    }
+  }
+
   dropdownNavLinks = () => {
 
     if (this.props.currentUser) {
@@ -56,7 +71,7 @@ class NavBar extends Component {
       return (
         <div className="dropdown-menu dropdown-menu-right">
           <NavLink className="dropdown-item" to="/profile/login">Login</NavLink>
-          <NavLink className="dropdown-item" to="/profile/register">Sign Up</NavLink>
+          <NavLink className="dropdown-item" to="/profile/register">Register</NavLink>
         </div>
       )
     }
@@ -78,25 +93,13 @@ class NavBar extends Component {
             {
               this.navLinks()
             }
-            {/* <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link active" to="/destination/search">Destinations</Link>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href="/">Link</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href="/">Link</a>
-              </li>
-              <li className="nav-item ">
-                <a className="nav-link disabled" href="/" >Link</a>
-              </li>
-            </ul> */}
-
-            <ul className="nav navbar-nav ml-auto">
+            <ul className="nav navbar-nav">
               {
                 this.welcomeMessage()
               }
+            </ul>
+            <ul className="nav navbar-nav ">
+              
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -105,15 +108,6 @@ class NavBar extends Component {
                 {
                   this.dropdownNavLinks()
                 }
-                {/* <div className="dropdown-menu dropdown-menu-right">
-                  <Link className="dropdown-item" to="/profile/login">Login</Link>
-                  <Link className="dropdown-item" to="/profile/register">Sign Up</Link>
-                  <div className="dropdown-divider"></div>
-                  <Link className="dropdown-item" to="/profile/edit">Update Profile</Link>
-                  <Link className="dropdown-item" to="/profile/login">Logout</Link>
-                </div> */}
-
-
               </li>
             </ul>
 
@@ -125,16 +119,7 @@ class NavBar extends Component {
     );
   }
 
-  welcomeMessage = () => {
-    if (this.props.currentUser && this.props.currentUser.firstName) {
-      return (
-        <li className="nav-item ">
-          <h4 >Welcome,{this.props.currentUser.firstName}</h4>
-        </li>
-      );
-
-    }
-  }
+  
 }
 
 export default NavBar;

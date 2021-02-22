@@ -6,20 +6,26 @@ class DestinationDetailsCard extends Component {
 
     render() {
         console.log(this.props.displayContent);
-        if (this.props.displayContent) {
+        if (this.props.displayContent && this.props.displayContent.length > 0) {
             return (
                 <div className="mx-1 DestinationDetailsCard">
                     {
 
                         this.props.displayContent.map((result) => (
-                            <div>
-                                <h3>
-                                    {result.title}
-                                </h3>
-                                <p>
-                                    {result.text}
-                                </p>
+
+                            <div className="card mb-4">
+                                <div class="card-header">
+                                    <h3 className="font-weight-bold text-dark" style={{ fontFamily: 'Verdana' }}>
+                                        {result.title}
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <p className=" text-dark" style={{ fontFamily: 'Verdana' }}>
+                                        {result.text}
+                                    </p>
+                                </div>
                             </div>
+
                         ))
 
                     }

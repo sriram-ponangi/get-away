@@ -15,7 +15,7 @@
     bottom: auto;
 } */
 
-.btn:hover, .btn:focus, .btn:active, .btn.active, .open>.dropdown-toggle.btn {
+.btn:hover, .btn:focus, .btn:active {
     color: red;
     background-color: black;
     border-color: black; /*set the color you want here*/

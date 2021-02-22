@@ -25,17 +25,35 @@ class DestinationDetails extends Component {
             .catch(console.log)
     }
 
+    showHighlights = () => {
+        return (
+            <NavLink className=" btn btn-outline-light text-dark" onClick={this.highlightsRedirect}
+            to={"/"} style={{ fontFamily: 'Verdana' }}><b>Highlights</b></NavLink>
+        );
+    }
+
+    highlightsRedirect = () => {
+
+        this.props.history.push(
+            { 
+                pathname: '/'
+                // countryName: this.state.counrtyName
+            }
+        );
+       
+    }
+
     render() {
 
         if (this.props.location.destinationId != undefined) {
 
-            
+
 
             return (
                 <div className='container DestinationDetails'>
                     <h1 className="font-weight-bold text-dark" style={{ fontFamily: 'Verdana' }}>
                         {this.state.destinationDetails.title} (Card: {this.props.location.destinationId} )
-                </h1>
+                    </h1>
                     {
                         this.state.destinationDetails.carouselImages.map((result) => (
                             <div key={result.id}>
@@ -47,29 +65,36 @@ class DestinationDetails extends Component {
 
 
                     <BrowserRouter>
-                        <ul className="nav nav-tabs">
-                            <li className="nav-item">
-                                <NavLink className="nav-link text-dark" id='login-nav' to="/destination/details/about"
-                                    activeClassName="active">About</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link text-dark" id='register-nav' to="/destination/details/documents"
-                                    activeClassName="active">Documents</NavLink>
-                            </li>
-                            <li className="nav-item ">
-                                <NavLink className="nav-link text-dark" id='destination-details-nav' to="/destination/details/accomodations"
-                                    activeClassName="active">Accomodations</NavLink>
-                            </li>
-                            {/* <ul class="nav nav-pills">
-                                <li className="nav-item">
-                                    <NavLink className="nav-link text-light btn btn-outline-dark" id='destination-details-nav' to="/destination/details/accomodation"
-                                        activeClassName="active">Highlights</NavLink>                                    
-                                </li>
-                            </ul> */}
-                        </ul>
+                        <nav className="navbar sticky-top navbar-expand-lg navbar-dark" style={{ background: 'black' }}>
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDestinationDetails"
+                                aria-controls="navbarDestinationDetails" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
+                            <div className="collapse navbar-collapse" id="navbarDestinationDetails">
+                                <ul className="navbar-nav mr-auto">
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link text-light" id='destination-details-about-nav'
+                                            to="/destination/details/about" activeClassName="active">About</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link text-light" id='destination-details-documents-nav'
+                                            to="/destination/details/documents" activeClassName="active">Documents</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link text-light" id='destination-details-accomodations-nav'
+                                            to="/destination/details/accomodations" activeClassName="active">Accomodations</NavLink>
+                                    </li>
+                                </ul>
+                                {
+                                    this.showHighlights()
+                                }
+
+                            </div>
+                        </nav>
+
 
                         <br />
-                        <Route path="/destination/details/about"
+                        <Route path="/destination/details/about" exact
                             component={() => <DestinationDetailsCard displayContent={this.state.destinationDetails.about} />} />
                         <Route path="/destination/details/documents" exact
                             component={() => <DestinationDetailsCard displayContent={this.state.destinationDetails.documents} />} />
