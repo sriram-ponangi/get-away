@@ -1,0 +1,97 @@
+.pt-80 {
+    padding-top: 80px;
+}
+
+.pb-80 {
+    padding-bottom: 80px;
+}
+
+.mb-80 {
+    margin-bottom: 80px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.text-pink {
+    color: #f32779;
+}
+
+#servicesAcc .card {
+    border: none;
+    box-shadow: 0 0 29px rgb(0 0 0 / 11%);
+    margin-bottom: 20px;
+}
+
+#servicesAcc .card-header {
+    background: #fff;
+}
+
+.btn-acc {
+    color: #f32779;
+    padding: 0;
+}
+
+.btn-acc.collapsed {
+    color: #aaa;
+}
+
+.btn-acc:hover,
+.btn-acc:focus {
+    color: #f32779;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 100px 0;
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+#teamCarousel {
+    background-image: linear-gradient(transparent, #17a2b8);
+}
+
+.team-card {
+    max-width: 400px;
+    border: none;
+    background-color: transparent;
+    background-image: linear-gradient(transparent, #fff);
+    margin: auto;
+}
+
+.team-card img {
+    max-width: 300px;
+    margin: auto;
+}
+
+#teamCarousel .carousel-indicators li {
+    background-color: #f32779;
+}
+
+#teamCarousel .carousel-item {
+    padding: 50px 0;
+}
+
+#teamCarousel hr {
+    border-width: 3px;
+    border-color: violet;
+    max-width: 50px;
+    margin-left: 0;
+}
