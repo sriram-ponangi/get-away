@@ -66,6 +66,9 @@ class App extends Component {
             <Route path="/my-groups/halifax-hustle" exact component={GroupSingle} />
             <Route path="/destination/highlights" exact component={Highlights} />
             <Route path="/club/details/clubPhoto" exact component={ClubPhotoGallery} />
+            <Route path="/aboutus" exact component={aboutus} />
+            <Route path="/contactus" exact component={contactus} />
+            <Route path="/whyus" exact component={whyus} />
             
         </BrowserRouter>
       </div>
