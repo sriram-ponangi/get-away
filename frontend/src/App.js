@@ -14,6 +14,7 @@ import Home from './Home/Home';
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import Highlights from './Highlights/Highlights';
 // import $ from 'jquery';
 // import Popper from 'popper.js';
 
@@ -57,8 +58,12 @@ class App extends Component {
             <Route path="/destination/search" exact component={DestinationSearch} />            
             <Route path="/destination/search/result" exact component={DestinationSearchResult} />
             <Route path="/destination/details/about" exact component={DestinationDetails} />
+<<<<<<< HEAD
             <Route path="/my-groups/halifax-hustle" exact component={GroupSingle} />
             
+=======
+            <Route path="/destination/highlights" exact component={Highlights} />
+>>>>>>> 5ff8fc6e8d42ac6046d0e250556361181d60bf5f
           
         </BrowserRouter>
       </div>
