@@ -13,6 +13,7 @@ import Home from './Home/Home';
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import Highlights from './Highlights/Highlights';
 // import $ from 'jquery';
 // import Popper from 'popper.js';
 
@@ -56,7 +57,7 @@ class App extends Component {
             <Route path="/destination/search" exact component={DestinationSearch} />            
             <Route path="/destination/search/result" exact component={DestinationSearchResult} />
             <Route path="/destination/details/about" exact component={DestinationDetails} />
-            
+            <Route path="/destination/highlights" exact component={Highlights} />
           
         </BrowserRouter>
       </div>

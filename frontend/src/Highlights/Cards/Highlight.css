@@ -1,0 +1,25 @@
+.img-single {
+    max-height: 120px;
+}
+
+.highlight-title {
+    position: relative;
+    top: 6%;
+    font-size: x-large
+}
+
+.highlight-category-title {
+    position: relative;
+    top: -6%;
+    font-size: x-large
+}
+
+.h-card {
+    width: 200px;
+    height: 300px;
+}
+
+.h-group {
+    position: relative;
+    top: 5%;
+}
