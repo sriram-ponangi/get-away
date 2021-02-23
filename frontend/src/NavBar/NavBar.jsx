@@ -25,10 +25,10 @@ class NavBar extends Component {
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link disabled" href="/">Link</a>
+          <NavLink className="nav-link active" to={"/whyus"}>Why US</NavLink>
           </li>
           <li className="nav-item ">
-            <a className="nav-link disabled" href="/" >Link</a>
+          <NavLink className="nav-link active" to={"/contactus"}>Contact Us</NavLink>
           </li>
         </ul>
       )
@@ -38,6 +38,15 @@ class NavBar extends Component {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <NavLink className="nav-link active" to={"/destination/search"}>Destinations</NavLink>
+          </li>
+          <li className="nav-item">
+          <NavLink className="nav-link active" to={"/aboutus"}>About Us</NavLink>
+          </li>
+          <li className="nav-item">
+          <NavLink className="nav-link active" to={"/whyus"}>Why US</NavLink>
+          </li>
+          <li className="nav-item ">
+          <NavLink className="nav-link active" to={"/contactus"}>Contact Us</NavLink>
           </li>
         </ul>
       )

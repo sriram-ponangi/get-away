@@ -11,6 +11,11 @@ import DestinationSearchResult from './DestinationSearchResult/DestinationSearch
 import DestinationDetails from './DestinationDetails/DestinationDetails';
 import GroupSingle from './GroupSingle/GroupSingle';
 import Home from './Home/Home';
+import ClubPhotoGallery from './ClubPhotoGallery/ClubPhotoGallery';
+import contactus from './ContactUs/ContactUs';
+import aboutus from './AboutUs/AboutUs';
+import whyus from './WhyUs/WhyUs';
+
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
@@ -60,6 +65,8 @@ class App extends Component {
             <Route path="/destination/details/about" exact component={DestinationDetails} />
             <Route path="/my-groups/halifax-hustle" exact component={GroupSingle} />
             <Route path="/destination/highlights" exact component={Highlights} />
+            <Route path="/club/details/clubPhoto" exact component={ClubPhotoGallery} />
+            
         </BrowserRouter>
       </div>
 
