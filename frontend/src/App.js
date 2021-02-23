@@ -9,6 +9,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import DestinationSearch from './DestinationSearch/DestinationSearch';
 import DestinationSearchResult from './DestinationSearchResult/DestinationSearchResult';
 import DestinationDetails from './DestinationDetails/DestinationDetails';
+import GroupSingle from './GroupSingle/GroupSingle';
 import Home from './Home/Home';
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -56,6 +57,7 @@ class App extends Component {
             <Route path="/destination/search" exact component={DestinationSearch} />            
             <Route path="/destination/search/result" exact component={DestinationSearchResult} />
             <Route path="/destination/details/about" exact component={DestinationDetails} />
+            <Route path="/my-groups/halifax-hustle" exact component={GroupSingle} />
             
           
         </BrowserRouter>
