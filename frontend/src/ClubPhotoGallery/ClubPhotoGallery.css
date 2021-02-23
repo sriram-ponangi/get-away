@@ -1,0 +1,83 @@
+.gallery-block{padding-bottom: 60px; padding-top: 60px;}
+.gallery-block .heading{margin-bottom: 50px; text-align: center;}
+.gallery-block .heading h2{font-weight: bold; font-size: 2.4rem; color: #2d6c9c;}
+.gallery-block .heading h4{font-size: 0.8rem; text-transform: lowercase; color: #6a6a6a}
+.gallery-block.cards-gallery h6{font-size: 17px; font-weight: bold;}
+.gallery-block.cards-gallery .card{transition: 0.4s easy;}
+.gallery-block.cards-gallery .card img{box-shadow: 0px 2px 10px rgba(0,0,0,0.15);}
+.gallery-block.cards-gallery .card-body{text-align: center;}
+.gallery-block.cards-gallery .card-body p{font-size: 15px;}
+.gallery-block.cards-gallery a{color: #212529;}
+.gallery-block.cards-gallery a:hover{text-decoration: none;}
+.gallery-block.cards-gallery .card{margin-bottom: 30px; box-shadow: 0px 2px 10 px rgba(0,0,0,0.15);}
+
+
+.comments {
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin-top: 3px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block
+}
+
+
+.comment-heading {
+    margin-bottom: 0px; font-weight: bold; font-size: 2.4rem; color: #2d6c9c; text-align: left; margin-left: 12px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #04a7ea;
+    border-color: #04a7ea; 
+}
+.comment-text-sm {color: #6a6a6a; font-size: 1rem; text-align: left;}
+.comment-user-name {color:#33c7f8;}
+.comment-date {color: #ffe15e; font-size: 1rem;}
+
+.card-img, .card-img-top {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    border-bottom-left-radius: calc(.25em - 1px);
+    border-bottom-right-radius: calc(.25em - 1px);
+}
+.sub-group-heading {font-size: 1rem; line-height: 0.9; color: #6a6a6a;
+    
+    text-align: left;}
+li.lihover:hover {
+    background-color: #ffe15e;
+    color: rgba(0,0,0,.7);
+  }
+.btndivloadmore {text-align: center; width:100%; display:flex;
+    justify-content:center;
+    align-item:center}
+.btnloadmore {text-align: center; }
+.btnloadmore:hover{
+color: #fff !important;
+background-color: #0069d9 !important;
+border-color: #0062cc !important;
+}
+
+.btn:hover, .btn:focus, .btn:active, .btn.active, .open>.dropdown-toggle.btn {
+    color: #fff !important;
+background-color: #0069d9 !important;
+border-color: #0062cc !important;
+}
+
+li.liunderline:hover {
+    text-decoration: underline;
+  }
+.groupimg{    height: 240px;
+    width: 100%;}
+
+@media (min-width: 576px){
+    .gallery-block .transform-on-hover:hover{
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0px 10px 10px rgba(0,0,0,0.15) !important;
+    }
+}
