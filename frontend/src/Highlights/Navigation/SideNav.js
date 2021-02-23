@@ -51,8 +51,7 @@ class SideNav extends Component {
               <p className='description'>Compared to conurbations such as Vancouver and Toronto, Halifax barely qualifies as a city, but this seaside town punches well above its size: it's dotted with red-brick heritage buildings,
               public parks and a landmark citadel, blessed with some first-rate museums, and home to a truly epic 4km seafront boardwalk. True, relentless downtown redevelopment has done little to enhance the city's charm:
               boxy office blocks and uninspiring concrete carbuncles are rising where handsome ironstones and Victorian townhouses once stood, although some exceptions (notably the new Central Library) show what can be achieved when planners exercise a little more quality control.</p>
-              <p className='description'>Above all, Halifax is a liveable city: its small size, fresh air and easy-going lifestyle
-              mean it scores high in quality-of-life tables. The nightlife and dining scene has
+              <p className='description'> The nightlife and dining scene has
               come on in leaps and bounds in recent years: there are craft breweries and locavore
               bistros galore, especially around the trendy North End.</p>
             </Col>
