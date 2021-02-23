@@ -20,8 +20,8 @@ class NavBar extends Component {
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <NavLink className="nav-link text-dark" to={"/my-groups/halifax-hustle"}>Halifax Hustle</NavLink>
-              <NavLink className="nav-link text-dark" to={"/my-groups/cape-breton-calling"}>Cape Breton Calling</NavLink>
-              <NavLink className="nav-link text-dark" to={"/my-groups/new-brunswick-nostalgia"}>New Brunswick Nostalgia</NavLink>
+              <NavLink className="nav-link text-dark disabled" to={"/my-groups/cape-breton-calling"}>Cape Breton Calling</NavLink>
+              <NavLink className="nav-link text-dark disabled" to={"/my-groups/new-brunswick-nostalgia"}>New Brunswick Nostalgia</NavLink>
             </div>
           </li>
           <li className="nav-item">

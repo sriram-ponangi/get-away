@@ -56,7 +56,7 @@ const sidebar = (props) => {
                 <ListGroup.Item variant="info">
                     <div className="row">
                         <div className="col-md-7">
-                        Eden Hazard <span className="ml-3 badge badge-pill badge-primary">Admin</span>
+                        Eden Hazard <div className="ml-3 badge badge-pill badge-primary">Admin</div>
                         </div>
                         <div className="text-right col-md-5">
                             <a href="#reject" className="btn btn-danger btn-sm disabled">Vote Out</a> 
