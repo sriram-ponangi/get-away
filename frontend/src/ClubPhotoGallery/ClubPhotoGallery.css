@@ -74,6 +74,9 @@ li.liunderline:hover {
   }
 .groupimg{    height: 240px;
     width: 100%;}
+.btndivUploadImage {text-align: center; width:100%; display:flex;
+    justify-content:center;
+    align-item:center; margin-top: 2rem; margin-bottom:2rem;}
 
 @media (min-width: 576px){
     .gallery-block .transform-on-hover:hover{

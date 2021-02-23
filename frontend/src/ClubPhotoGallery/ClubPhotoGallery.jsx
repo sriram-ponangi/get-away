@@ -15,6 +15,14 @@ class ClubPhotoGallery extends Component {
             <h2>Group A Gallery</h2>
             <span className="comment-text-sm sub-group-heading"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna  </span>
           </div>
+          <div class="comment-heading border border-right-0  border-top-0  border-left-0">
+            <h2>Upload Images</h2>
+          </div>
+          <div class="row btndivUploadImage">
+          
+          <input type="file"  id="customFile" />
+          </div>
+          
           <div class="row">
             <div class="col-md-6 col-lg-4">
               <div class="card border-0 transform-on-hover">
