@@ -1,6 +1,7 @@
 import logo from '../profileLogoBlackBG.png';
 import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
+import './NavBar.css';
 // import axios from 'axios';
 
 class NavBar extends Component {
@@ -9,12 +10,19 @@ class NavBar extends Component {
   navLinks = () => {
     if (this.props.currentUser) {
       return (
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav mr-auto main-nav">
           <li className="nav-item">
-            <NavLink className="nav-link active" to={"/destination/search"}>Destinations</NavLink>
+            <NavLink className="nav-link" to={"/destination/search"}>Destinations</NavLink>
           </li>
-          <li className="nav-item">
-          <NavLink className="nav-link active" to={"/aboutus"}>About Us</NavLink>
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Groups
+            </a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <NavLink className="nav-link text-dark" to={"/my-groups/halifax-hustle"}>Halifax Hustle</NavLink>
+              <NavLink className="nav-link text-dark" to={"/my-groups/cape-breton-calling"}>Cape Breton Calling</NavLink>
+              <NavLink className="nav-link text-dark" to={"/my-groups/new-brunswick-nostalgia"}>New Brunswick Nostalgia</NavLink>
+            </div>
           </li>
           <li className="nav-item">
           <NavLink className="nav-link active" to={"/whyus"}>Why US</NavLink>
@@ -54,7 +62,7 @@ class NavBar extends Component {
     if (this.props.currentUser && this.props.currentUser.firstName) {
       return (
         <li className="nav-item ">
-          <NavLink className="font-weight-bold text-light" to="/profile/edit"
+          <NavLink className="text-light" to="/profile/edit"
             style={{ fontFamily: 'Verdana' }}>Welcome, {this.props.currentUser.firstName}</NavLink>
         </li>
         //   <li className="nav-item">

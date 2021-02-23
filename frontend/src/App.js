@@ -9,6 +9,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import DestinationSearch from './DestinationSearch/DestinationSearch';
 import DestinationSearchResult from './DestinationSearchResult/DestinationSearchResult';
 import DestinationDetails from './DestinationDetails/DestinationDetails';
+import GroupSingle from './GroupSingle/GroupSingle';
 import Home from './Home/Home';
 import ClubPhotoGallery from './ClubPhotoGallery/ClubPhotoGallery';
 import contactus from './ContactUs/ContactUs';
@@ -18,6 +19,7 @@ import whyus from './WhyUs/WhyUs';
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import Highlights from './Highlights/Highlights';
 // import $ from 'jquery';
 // import Popper from 'popper.js';
 
@@ -61,11 +63,10 @@ class App extends Component {
             <Route path="/destination/search" exact component={DestinationSearch} />            
             <Route path="/destination/search/result" exact component={DestinationSearchResult} />
             <Route path="/destination/details/about" exact component={DestinationDetails} />
-            
+            <Route path="/my-groups/halifax-hustle" exact component={GroupSingle} />
+            <Route path="/destination/highlights" exact component={Highlights} />
             <Route path="/club/details/clubPhoto" exact component={ClubPhotoGallery} />
-            <Route path="/contactus" exact component={contactus} />
-            <Route path="/aboutus" exact component={aboutus} />
-            <Route path="/whyus" exact component={whyus} />
+            
         </BrowserRouter>
       </div>
 

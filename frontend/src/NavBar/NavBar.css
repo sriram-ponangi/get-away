@@ -1,0 +1,15 @@
+.main-nav .nav-link {
+    color: #fff !important;
+}
+
+.main-nav .nav-link.text-dark {
+    color: #333 !important;
+}
+
+.main-nav .nav-link.disabled {
+    color: #aaa !important;
+}
+
+.main-nav .nav-link:hover {
+    color: #007bff !important;
+}
