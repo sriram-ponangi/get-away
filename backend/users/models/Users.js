@@ -59,7 +59,7 @@ const userSchema = new mongoose.Schema({
     my_groups: [
         { 
             type: mongoose.Schema.Types.ObjectId, 
-            ref: 'groupsdummies' 
+            ref: 'groups' 
         }
     ]
 

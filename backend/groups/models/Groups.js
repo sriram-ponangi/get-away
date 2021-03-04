@@ -36,7 +36,7 @@ const groupSchema = new mongoose.Schema({
     membersID: [
         { 
             type : mongoose.Schema.Types.ObjectId,
-            ref: 'usersdummies' 
+            ref: 'users' 
         }
     ],
 
