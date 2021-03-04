@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-// const dotenv =  require('dotenv');
+// const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 var cors = require('cors');
 
@@ -13,7 +13,11 @@ const groupRoutes = require('./groups/routes/Groups');
 const uri = "mongodb+srv://" + process.env.MONGODB_USERNAME + ":" + process.env.MONGODB_PASSWORD +
     "@csci5709-project.ed041.mongodb.net/" + process.env.MONGODB_CLUSTER_NAME + "?retryWrites=true&w=majority";
 
-mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, () => {
+console.log("DB URI", uri);
+mongoose.connect(uri, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,  
+    useFindAndModify: false }, () => {
     console.log("Database Connection Successful.");
 });
 

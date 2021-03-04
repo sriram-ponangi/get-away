@@ -1,3 +1,16 @@
+#######################################################################################
+### REGISTRATION
+#######################################################################################
+POST http://localhost:4000/api/auth/register
+content-type: application/json
+
+{
+    "firstName" : "ADMIN",
+    "lastName" : "ONE",
+    "email" : "admin_one@email.com",
+    "password" : "ADMIN_ONE"
+}
+###
 POST http://localhost:4000/api/auth/register
 content-type: application/json
 
@@ -28,6 +41,11 @@ content-type: application/json
     "email" : "a@a.com",
     "password" : "aaaaaa"
 }
+
+#######################################################################################
+### LOGIN
+#######################################################################################
+
 ###
 POST http://localhost:4000/api/auth/login
 content-type: application/json
@@ -39,7 +57,6 @@ content-type: application/json
 }
 
 ###
-
 POST http://localhost:4000/api/auth/login
 content-type: application/json
 
@@ -50,16 +67,106 @@ content-type: application/json
 }
 
 ###
-GET http://localhost:4000/api/groups/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDI2MGQxOTA2OGU4ODQzNzQ4ZmFiZDYiLCJpYXQiOjE2MTMzMzEwNjksImV4cCI6MTYxMzMzNDYwOX0.UzzPeq8Uy-PN8PDaOss33Yo0pYn3trXzLuhEEimZWcc
+POST http://localhost:4000/api/auth/login
+content-type: application/json
+{
 
-
+    "email" : "a@a.com",
+    "password" : "aaaaaa"
+}
 
 ###
-GET http://localhost:4000/api/user/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDI2MGQxOTA2OGU4ODQzNzQ4ZmFiZDYiLCJpYXQiOjE2MTMzMzg1ODksImV4cCI6MTYxMzM0MjEyOX0.h0jZ1HxfwVrPxbOv83PG18o3g2xhB0ubCOXciDWTZsk
+POST http://localhost:4000/api/auth/login
+content-type: application/json
 
+{
+
+    "email" : "userTwo@email.com",
+    "password" : "User_Two"
+}
+
+###
+POST http://localhost:4000/api/auth/login
+content-type: application/json
+
+{
+
+    "email" : "admin_one@email.com",
+    "password" : "0e151df5d7b8087da78b3ee3b7d7c4853beabc8d"
+}
+
+#######################################################################################
+### TEST GROUPS API
+#######################################################################################
 
 ###
 GET http://localhost:4000/api/groups/all
 
+###
+GET http://localhost:4000/api/groups/user/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQxMzVlZDNhMjZkNTk4OTAzNTFiYmIiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtNTc5NUBnbWFpbC5jb20iLCJpYXQiOjE2MTQ4OTcwMzIsImV4cCI6MTYxNDkwMDU3Mn0.K69hObdyc6AagqIiNJPOBDY0-zi8Gi8YiKL-jl6pMd4
+
+###
+GET http://localhost:4000/api/groups/admin/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQxMWZiMzI5ZmUxNGM1MDRmNDg2NzUiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE0ODgxNTgyLCJleHAiOjE2MTQ4ODUxMjJ9.swmkLY_3Je-3-f8T1fsmB2sYQ8IkzXvcWTYznRbmn9w
+
+
+#######################################################################################
+### TEST USER API
+#######################################################################################
+
+###
+GET http://localhost:4000/api/user/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQxMWE4ZTE2NmY1ZTJmNzRlNzBlOTYiLCJpYXQiOjE2MTQ4Nzk4NjMsImV4cCI6MTYxNDg4MzQwM30.kk1pNqgYvh0jdIQFoRFAnroXtBOJf2M1V9BxF6qbME8
+
+###
+POST http://localhost:4000/api/auth/forgot-password
+content-type: application/json
+
+{
+
+    "email" : "admin_one@email.com"
+}
+###
+
+POST http://localhost:4000/api/auth/register
+content-type: application/json
+
+{
+    "firstName" : "Sriram",
+    "lastName" : "Ponangi",
+    "email" : "sriram5795@gmail.com",
+    "password" : "0123456789"
+}
+
+###
+
+POST http://localhost:4000/api/user/forgot-password
+content-type: application/json
+
+{
+
+    "email" : "sriram5795@gmail.com"
+}
+
+###
+POST http://localhost:4000/api/auth/login
+content-type: application/json
+
+{
+
+    "email" : "sriram5795@gmail.com",
+    "password": "123456789"
+}
+
+###
+POST http://localhost:4000/api/user/update-profile
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQxMWZiMzI5ZmUxNGM1MDRmNDg2NzUiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE0ODk4ODM4LCJleHAiOjE2MTQ5MDIzNzh9.ioUkZAnhpdeROzVyabCqkw9GnFw1MRe51N7H3c2fdsc
+
+{
+    "firstName": "ADMIN",
+    "lastName": "One",
+    "password": "123456789",
+    "confirmPassword": "123456789"
+}
