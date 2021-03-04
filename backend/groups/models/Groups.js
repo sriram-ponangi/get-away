@@ -56,6 +56,6 @@ const groupSchema = new mongoose.Schema({
 
 });
 
-const Groups = mongoose.model('GroupsDummy', groupSchema);
+const Groups = mongoose.model('Groups', groupSchema);
 
 module.exports = Groups;
