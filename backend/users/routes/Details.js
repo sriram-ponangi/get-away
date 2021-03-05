@@ -21,8 +21,7 @@ router.get('/', verifyTokenMiddleware, async (req, res) => {
             .send({
                 errors: error
             });
-    }
-    
+    }    
 });
 
 

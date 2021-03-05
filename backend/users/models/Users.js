@@ -56,7 +56,7 @@ const userSchema = new mongoose.Schema({
         max: 100
     },
 
-    my_groups: [
+    groups: [
         { 
             type: mongoose.Schema.Types.ObjectId, 
             ref: 'groups' 
@@ -65,6 +65,6 @@ const userSchema = new mongoose.Schema({
 
 });
 
-const Users = mongoose.model('Users', userSchema);
+const Users = mongoose.model('users', userSchema);
 
 module.exports = Users;

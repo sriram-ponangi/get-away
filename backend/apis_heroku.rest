@@ -1,3 +1,7 @@
+######################################################################################################
+### REGISTER
+######################################################################################################
+
 POST https://csci-5709-backend.herokuapp.com/api/auth/register
 content-type: application/json
 
@@ -21,12 +25,29 @@ content-type: application/json
 ###
 POST https://csci-5709-backend.herokuapp.com/api/auth/register
 content-type: application/json
+
 {
     "firstName" : "A",
     "lastName" : "a",
     "email" : "a@a.com",
     "password" : "aaaaaa"
 }
+###
+POST https://csci-5709-backend.herokuapp.com/api/auth/register
+content-type: application/json
+
+{
+    "firstName" : "Sriram",
+    "lastName" : "Ponangi",
+    "email" : "sriram.ponangi@dal.ca",
+    "password" : "123456789"
+}
+
+
+######################################################################################################
+### LOGIN
+######################################################################################################
+
 ###
 POST https://csci-5709-backend.herokuapp.com/api/auth/login
 content-type: application/json

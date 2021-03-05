@@ -7,13 +7,13 @@ module.exports = function (req) {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'w21.csci5709.group2@gmail.com',
+            user: process.env.EMAIL_ID,
             pass: process.env.EMAIL_PASSWORD
         }
     });
 
     var mailOptions = {
-        from: 'w21.csci5709.group2@gmail.com',
+        from: process.env.EMAIL_ID,
         to: req.to,
         subject: req.subject,
         html: forgotPasswordEmailTemplate

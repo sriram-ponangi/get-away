@@ -10,7 +10,7 @@ const groupSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true,
-        max: 100
+        max: 1024
     },
 
     created_date: {
@@ -20,42 +20,57 @@ const groupSchema = new mongoose.Schema({
 
     location_country: {
         type: String,
-        default: 'CANADA'
+        required: true,
+        max: 100
     },
 
     location_name: {
         type: String,
-        default: 'HALIFAX, NOVA SCOTIA'
+        required: true,
+        max: 100
     },
 
     highlight: {
         type: String,
-        default: 'CYCLING'
+        required: true,
+        max: 100
     },
 
-    membersID: [
+    members: [
         { 
             type : mongoose.Schema.Types.ObjectId,
-            ref: 'users' 
+            ref: 'users',
+            require: false
         }
     ],
 
-    commentsID:  [
+    comments:  [
         { 
             type : mongoose.Schema.Types.ObjectId, 
-            ref: 'groupcomments' 
+            ref: 'groupcomments',
+            require: false 
         }
     ],    
   
-    imageID:  [
+    images:  [
         { 
             type : mongoose.Schema.Types.ObjectId,
-            ref: 'groupphotos' 
+            ref: 'groupphotos',
+            require: false 
         }
     ]       
 
 });
 
-const Groups = mongoose.model('Groups', groupSchema);
+groupSchema.index({
+    name: 1,
+    location_country: 1,
+    location_name: 1,
+    highlight: 1,
+  }, {
+    unique: true,
+  });
+
+const Groups = mongoose.model('groups', groupSchema);
 
 module.exports = Groups;
