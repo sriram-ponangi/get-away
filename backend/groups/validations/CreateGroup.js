@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const registrationValidator = (data) => {
+const createGroupValidator = (data) => {
     const groupSchema = Joi.object({
         name: Joi.string()
             .max(100)
@@ -9,6 +9,11 @@ const registrationValidator = (data) => {
         description: Joi.string()
             .max(1024)
             .required(),
+
+        image_src: Joi.string()
+            .max(1024)
+            .required()
+            .allow(''),
 
         location_country: Joi.string()
             .max(100)
@@ -26,4 +31,4 @@ const registrationValidator = (data) => {
 }
 
 
-module.exports = registrationValidator;
+module.exports = createGroupValidator;

@@ -152,5 +152,21 @@ router.post('/update-profile', verifyTokenMiddleware, async (req, res) => {
 
 });
 
+router.get('/groups', verifyTokenMiddleware, async (req, res) => {      
+
+    try {        
+        const group = await User.findOne({ _id: req.body.currentUser._id },
+             'firstName lastName')
+             .populate({ path: 'groups', select: ['name','description',
+             'location_country', 'location_name', 'highlight', 'image_src'] });
+        return res.status(200).send(group);
+    } catch (error) {
+        console.log(error);
+        return res.status(500)
+            .send({
+                errors: error
+            });
+    }
+});
 
 module.exports = router;

@@ -13,6 +13,12 @@ const groupSchema = new mongoose.Schema({
         max: 1024
     },
 
+    image_src: {
+        type: String,  
+        required: true,      
+        max: 1024
+    },
+
     created_date: {
         type: Date,
         default: Date.now

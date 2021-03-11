@@ -109,60 +109,55 @@ content-type: application/json
 #######################################################################################
 ### TEST GROUPS API
 #######################################################################################
-GET http://localhost:4000/api/groups/user/all
+GET http://localhost:4000/api/group/
+?location_country=Canada
+&location_name=Halifax, Nova Scotia
+&highlight=Cycling
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQyNDRjNjQ5OTE2ZWMxZDQzNzg4NzYiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE0OTU2MTY5LCJleHAiOjE2MTQ5NTk3MDl9.44duvig69kVZ9EVa9QJwC9bvhK3rC96DX9RjL_n0TgI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5NTBjNzYzZGQ3YmYwZjBlNzJlOTciLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDIwNjQ3LCJleHAiOjE2MTU0MjQxODd9.is9xUy3vC_NgUeLsbIg2Dns-p3dalT7t3lTStNqwNtc
 
 ###
-POST http://localhost:4000/api/groups/
+POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQyNDRkNjQ5OTE2ZWMxZDQzNzg4N2EiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE0OTU3MzU1LCJleHAiOjE2MTQ5NjA4OTV9.FeM8n0NSEYRRexHbo2q-4s13cFFmzheeupL31o3Khr8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5NTBiMjYzZGQ3YmYwZjBlNzJlOTIiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDE3Njk5LCJleHAiOjE2MTU0MjEyMzl9.EYNY2TgG0d6n7Dg09YfxR1h5WH43Q9zcRJJvT4ydphc
 
 {
     "name" : "GROUP-ONE",
     "description" : "Description of Group One is written here...",
     "location_country" : "Canada",
     "location_name" : "Halifax, Nova Scotia",
-    "highlight" : "Cycling"
+    "highlight" : "Cycling",
+    "image_src": "N/A"
 }
 ###
-POST http://localhost:4000/api/groups/
+POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQyNDRjNjQ5OTE2ZWMxZDQzNzg4NzYiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE0OTU2MTY5LCJleHAiOjE2MTQ5NTk3MDl9.44duvig69kVZ9EVa9QJwC9bvhK3rC96DX9RjL_n0TgI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5NTBiMjYzZGQ3YmYwZjBlNzJlOTIiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDE3Njk5LCJleHAiOjE2MTU0MjEyMzl9.EYNY2TgG0d6n7Dg09YfxR1h5WH43Q9zcRJJvT4ydphc
 
 {
     "name" : "GROUP-TWO",
     "description" : "Description of Group Two is written here...",
     "location_country" : "Canada",
     "location_name" : "Halifax, Nova Scotia",
-    "highlight" : "Cycling"
+    "highlight" : "Cycling",
+    "image_src": "N/A"
 }
 
-###
-POST http://localhost:4000/api/groups/members
-content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQyNDRjNjQ5OTE2ZWMxZDQzNzg4NzYiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE0OTU2MTY5LCJleHAiOjE2MTQ5NTk3MDl9.44duvig69kVZ9EVa9QJwC9bvhK3rC96DX9RjL_n0TgI
 
-{
-    "name" : "GROUP-ONE",
-    "location_country" : "Canada",
-    "location_name" : "Halifax, Nova Scotia",
-    "highlight" : "Cycling"
-}
 ###
-GET http://localhost:4000/api/groups/members
+GET http://localhost:4000/api/group/members
 ?name=GROUP-ONE
 &location_country=Canada
 &location_name=Halifax, Nova Scotia
 &highlight=Cycling
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQyNDRjNjQ5OTE2ZWMxZDQzNzg4NzYiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE0OTU2MTY5LCJleHAiOjE2MTQ5NTk3MDl9.44duvig69kVZ9EVa9QJwC9bvhK3rC96DX9RjL_n0TgI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5NTBjNzYzZGQ3YmYwZjBlNzJlOTciLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDIwNjQ3LCJleHAiOjE2MTU0MjQxODd9.is9xUy3vC_NgUeLsbIg2Dns-p3dalT7t3lTStNqwNtc
 
 ###
 
-POST http://localhost:4000/api/groups/member
+POST http://localhost:4000/api/group/member
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQyNDRkNjQ5OTE2ZWMxZDQzNzg4N2EiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE0OTU3MzU1LCJleHAiOjE2MTQ5NjA4OTV9.FeM8n0NSEYRRexHbo2q-4s13cFFmzheeupL31o3Khr8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5NTBjNzYzZGQ3YmYwZjBlNzJlOTciLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDIwNjQ3LCJleHAiOjE2MTU0MjQxODd9.is9xUy3vC_NgUeLsbIg2Dns-p3dalT7t3lTStNqwNtc
 
 {
     "name" : "GROUP-ONE",
@@ -172,9 +167,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQyNDRkN
 }
 
 ###
-POST http://localhost:4000/api/groups/member
+POST http://localhost:4000/api/group/member
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQyNDRkMjQ5OTE2ZWMxZDQzNzg4NzkiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IkEiLCJsYXN0TmFtZSI6ImEiLCJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE2MTQ5NTYyMjUsImV4cCI6MTYxNDk1OTc2NX0.BX5_6Wkjd17qMlH7Lz4z7YsH5oZcsMuftj6WXFpAso4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5NTBjNzYzZGQ3YmYwZjBlNzJlOTciLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDIwNjQ3LCJleHAiOjE2MTU0MjQxODd9.is9xUy3vC_NgUeLsbIg2Dns-p3dalT7t3lTStNqwNtc
 
 {
     "name" : "GROUP-TWO",
@@ -190,6 +185,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQyNDRkM
 GET http://localhost:4000/api/user/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQyMzI0N2Y0N2I3YTczOGM0ZDI3ZjAiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtNTc5NUBnbWFpbC5jb20iLCJpYXQiOjE2MTQ5NTE2MzgsImV4cCI6MTYxNDk1NTE3OH0.k-RnG0loLIoaA8_M4QdCyxMvRSQYjtpfgJkblOo5iho
 
+###
+GET http://localhost:4000/api/user/groups
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5NTBjNzYzZGQ3YmYwZjBlNzJlOTciLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDI4ODE4LCJleHAiOjE2MTU0MzIzNTh9.hO-_OX65QSFvM1aobM1UxNydksyDh3zcDr7gwryLweA
 
 ###
 POST http://localhost:4000/api/user/forgot-password
@@ -212,3 +210,28 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQxMWZiM
     "password": "123456789",
     "confirmPassword": "123456789"
 }
+
+#######################################################################################
+### TEST DESTINATION API
+#######################################################################################
+
+
+###
+POST http://localhost:4000/api/destination
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5NTBiMjYzZGQ3YmYwZjBlNzJlOTIiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDMxNDg5LCJleHAiOjE2MTU0MzUwMjl9.NMJ3txlNs2mvR1ZYD85kkwiVrwhhgkuLoFrV0Wshl5A
+
+###
+GET http://localhost:4000/api/destination
+?location_country=i
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5NTBjNzYzZGQ3YmYwZjBlNzJlOTciLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDM1NDExLCJleHAiOjE2MTU0Mzg5NTF9.YhqDA2I5CdOrVq-sGT3lymSlBVw_iY6bZykDVwlyDvU
+
+
+###
+GET http://localhost:4000/api/destination/details
+?location_country=India
+&location_name=Hyderabad, Telangana
+&name=Hyderabad, Telangana, India
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5NTBjNzYzZGQ3YmYwZjBlNzJlOTciLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDM1NDExLCJleHAiOjE2MTU0Mzg5NTF9.YhqDA2I5CdOrVq-sGT3lymSlBVw_iY6bZykDVwlyDvU
