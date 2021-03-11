@@ -25,7 +25,7 @@ build-frontend:
     - frontend/build/*
     - frontend/app-server/*
 
-deploy:
+deploy-frontend:
   type: deploy
   stage: deploy-frontend
   tags:
@@ -52,7 +52,7 @@ deploy:
     - release
     
 deploy-backend:
-  type: deploy
+  type: build
   stage: deploy-backend
   tags:
     - dalfcs_docker_kvm

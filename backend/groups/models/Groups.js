@@ -13,33 +13,22 @@ const groupSchema = new mongoose.Schema({
         max: 1024
     },
 
-    image_src: {
+    imageSource: {
         type: String,  
         required: true,      
         max: 1024
     },
 
-    created_date: {
+    createdDate: {
         type: Date,
         default: Date.now
     },
 
-    location_country: {
-        type: String,
+    
+    highlightId: {
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
-        max: 100
-    },
-
-    location_name: {
-        type: String,
-        required: true,
-        max: 100
-    },
-
-    highlight: {
-        type: String,
-        required: true,
-        max: 100
+        ref: 'highlights',
     },
 
     members: [
@@ -53,15 +42,15 @@ const groupSchema = new mongoose.Schema({
     comments:  [
         { 
             type : mongoose.Schema.Types.ObjectId, 
-            ref: 'groupcomments',
+            ref: 'comments',
             require: false 
         }
     ],    
   
-    images:  [
+    photos:  [
         { 
             type : mongoose.Schema.Types.ObjectId,
-            ref: 'groupphotos',
+            ref: 'photos',
             require: false 
         }
     ]       
@@ -70,9 +59,7 @@ const groupSchema = new mongoose.Schema({
 
 groupSchema.index({
     name: 1,
-    location_country: 1,
-    location_name: 1,
-    highlight: 1,
+    highlightId: 1,
   }, {
     unique: true,
   });

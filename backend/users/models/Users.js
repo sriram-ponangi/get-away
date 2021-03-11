@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
         default: 'USER'
     },
 
-    created_date: {
+    createdDate: {
         type: Date,
         default: Date.now
     },
@@ -42,14 +42,14 @@ const userSchema = new mongoose.Schema({
         default: true
     },
 
-    current_country: {
+    currentCountryName: {
         type: String,
         required: true,
         default: 'CANADA',
         max: 100
     },
 
-    current_state: {
+    currentLocationName: {
         type: String,
         required: true,
         default: 'NOVA SCOTIA',

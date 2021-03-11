@@ -1,0 +1,54 @@
+#######################################################################################
+### LOGIN
+#######################################################################################
+
+
+POST http://localhost:4000/api/auth/login
+content-type: application/json
+
+{
+
+    "email" : "userOne@email.com",
+    "password" : "User_One"
+}
+
+###
+POST http://localhost:4000/api/auth/login
+content-type: application/json
+
+{
+
+    "email" : "userTwo@email.com",
+    "password" : "User_Two"
+}
+
+###
+POST http://localhost:4000/api/auth/login
+content-type: application/json
+
+{
+
+    "email" : "a@a.com",
+    "password" : "aaaaaa"
+}
+
+###
+POST http://localhost:4000/api/auth/login
+content-type: application/json
+
+{
+
+    "email" : "admin_one@email.com",
+    "password" : "ADMIN_ONE"
+}
+
+
+###
+POST http://localhost:4000/api/auth/login
+content-type: application/json
+
+{
+
+    "email" : "sriram.ponangi@dal.ca",
+    "password" : "0123456789"
+}

@@ -1,0 +1,40 @@
+#######################################################################################
+### GROUPS API
+#######################################################################################
+
+#####################################
+### GET ALL GROUPS - FOR HighlightId
+#####################################
+GET http://localhost:4000/api/group/
+?highlightId=604a76bb76ae0491fc212f75
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDk0MDg5LCJleHAiOjE2MTU0OTc2Mjl9.D_pFmULVpMQVxeXSC8QaOmtAVUpGLWnbiSr8k_iu8o8
+
+
+#####################################
+### CREATE GROUPS - ADMIN ONLY ACCESS
+#####################################
+###
+POST http://localhost:4000/api/group/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDk0MDg5LCJleHAiOjE2MTU0OTc2Mjl9.D_pFmULVpMQVxeXSC8QaOmtAVUpGLWnbiSr8k_iu8o8
+
+{
+    "name": "Cycling-3",
+    "description": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as \"cyclists\", \"bicyclists\", or \"bikers\"",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "highlightId": "604a76bb76ae0491fc212f75"
+}
+
+###
+POST http://localhost:4000/api/group/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDk0MDg5LCJleHAiOjE2MTU0OTc2Mjl9.D_pFmULVpMQVxeXSC8QaOmtAVUpGLWnbiSr8k_iu8o8
+
+{
+    "name": "Jogging",
+    "description": "Jogging is a form of trotting or running at a slow or leisurely pace. The main intention is to increase physical fitness with less stress on the body than from faster running but more than walking, or to maintain a steady speed for longer periods of time",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "highlightId": "604a755cddad4af1482a1ad1"
+}
+

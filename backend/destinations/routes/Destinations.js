@@ -40,7 +40,7 @@ router.post('/', verifyAdminTokenMiddleware, async (req, res) => {
 router.get('/', verifyTokenMiddleware, async (req, res) => {
 
     let destinationValidationObject = {
-        location_country: req.query.location_country,
+        countryName: req.query.countryName,
     }
 
     const { error } = listDestinationValidator(destinationValidationObject);
@@ -56,11 +56,11 @@ router.get('/', verifyTokenMiddleware, async (req, res) => {
 
     try {
         const destinations = await Destinations.find({
-            location_country: {
-                $regex: req.query.location_country,
+            countryName: {
+                $regex: req.query.countryName,
                 $options: 'i'
             }
-        }, 'name description image_src location_name');
+        }, 'name description imageSource locationName');
         return res.status(200).send(destinations);
     } catch (error) {
         console.log(error);
@@ -75,8 +75,8 @@ router.get('/', verifyTokenMiddleware, async (req, res) => {
 router.get('/details', verifyTokenMiddleware, async (req, res) => {
 
     let destinationValidationObject = {
-        location_country: req.query.location_country,
-        location_name: req.query.location_name,
+        countryName: req.query.countryName,
+        locationName: req.query.locationName,
         name: req.query.name,
     }
 

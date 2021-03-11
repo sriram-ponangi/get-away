@@ -1,11 +1,17 @@
 const router = require('express').Router();
+
 const verifyTokenMiddleware = require('../../utils/VerifyToken');
 const verifyAdminTokenMiddleware = require('../../utils/VerifyAdminToken');
+
 const Groups = require('../models/Groups');
+const Highlights = require('../../highlights/models/Highlights');
+
 const createGroupValidator = require('../validations/CreateGroup');
-const defaultGroupValidator = require('../validations/DefaultGroup');
+
 const getGroupsValidator = require('../validations/GetGroups');
-const Users = require('../../users/models/Users');
+
+const groupMemberRoutes = require('./Members');
+const groupCommentRoutes = require('./Comments');
 
 router.post('/', verifyAdminTokenMiddleware, async (req, res) => {
 
@@ -21,34 +27,37 @@ router.post('/', verifyAdminTokenMiddleware, async (req, res) => {
                 }
             });
     }
-
-    const group = new Groups({
-        name: req.body.name,
-        description: req.body.description,
-        location_country: req.body.location_country,
-        location_name: req.body.location_name,
-        highlight: req.body.highlight,
-        image_src: req.body.image_src,
-    });
-
     try {
-        const savedUser = await group.save();
-        return res.send(savedUser);
+        const highlightDetials = await Highlights.findOne({ _id: validationObject.highlightId });
+        validationObject.highlightId = highlightDetials;
+        console.log(validationObject.highlightId);
+        const groupsModel = new Groups(validationObject);
+
+        try {
+            const savedGroup = await groupsModel.save();
+            return res.send(savedGroup);
+        } catch (error) {
+            return res.status(400)
+                .send({
+                    errors: error
+                });
+        }
+
     } catch (error) {
-        return res.status(400)
+        console.log(error);
+        return res.status(500)
             .send({
                 errors: error
             });
     }
 
+
 });
 
 router.get('/', verifyTokenMiddleware, async (req, res) => {
 
-    let groupValidationObject = {
-        location_country: req.query.location_country,
-        location_name: req.query.location_name,
-        highlight: req.query.highlight,
+    let groupValidationObject = {        
+        highlightId: req.query.highlightId,
     }
     const { error } = getGroupsValidator(groupValidationObject);
 
@@ -74,94 +83,9 @@ router.get('/', verifyTokenMiddleware, async (req, res) => {
     }
 });
 
-router.post('/member', verifyTokenMiddleware, async (req, res) => {
+router.use('/member', groupMemberRoutes);
+router.use('/comment', groupCommentRoutes);
 
-    let validationObject = Object.assign({}, req.body);
-    delete validationObject.currentUser;
-    const { error } = defaultGroupValidator(validationObject);
-    if (error) {
-        console.log(error.details);
-        return res.status(400)
-            .send({
-                errors: {
-                    messages: error.details.map(e => e.message)
-                }
-            });
-    }
-
-
-    try {
-        const userFilter = { email: req.body.currentUser.email };
-
-        const user = await Users.findOne(userFilter);
-        const group = await Groups.findOne(validationObject);
-        if (group && user) {
-            const savedGroup = await Groups.findOneAndUpdate(validationObject,
-                {
-                    $addToSet: {
-                        members: {
-                            $each: [user]
-                        }
-                    }
-                },
-                { new: true });
-
-            const savedUser = await Users.findOneAndUpdate(userFilter,
-                {
-                    $addToSet: {
-                        groups: {
-                            $each: [group]
-                        }
-                    }
-                },
-                { new: true });
-            return res.send({ group: savedGroup, user: savedUser });
-        }
-
-
-
-    } catch (error) {
-        console.log(error);
-        return res.status(500)
-            .send({
-                errors: error
-            });
-    }
-
-});
-
-router.get('/members', verifyTokenMiddleware, async (req, res) => {
-
-    let groupValidationObject = {
-        name: req.query.name,
-        location_country: req.query.location_country,
-        location_name: req.query.location_name,
-        highlight: req.query.highlight,
-    }
-    const { error } = defaultGroupValidator(groupValidationObject);
-    if (error) {
-        console.log(error.details);
-        return res.status(400)
-            .send({
-                errors: {
-                    messages: error.details.map(e => e.message)
-                }
-            });
-    }
-
-    try {
-        const group = await Groups.findOne(groupValidationObject,
-            'name description location_country location_name highlight')
-            .populate({ path: 'members', select: ['email', 'firstName', 'lastName'] });
-        return res.status(200).send(group);
-    } catch (error) {
-        console.log(error);
-        return res.status(500)
-            .send({
-                errors: error
-            });
-    }
-});
 
 // To-DO:
 // Add Comments

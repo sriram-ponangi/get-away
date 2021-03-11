@@ -158,7 +158,7 @@ router.get('/groups', verifyTokenMiddleware, async (req, res) => {
         const group = await User.findOne({ _id: req.body.currentUser._id },
              'firstName lastName')
              .populate({ path: 'groups', select: ['name','description',
-             'location_country', 'location_name', 'highlight', 'image_src'] });
+             'countryName', 'locationName', 'highlight', 'imageSource'] });
         return res.status(200).send(group);
     } catch (error) {
         console.log(error);

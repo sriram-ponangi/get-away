@@ -10,16 +10,16 @@ const createDestinationValidator = (data) => {
             .max(1024)
             .required(),
 
-        image_src: Joi.string()
+        imageSource: Joi.string()
             .max(1024)
             .required()
             .allow(''),
 
-        location_country: Joi.string()
+        countryName: Joi.string()
             .max(100)
             .required(),
 
-        location_name: Joi.string()
+        locationName: Joi.string()
             .max(100)
             .required(),
 
@@ -35,6 +35,7 @@ const createDestinationValidator = (data) => {
                     ),
             })
             .required(),
+
         essentials: Joi.array()
             .items({
                 title: Joi.string()
@@ -47,7 +48,8 @@ const createDestinationValidator = (data) => {
                     ),
             })
             .required(),
-        tourist_attractions: Joi.array()
+
+        touristAttractions: Joi.array()
             .items({
                 title: Joi.string()
                     .required()

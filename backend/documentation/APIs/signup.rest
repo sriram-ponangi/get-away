@@ -1,0 +1,54 @@
+#######################################################################################
+### REGISTRATION
+#######################################################################################
+POST http://localhost:4000/api/auth/register
+content-type: application/json
+
+{
+    "firstName" : "ADMIN",
+    "lastName" : "ONE",
+    "email" : "admin_one@email.com",
+    "password" : "ADMIN_ONE"
+}
+###
+POST http://localhost:4000/api/auth/register
+content-type: application/json
+
+{
+    "firstName" : "USER",
+    "lastName" : "ONE",
+    "email" : "userOne@email.com",
+    "password" : "User_One"
+}
+###
+
+POST http://localhost:4000/api/auth/register
+content-type: application/json
+
+{
+    "firstName" : "USER",
+    "lastName" : "TWO",
+    "email" : "userTwo@email.com",
+    "password" : "User_Two"
+}
+###
+POST http://localhost:4000/api/auth/register
+content-type: application/json
+
+{
+    "firstName" : "A",
+    "lastName" : "a",
+    "email" : "a@a.com",
+    "password" : "aaaaaa"
+}
+
+###
+POST http://localhost:4000/api/auth/register
+content-type: application/json
+
+{
+    "firstName" : "Sriram",
+    "lastName" : "Ponangi",
+    "email" : "sriram.ponangi@dal.ca",
+    "password" : "0123456789"
+}

@@ -1,9 +1,9 @@
 const Joi = require('joi');
 
-const getDestinationValidator = (data) => {
+const listDestinationValidator = (data) => {
     const destinationSchema = Joi.object({
 
-        location_country: Joi.string()
+        countryName: Joi.string()
             .max(100)
             .required()
     });
@@ -11,4 +11,4 @@ const getDestinationValidator = (data) => {
 }
 
 
-module.exports = getDestinationValidator;
+module.exports = listDestinationValidator;
