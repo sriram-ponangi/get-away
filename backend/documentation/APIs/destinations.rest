@@ -1,0 +1,233 @@
+
+#######################################################################################
+### TEST DESTINATION API:
+#######################################################################################
+
+
+########################################
+### CREATE DESTINATION API - ADMIN ONLY:
+########################################
+###
+POST http://localhost:4000/api/destination
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDg5NDkyLCJleHAiOjE2MTU0OTMwMzJ9.dwedMSTcHseA_kM77IzqbSMGJZFi-JxfcgqlhUzpi2o
+
+{
+    "name": "Halifax, Nova Scotia, Canada",
+    "description": "Halifax, an Atlantic Ocean port in eastern Canada, is the provincial capital of Nova Scotia. A major business centre, it’s also known for its maritime history. The city’s dominated by the hilltop Citadel, a star-shaped fort completed in the 1850s. Waterfront warehouses known as the Historic Properties recall Halifax’s days as a trading hub for privateers, notably during the War of 1812.",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "countryName": "Canada",
+    "locationName": "Halifax, Nova Scotia",
+    "about": [
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "About-Title-1"
+      },
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "About-Title-2"
+      }
+    ],
+
+    "touristAttractions": [],
+    "essentials": []
+}
+
+
+###
+POST http://localhost:4000/api/destination
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDg5NDkyLCJleHAiOjE2MTU0OTMwMzJ9.dwedMSTcHseA_kM77IzqbSMGJZFi-JxfcgqlhUzpi2o
+
+{
+    "name": "Vancouver, British Columbia, Canada",
+    "description": "Vancouver, a bustling west coast seaport in British Columbia, is among Canada’s densest, most ethnically diverse cities. A popular filming location, it’s surrounded by mountains, and also has thriving art, theatre and music scenes. Vancouver Art Gallery is known for its works by regional artists, while the Museum of Anthropology houses preeminent First Nations collections.",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "countryName": "Canada",
+    "locationName": "Vancouver, British Columbia",
+    "about": [
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "About-Title-1"
+      },
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "About-Title-2"
+      }
+    ],
+
+    "touristAttractions": [
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "touristAttractions-Title-1"
+      },
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "touristAttractions-Title-2"
+      }
+    ],
+    "essentials": []
+}
+
+###
+POST http://localhost:4000/api/destination
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDg5NDkyLCJleHAiOjE2MTU0OTMwMzJ9.dwedMSTcHseA_kM77IzqbSMGJZFi-JxfcgqlhUzpi2o
+
+{
+    "name": "Hyderabad, Telangana, India",
+    "description": "Hyderabad is the capital of southern India's Telangana state. A major center for the technology industry, it's home to many upscale restaurants and shops. Its historic sites include Golconda Fort, a former diamond-trading center that was once the Qutb Shahi dynastic capital. The Charminar, a 16th-century mosque whose 4 arches support towering minarets, is an old city landmark near the long-standing Laad Bazaar. ",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "countryName": "India",
+    "locationName": "Hyderabad, Telangana",
+    "about": [
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "About-Title-1"
+      },
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "About-Title-2"
+      }
+    ],
+    "touristAttractions": [],
+    "essentials": [
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "essentials-Title-1"
+      },
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "essentials-Title-2"
+      }
+    ]
+}
+
+
+
+
+###
+POST http://localhost:4000/api/destination
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDg5NDkyLCJleHAiOjE2MTU0OTMwMzJ9.dwedMSTcHseA_kM77IzqbSMGJZFi-JxfcgqlhUzpi2o
+
+{
+    "name": "New Delhi, India",
+    "description": "New Delhi is the capital of India and an administrative district of NCT Delhi. New Delhi is also the seat of all three branches of the government of India, hosting the Rashtrapati Bhavan, Parliament House, and the Supreme Court of India.",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "countryName": "India",
+    "locationName": "New Delhi",
+    "about": [
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "About-Title-1"
+      },
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "About-Title-2"
+      }
+    ],
+    "touristAttractions": [
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "touristAttractions-Title-1"
+      },
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "touristAttractions-Title-2"
+      }
+    ],
+    "essentials": [
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "essentials-Title-1"
+      },
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "essentials-Title-2"
+      }
+    ]
+}
+
+###
+
+
+########################################
+### GET DESTINATIONS BY COUNTRY NAME:
+########################################
+###
+GET http://localhost:4000/api/destination
+?countryName=i
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjJhNDUzNDk0ZWYyYTRiZjk3YmQiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDkwMzc5LCJleHAiOjE2MTU0OTM5MTl9.2vn19YoqadkkPNvtI3BaktnNn6Rwsft5_O3ExNukZIw
+
+###
+GET http://localhost:4000/api/destination
+?countryName=an
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjJhNDUzNDk0ZWYyYTRiZjk3YmQiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDkwMzc5LCJleHAiOjE2MTU0OTM5MTl9.2vn19YoqadkkPNvtI3BaktnNn6Rwsft5_O3ExNukZIw
+
+########################################
+### GET FULL DETAILS OF DESTINATIONS BY:
+# COUNTRY NAME
+# LOCATION NAME
+# DESTIANTION NAME
+########################################
+###
+GET http://localhost:4000/api/destination/details
+?countryName=India
+&locationName=Hyderabad, Telangana
+&name=Hyderabad, Telangana, India
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjJhNDUzNDk0ZWYyYTRiZjk3YmQiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDkwMzc5LCJleHAiOjE2MTU0OTM5MTl9.2vn19YoqadkkPNvtI3BaktnNn6Rwsft5_O3ExNukZIw
+

@@ -1,0 +1,31 @@
+
+#######################################################################################
+### TEST HIGHLIGHTS API:
+#######################################################################################
+POST http://localhost:4000/api/highlight
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDg5NDkyLCJleHAiOjE2MTU0OTMwMzJ9.dwedMSTcHseA_kM77IzqbSMGJZFi-JxfcgqlhUzpi2o
+
+{
+    "name": "Cycling-3",
+    "description": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as \"cyclists\", \"bicyclists\", or \"bikers\"",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "destinationId": "604a6b9e9dce7edc48067f5d",
+    "about": [
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "About-Title-1"
+      },
+      {
+        "paragraphs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "About-Title-2"
+      }
+    ]
+}

@@ -3,11 +3,11 @@ const Joi = require('joi');
 const getDestinationValidator = (data) => {
     const destinationSchema = Joi.object({
 
-        location_country: Joi.string()
+        countryName: Joi.string()
             .max(100)
             .required(),
 
-        location_name: Joi.string()
+        locationName: Joi.string()
             .max(100)
             .required(),
 

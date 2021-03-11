@@ -1,0 +1,33 @@
+
+#######################################################################################
+### USER APIs
+#######################################################################################
+
+
+### Get Basic Info of the logged-in user
+GET http://localhost:4000/api/user/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5ZjUzNDk0ZWYyYTRiZjk3YmMiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IkEiLCJsYXN0TmFtZSI6ImEiLCJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE2MTU0OTY5MjksImV4cCI6MTYxNTUwMDQ2OX0.XBHd1pSMFU-ACf_49LKDTi7Zc7XPNmYOZ4V4DIJDQjs
+
+### MyGroups - Get the basic info of all the groups the logged-in user is part of.
+GET http://localhost:4000/api/user/groups
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5OTUzNDk0ZWYyYTRiZjk3YmEiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlVTRVIiLCJsYXN0TmFtZSI6Ik9ORSIsImVtYWlsIjoidXNlck9uZUBlbWFpbC5jb20iLCJpYXQiOjE2MTU0OTYzNjIsImV4cCI6MTYxNTQ5OTkwMn0.pWwKOvL5t5DHjr1R46Mmpd9-v_1UW8-K-A_hUdRWWEY
+
+###
+POST http://localhost:4000/api/user/forgot-password
+content-type: application/json
+
+{
+    "email" : "sriram.ponangi@dal.ca"
+}
+
+###
+POST http://localhost:4000/api/user/update-profile
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjJhNDUzNDk0ZWYyYTRiZjk3YmQiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDg4MDkyLCJleHAiOjE2MTU0OTE2MzJ9.HUdydro3ae0OvXm132LeKkp0gl43afbKCqE22GVgve4
+
+{
+    "firstName": "SriRam",
+    "lastName": "Ponangi",
+    "password": "0123456789",
+    "confirmPassword": "0123456789"
+}

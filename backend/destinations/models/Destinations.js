@@ -13,19 +13,19 @@ const destinationSchema = new mongoose.Schema({
         max: 1024
     },
 
-    image_src: {
+    imageSource: {
         type: String,
         required: true,
         max: 1024
     },
 
-    location_country: {
+    countryName: {
         type: String,
         required: true,
         max: 100
     },
 
-    location_name: {
+    locationName: {
         type: String,
         required: true,
         max: 100
@@ -42,7 +42,7 @@ const destinationSchema = new mongoose.Schema({
         }
     ],
 
-    tourist_attractions: [
+    touristAttractions: [
         {
             title: String,
             paragraphs: [
@@ -68,8 +68,8 @@ const destinationSchema = new mongoose.Schema({
 
 destinationSchema.index({
     name: 1,
-    location_country: 1,
-    location_name: 1,
+    countryName: 1,
+    locationName: 1,
 }, {
     unique: true,
 });

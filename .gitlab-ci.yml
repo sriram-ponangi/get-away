@@ -1,15 +1,14 @@
 image: node:latest
 
 stages:
-- build-frontend
-- deploy-frontend
-- deploy-backend
+- build
+- deploy
 
 
 
 build-frontend:
   type: build
-  stage: build-frontend
+  stage: build
   tags:
     - dalfcs_docker_kvm
     - dalfcs_gitlab_docker_ci
@@ -25,9 +24,9 @@ build-frontend:
     - frontend/build/*
     - frontend/app-server/*
 
-deploy:
+deploy-frontend:
   type: deploy
-  stage: deploy-frontend
+  stage: deploy
   tags:
     - dalfcs_docker_kvm
     - dalfcs_gitlab_docker_ci
@@ -52,8 +51,8 @@ deploy:
     - release
     
 deploy-backend:
-  type: deploy
-  stage: deploy-backend
+  type: build
+  stage: build
   tags:
     - dalfcs_docker_kvm
     - dalfcs_gitlab_docker_ci
