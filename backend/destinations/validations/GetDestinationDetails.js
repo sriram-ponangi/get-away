@@ -3,17 +3,22 @@ const Joi = require('joi');
 const getDestinationValidator = (data) => {
     const destinationSchema = Joi.object({
 
-        countryName: Joi.string()
-            .max(100)
-            .required(),
+        // countryName: Joi.string()
+        //     .max(100)
+        //     .required(),
 
-        locationName: Joi.string()
-            .max(100)
-            .required(),
+        // locationName: Joi.string()
+        //     .max(100)
+        //     .required(),
 
-        name: Joi.string()
+        // name: Joi.string()
+        //     .max(100)
+        //     .required(),
+
+        destinationId: Joi.string()
             .max(100)
-            .required(),
+            .min(24)
+            .required()
 
     });
     return destinationSchema.validate(data);

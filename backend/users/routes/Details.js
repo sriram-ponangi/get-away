@@ -42,7 +42,7 @@ router.post('/forgot-password', async (req, res, next) => {
         // Checking if email does not exists
         const valid_user = await User.findOne({ email: req.body.email });        
         if (!valid_user) {            
-            return res.redirect('/profile/login');            
+            return res.send({message: "An Email with temporary login details will be sent if your account is valid."});            
         }  
         req.body.valid_user = valid_user;  
     } catch (error) {
@@ -86,7 +86,7 @@ router.post('/forgot-password', async (req, res, next) => {
     const sendEmail = SendEmail(emailInfo);
     
 
-    return res.redirect('/profile/login');            
+    return res.send({message: "An Email with temporary login details will be sent if your account is valid."});  ;            
 
 });
 

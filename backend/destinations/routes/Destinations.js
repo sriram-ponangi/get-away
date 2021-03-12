@@ -37,7 +37,7 @@ router.post('/', verifyAdminTokenMiddleware, async (req, res) => {
 
 
 
-router.get('/', verifyTokenMiddleware, async (req, res) => {
+router.get('/', async (req, res) => {
 
     let destinationValidationObject = {
         countryName: req.query.countryName,
@@ -72,12 +72,13 @@ router.get('/', verifyTokenMiddleware, async (req, res) => {
 });
 
 
-router.get('/details', verifyTokenMiddleware, async (req, res) => {
+router.get('/details', async (req, res) => {
 
     let destinationValidationObject = {
-        countryName: req.query.countryName,
-        locationName: req.query.locationName,
-        name: req.query.name,
+        // countryName: req.query.countryName,
+        // locationName: req.query.locationName,
+        // name: req.query.name,
+        destinationId: req.query.destinationId
     }
 
     const { error } = getDestinationDetialsValidator(destinationValidationObject);
@@ -92,7 +93,7 @@ router.get('/details', verifyTokenMiddleware, async (req, res) => {
     }
 
     try {
-        const destinationDetials = await Destinations.findOne(destinationValidationObject);
+        const destinationDetials = await Destinations.findOne({_id: destinationValidationObject.destinationId});
         return res.status(200).send(destinationDetials);
     } catch (error) {
         console.log(error);

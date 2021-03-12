@@ -20,9 +20,13 @@ class DestinationDetailsCard extends Component {
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                    <p className=" text-dark" style={{ fontFamily: 'Verdana' }}>
-                                        {result.text}
-                                    </p>
+                                    {
+                                        result.paragraphs.map((para) => (
+                                            <p className=" text-dark" style={{ fontFamily: 'Verdana' }}>
+                                                {para}
+                                            </p>
+                                        ))
+                                    }
                                 </div>
                             </div>
 

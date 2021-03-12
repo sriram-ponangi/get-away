@@ -1,14 +1,15 @@
-import React from 'react';
+
 // import logo from '../logo.png';
 import './Login.css';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import { Component } from 'react';
+import React, { Component } from 'react';
 
 class Login extends Component {
 
     state = {
         loggedIn: false,
+        errorMessage: ""
        
     };
 
@@ -43,14 +44,33 @@ class Login extends Component {
                     },
                     error => {                        
                         console.log(error);
+                        this.setState({
+                            errorMessage: "Sorry, something went wrong on our side. Please try again later."                    
+                        });
                     }
                 );
 
             })
             .catch(error => {
                 console.log(error.body);
+                this.setState({
+                    errorMessage: "Invalid Credentials!"                    
+                });
             })
             
+    }
+
+    showMessage = () => {
+        if (this.state.errorMessage) {
+            return (
+                <div className="alert alert-danger" role="alert">
+                    {this.state.errorMessage}
+                </div>
+            );        
+        } else {
+            return (<div></div>);
+        }
+
     }
 
     render() {
@@ -65,6 +85,9 @@ class Login extends Component {
                     <div className="form-group col-12">
                         <h2 className="mt-3">Login:</h2>
                     </div>
+                    {
+                        this.showMessage()
+                    }
                     <div className="form-group col-12">
                         <input type="email" className="form-control" id="loginInputEmail"
                             aria-describedby="emailHelp" placeholder="Email" required={true}
@@ -80,7 +103,6 @@ class Login extends Component {
                             Login
                         </button>
                     </div>
-
                 </form>
             </div>
 

@@ -13,11 +13,13 @@ const updateProfileValidator = (data) => {
 
         password: Joi.string()
             .min(6)
-            .max(1024),
+            .max(1024)
+            .allow(''),
 
         confirmPassword: Joi.string()
         .min(6)
         .max(1024)
+        .allow('')
     });
     return userSchema.validate(data);
 }

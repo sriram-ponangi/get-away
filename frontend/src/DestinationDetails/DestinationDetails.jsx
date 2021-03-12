@@ -3,7 +3,7 @@ import './DestinationDetails.css';
 import { Component } from 'react';
 
 import DestinationDetailsCard from '../DestinationDetailsCard/DestinationDetailsCard';
-
+import axios from 'axios';
 
 import { NavLink, BrowserRouter, Route, Redirect } from 'react-router-dom';
 
@@ -15,25 +15,37 @@ class DestinationDetails extends Component {
     }
 
     componentDidMount() {
-        fetch('/mock-data/destinationDetails.json')
-            .then(res => res.json())
-            .then((data) => {
+        // fetch('/mock-data/destinationDetails.json')
+        //     .then(res => res.json())
+        //     .then((data) => {
 
-                this.setState({ destinationDetails: data });
-                console.log(this.state);
-            })
-            .catch(console.log)
+        //         this.setState({ destinationDetails: data });
+        //         console.log(this.state);
+        //     })
+        //     .catch(console.log)
+        axios.get('destination/details', {
+            params: {
+                destinationId: this.props.location.destinationId
+            }
+        }).then(
+            res => {
+                this.setState({ destinationDetails: res.data });
+            },
+            error => {
+                console.log(error);
+            }
+        );
     }
 
     showHighlights = () => {
-        
-        if(localStorage.getItem('firstName')){
+
+        if (localStorage.getItem('firstName')) {
             return (
                 <NavLink className=" btn btn-outline-light text-dark" onClick={this.highlightsRedirect}
                     to={"/"} style={{ fontFamily: 'Verdana' }}><b>Highlights</b></NavLink>
             );
         }
-        
+
     }
 
 
@@ -57,16 +69,21 @@ class DestinationDetails extends Component {
             return (
                 <div className='container DestinationDetails'>
                     <h1 className="font-weight-bold text-dark" style={{ fontFamily: 'Verdana' }}>
-                        {this.state.destinationDetails.title} (Card: {this.props.location.destinationId} )
+                        {this.state.destinationDetails.title} {this.state.destinationDetails.name}
                     </h1>
-                    {
+                    {/* {
                         this.state.destinationDetails.carouselImages.map((result) => (
                             <div key={result.id}>
                                 <img className="img-fluid" src={result.image}
                                     title={result.title} alt={result.title} />
                             </div>
                         ))
-                    }
+                    } */}
+
+                    <div>
+                        <img className="img-fluid" src={this.state.destinationDetails.imageSource}
+                            title={this.state.destinationDetails.name} alt={this.state.destinationDetails.name} />
+                    </div>
 
 
                     <BrowserRouter>
@@ -83,11 +100,11 @@ class DestinationDetails extends Component {
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className="nav-link text-light" id='destination-details-documents-nav'
-                                            to="/destination/details/documents" activeClassName="active">Documents</NavLink>
+                                            to="/destination/details/documents" activeClassName="active">Tourist Attractions</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className="nav-link text-light" id='destination-details-accomodations-nav'
-                                            to="/destination/details/accomodations" activeClassName="active">Accomodations</NavLink>
+                                            to="/destination/details/accomodations" activeClassName="active">Essentials</NavLink>
                                     </li>
                                 </ul>
                                 {
@@ -102,9 +119,9 @@ class DestinationDetails extends Component {
                         <Route path="/destination/details/about" exact
                             component={() => <DestinationDetailsCard displayContent={this.state.destinationDetails.about} />} />
                         <Route path="/destination/details/documents" exact
-                            component={() => <DestinationDetailsCard displayContent={this.state.destinationDetails.documents} />} />
+                            component={() => <DestinationDetailsCard displayContent={this.state.destinationDetails.touristAttractions} />} />
                         <Route path="/destination/details/accomodations" exact
-                            component={() => <DestinationDetailsCard displayContent={this.state.destinationDetails.accomodations} />} />
+                            component={() => <DestinationDetailsCard displayContent={this.state.destinationDetails.essentials} />} />
                         <br /><hr /><br />
                     </BrowserRouter>
 
