@@ -17,8 +17,13 @@ class EditProfile extends Component {
         password: "",
         confirmPassword: ""
     }
-    editProfileHandler = (event) => {
+    editProfileHandler = (event) => {        
         event.preventDefault();
+        this.setState({
+            errorMessage: "",
+            successMessage: ""                    
+        });
+        
         console.log("Edit Profile:", this.editProfileInfo);
         axios.post('user/update-profile', this.editProfileInfo)
             .then(res => {

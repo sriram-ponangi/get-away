@@ -13,8 +13,13 @@ class ForgotPassword extends Component {
         email: ""
     }
 
-    forgotPasswordHandler = (event) => {
+    forgotPasswordHandler = (event) => {        
         event.preventDefault();
+        this.setState({
+            errorMessage: "",
+            successMessage: ""                    
+        });
+
         console.log("Forgot Password:", this.forgotPasswordInfo);
         axios.post('user/forgot-password', this.forgotPasswordInfo)
             .then(res => {

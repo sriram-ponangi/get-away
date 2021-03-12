@@ -20,6 +20,10 @@ class Login extends Component {
 
     loginHandler = (event) => {
         event.preventDefault();
+        this.setState({
+            errorMessage: ""                    
+        });
+        
         console.log(this.userLoginInfo);
 
         axios.post('auth/login', this.userLoginInfo)

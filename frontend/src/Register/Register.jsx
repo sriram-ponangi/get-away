@@ -18,14 +18,20 @@ class Register extends Component {
 
     registerHandler = (event) => {
         event.preventDefault();
-        // console.log(this.userRegistrationInfo);
+        this.setState({
+            errorMessage: "",
+            successMessage: ""                    
+        });
+
+        console.log(this.userRegistrationInfo);
 
         if (this.userRegistrationInfo.password !== this.userRegistrationInfo.confirmPassword) {
             this.setState({ errorMessage: "Password and Confirm Password do not match." });
-        } else {
-            delete this.userRegistrationInfo.confirmPassword;
-            console.log(this.userRegistrationInfo);
-            axios.post('auth/register', this.userRegistrationInfo)
+        } else {        
+            let userRegistrationInfoRequestBody = Object.assign({}, this.userRegistrationInfo);
+            delete userRegistrationInfoRequestBody.confirmPassword;
+            console.log(userRegistrationInfoRequestBody);
+            axios.post('auth/register', userRegistrationInfoRequestBody)
                 .then(res => {
                     this.setState({ successMessage: "Account Created Successfully." });
                 }).catch(error => {
@@ -98,11 +104,13 @@ class Register extends Component {
                             id="loginInputPassword" placeholder="Password" required={true}
                             onChange={event => this.userRegistrationInfo.password = event.target.value} />
                     </div>
+
                     <div className="form-group col-12">
                         <input type="password" className="form-control"
-                            id="loginInputConfirmPassword" placeholder="Confirm Password Again" required={true}
+                            id="loginInputConfirmPassword" placeholder="Confirm Password" required={true}
                             onChange={event => this.userRegistrationInfo.confirmPassword = event.target.value} />
                     </div>
+
                     <div className="form-check col-12">
                         <button type="submit" className="btn text-light mr-3 btn-block" style={{ background: 'black' }}>Register</button>
                     </div>
