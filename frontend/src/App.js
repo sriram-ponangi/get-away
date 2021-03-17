@@ -11,7 +11,8 @@ import DestinationSearchResult from './DestinationSearchResult/DestinationSearch
 import DestinationDetails from './DestinationDetails/DestinationDetails';
 import GroupSingle from './GroupSingle/GroupSingle';
 import Home from './Home/Home';
-import ClubPhotoGallery from './ClubPhotoGallery/ClubPhotoGallery';
+import GroupPhotoGallery from './GroupPhotoGallery/GroupPhotoGallery';
+import GroupComments from './GroupComments/GroupComments';
 import contactus from './ContactUs/ContactUs';
 import aboutus from './AboutUs/AboutUs';
 import whyus from './WhyUs/WhyUs';
@@ -65,7 +66,8 @@ class App extends Component {
             <Route path="/destination/details/about" exact component={DestinationDetails} />
             <Route path="/my-groups/halifax-hustle" exact component={GroupSingle} />
             <Route path="/destination/highlights" exact component={Highlights} />
-            <Route path="/club/details/clubPhoto" exact component={ClubPhotoGallery} />
+            <Route path="/group/groupPhotos" exact component={GroupPhotoGallery} />
+            <Route path="/group/comments" exact component={GroupComments} />
             <Route path="/aboutus" exact component={aboutus} />
             <Route path="/contactus" exact component={contactus} />
             <Route path="/whyus" exact component={whyus} />

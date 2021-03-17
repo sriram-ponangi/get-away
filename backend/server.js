@@ -9,6 +9,9 @@ const userDetailsRoutes = require('./users/routes/Details');
 const groupRoutes = require('./groups/routes/Groups');
 const destinationRoutes = require('./destinations/routes/Destinations');
 const highlightRoutes = require('./highlights/routes/Highlights');
+const contactusRoutes = require('./contactus/routes/contactus');
+const groupCommentsRoutes = require('./groups/routes/Comments');
+const groupPhotosRoutes = require('./groups/routes/Photos');
 
 // dotenv.config();
 
@@ -31,6 +34,13 @@ app.use('/api/group', groupRoutes);
 app.use('/api/user', userDetailsRoutes);
 app.use('/api/destination', destinationRoutes);
 app.use('/api/highlight', highlightRoutes);
+app.use('/api/contactus', contactusRoutes);
+app.use('/api/group/comments', groupCommentsRoutes);
+app.use('/api/group/photos', groupPhotosRoutes);
+
+
+app.use(express.static('public'));   
+app.use('/uploads', express.static('uploads')); 
 
 app.listen(process.env.PORT || 4000, () => {
     console.log('Auth-Server Running on port : ', process.env.PORT || 4000);
