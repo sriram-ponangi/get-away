@@ -4,16 +4,39 @@ const verifyAdminTokenMiddleware = require('../../utils/VerifyAdminToken');
 
 const Groups = require('../models/Groups');
 const Users = require('../../users/models/Users');
-const Comments = require('../models/Comments');
+const Photos = require('../models/Photos');
 
-const createCommentsValidator = require('../validations/CreateComments');
-const getCommentsValidator = require('../validations/GetComments');
+const createPhotosValidator = require('../validations/CreatePhotos');
+const getPhotosValidator = require('../validations/GetPhotos');
 
-router.post('/', verifyTokenMiddleware, async (req, res) => {
+const multer  = require('multer');
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null,'./uploads/');
+    },
+    filename: function(req, file, cb) {
+        const str = Math.floor(Math.random()*10000);
+        console.log(str)
+        cb(null,str + file.originalname);
+    },
+});
+const filefilter = (req, file, cb)=>{
+    if(file.mimetype === "image/jpeg" || file.mimetype === "image/png"){
+        cb(null,true);
+    }
+    else{
+        cb(null,false);
+    }
+};
+const upload = multer({storage: storage, filefilter:filefilter});
+
+
+router.post('/', verifyTokenMiddleware,upload.single('groupPhotos'), async (req, res) => {
 
     let validationObject = Object.assign({}, req.body);
     delete validationObject.currentUser;
-    const { error } = createCommentsValidator(validationObject);
+    const { error } = createPhotosValidator(validationObject);
     if (error) {
         console.log(error.details);
         return res.status(400)
@@ -26,36 +49,33 @@ router.post('/', verifyTokenMiddleware, async (req, res) => {
 
 
     try {
-        const user = await Users.findOne({ email: req.body.currentUser.email });
+        console.log('hiiiii');
         const group = await Groups.findOne({ _id: validationObject.groupId });
-        console.log(group); console.log(user);
+        console.log(group); 
 
-        if (group && user) {
-            const commentModel = new Comments({
-                text: validationObject.text,
-                userId: user
+        if (group) {
+            const photoModel = new Photos({
+                imageSource: "uploads/" + req.file.filename
             });
-            const savedComment = await commentModel.save();
-
-
+            const savedPhoto = await photoModel.save();
             const savedGroup = await Groups.findOneAndUpdate({ _id: group._id },
                 {
                     $addToSet: {
-                        comments: {
-                            $each: [savedComment]
+                        photos: {
+                            $each: [savedPhoto]
                         }
                     }
                 },
                 { new: true });
 
 
-            return res.send({ group: savedGroup, savedComment: savedComment });
+            return res.send({ group: savedGroup, savedPhoto: savedPhoto });
         }
         else {
             return res.status(500)
                 .send({
                     errors: {
-                        messages: ['Invalid Group']
+                        messages: ['Invalid Photo']
                     }
                 });
         }
@@ -77,7 +97,7 @@ router.get('/', async (req, res) => {
     let groupValidationObject = {
         groupId: req.query.groupId
     }
-    const { error } = getCommentsValidator(groupValidationObject);
+    const { error } = getPhotosValidator(groupValidationObject);
     if (error) {
         console.log(error.details);
         return res.status(400)
@@ -90,14 +110,10 @@ router.get('/', async (req, res) => {
     console.log("hello")
     
     try {
-        const group = await Groups.findOne({ _id: groupValidationObject.groupId }, 'name')
+        const group = await Groups.findOne({ _id: groupValidationObject.groupId }, 'name description')
             .populate({
-                path: 'comments',
-                populate: {
-                    path: 'userId',
-                    model: 'users',
-                    select: ['email', 'firstName', 'lastName']
-                },
+                path: 'photos',
+                
                 options:{ sort:{"createdDate" : "descending"}}
             });
             console.log(group)
