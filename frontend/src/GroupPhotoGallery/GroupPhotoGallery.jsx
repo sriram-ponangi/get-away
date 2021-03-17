@@ -79,9 +79,9 @@ class GroupPhotoGallery extends Component {
             <div className="col-md-6 col-lg-4" id={photo._id} >
               <b></b>
               <div className="card border-0 transform-on-hover">
-                <a className="lightbox" href={`http://localhost:4000/${photo.imageSource}`} >
+                <a className="lightbox" href={`https://csci-5709-backend.herokuapp.com/${photo.imageSource}`} >
                 
-                  <img src={`http://localhost:4000/${photo.imageSource}`}
+                  <img src={`https://csci-5709-backend.herokuapp.com/${photo.imageSource}`}
                   className="card-img-top groupimg"  alt="" />
                 </a>
               </div>
