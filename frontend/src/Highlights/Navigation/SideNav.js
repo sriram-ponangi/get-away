@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { SideNavItems } from './SideNavItems'
 import HighlightGroup from '../Cards/HighlightGroup.jsx'
-import './Navigation.css';
+// import './Navigation.css';
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 import { highlightsData } from '../Cards/HighlightsData.js'

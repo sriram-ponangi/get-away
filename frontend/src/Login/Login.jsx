@@ -87,7 +87,7 @@ class Login extends Component {
             <div className="container">
                 <form onSubmit={this.loginHandler}>
                     <div className="form-group col-12">
-                        <h2 className="mt-3">Login:</h2>
+                        <h2>Login:</h2>
                     </div>
                     {
                         this.showMessage()

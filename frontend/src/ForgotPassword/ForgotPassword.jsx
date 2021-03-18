@@ -70,7 +70,7 @@ class ForgotPassword extends Component {
             <div className="container">
                 <form onSubmit={this.forgotPasswordHandler}>
                     <div className="form-group col-12">
-                        <h2 className="mt-3">Forgot Password:</h2>
+                        <h2>Forgot Password:</h2>
                     </div>
                     {
                         this.showMessage()

@@ -1,15 +1,19 @@
-@media screen and (min-width: 768px){
-
-    #mmenu_screen > .row {
-        min-height: 100vh;
-    }
-    
+.login-settings {
+    max-width: 500px;
+    margin: auto;
 }
 
-.nav li.active a,
-.nav li a:hover,
-.nav li.active a:focus,
-.nav li.active a:hover,
-.nav-tabs .nav-link.active{
-  background-color:rgba(136, 127, 127, 0.514);
+.paper-plane {
+    position: absolute;
+    offset-path: path('M20,20 C20,100 1000,0 800,500');
+    animation: move 6000ms infinite alternate ease-in-out;
+}
+
+@keyframes move {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
 }

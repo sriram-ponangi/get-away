@@ -10,6 +10,20 @@
     color: #aaa !important;
 }
 
-.main-nav .nav-link:hover {
+.main-nav .nav-item .nav-link:hover {
     color: #007bff !important;
+}
+
+.user-settings i {
+    color: #fff;
+    font-size: 24px;
+}
+
+.user-settings a:hover i {
+    color: #007bff;
+    font-size: 24px;
+}
+
+.navbar-brand img {
+    max-width: 80px;
 }

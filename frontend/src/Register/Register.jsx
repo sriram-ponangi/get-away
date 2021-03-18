@@ -78,7 +78,7 @@ class Register extends Component {
 
                 <form onSubmit={this.registerHandler}>
                     <div className="form-group col-12">
-                        <h2 className="mt-3">Registration:</h2>
+                        <h2>Registration:</h2>
                     </div>
                     {
                         this.showMessage()

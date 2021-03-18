@@ -1,7 +1,6 @@
 import React from 'react';
 import ForgotPassword from '../ForgotPassword/ForgotPassword';
 import Login from '../Login/Login';
-import logo from '../logo.png';
 import Register from '../Register/Register';
 import './ProfileTemplate.css';
 // import ReactDOM from 'react-dom';
@@ -11,42 +10,31 @@ const ProfileTemplate = (props) => {
 
     return (
 
-        <div id="mmenu_screen" className="container-fluid ProfileTemplate" >
-            <div className="row" >
-                <div className="col-md-4 col-sm-12" align="center" style={{ background: 'black' }}>
-                    <div>
-                        <img src={logo} className="img-fluid" alt="GetAway Application Logo" />
-                    </div>
-                </div>
-
-                <div className="col-md-8 col-sm-12">
-                    <br />
-
-                    <ul className="nav nav-tabs">
+        <div id="mmenu_screen" className="container ProfileTemplate pt-5">
+                <img src={'/img/paper-plane.png'} className="img-responsive paper-plane" width="100" alt=""/>
+                <div className="login-settings card mt-5">
+                    <div className="card-header">
+                    <ul className="nav nav-pills nav-fill">
                         <li className="nav-item">
-                            <NavLink className="nav-link text-dark" id='login-nav' to="/profile/login"
+                            <NavLink className="nav-link" id='login-nav' to="/profile/login"
                                 activeClassName="active">Login</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link text-dark" id='register-nav' to="/profile/register"
+                            <NavLink className="nav-link" id='register-nav' to="/profile/register"
                                 activeClassName="active">Register</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link text-dark" id='forgot-password-nav' to="/profile/forgotPassword"
+                            <NavLink className="nav-link" id='forgot-password-nav' to="/profile/forgotPassword"
                                 activeClassName="active">Forgot Password</NavLink>
                         </li>
                     </ul>
-                    <br />
-
+                    </div>
+                    <div className="card-body pt-5 pb-5">
                     <Route path="/profile/login" exact component={() => <Login setCurrentUser={props.setCurrentUser} />} />
                     <Route path="/profile/register" exact component={Register} />
                     <Route path="/profile/forgotPassword" exact component={ForgotPassword} />
-                    <br /><hr /><br />
-
-
-
+                    </div>
                 </div>
-            </div>
         </div>
 
 

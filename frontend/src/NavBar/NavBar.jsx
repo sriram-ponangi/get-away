@@ -1,4 +1,3 @@
-import logo from '../profileLogoBlackBG.png';
 import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
 import './NavBar.css';
@@ -35,7 +34,7 @@ class NavBar extends Component {
     }
     else {
       return (
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav mr-auto main-nav">
           <li className="nav-item">
             <NavLink className="nav-link active" to={"/destination/search"}>Destinations</NavLink>
           </li>
@@ -99,7 +98,7 @@ class NavBar extends Component {
       <div>
 
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark" style={{ background: 'black' }}>
-          <NavLink className="navbar-brand" to="/" style={{ color: 'red' }}>GetAway!</NavLink>
+          <NavLink className="navbar-brand" to="/"><img src={'/img/getaway-logo.png'} className="img-responsive" alt="GetAway Application Logo" /></NavLink>
 
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,12 +114,12 @@ class NavBar extends Component {
                 this.welcomeMessage()
               }
             </ul>
-            <ul className="nav navbar-nav ">
+            <ul className="nav navbar-nav user-settings">
 
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink"
                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src={logo} alt="Logo" width="40" height="40" className="rounded-circle" />
+                  <i className="fa fa-user-cog"></i>
                 </a>
                 {
                   this.dropdownNavLinks()
