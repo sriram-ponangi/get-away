@@ -215,7 +215,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjJhN
 GET http://localhost:4000/api/destination
 ?countryName=an
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjJhNDUzNDk0ZWYyYTRiZjk3YmQiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDkwMzc5LCJleHAiOjE2MTU0OTM5MTl9.2vn19YoqadkkPNvtI3BaktnNn6Rwsft5_O3ExNukZIw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5OTUzNDk0ZWYyYTRiZjk3YmEiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoidXNlck9uZUBlbWFpbC5jb20iLCJpYXQiOjE2MTU5MDMwNzMsImV4cCI6MTYxNTkwNjYxM30.HqUR7FuTtwjrMv6wk0pehVTk78EQYnFZp7rIWdTayc8
 
 ########################################
 ### GET FULL DETAILS OF DESTINATIONS BY:

@@ -12,7 +12,7 @@ router.post('/send', async (req, res) => {
         
     const sendEmail = SendEmail(emailInfo);
     
-    return res.send({message: "An Email with temporary login details will be sent if your account is valid."});              
+    return res.send({message: "your message is sent to admin. GetAway team will contact you shortly."});              
 });
 
 module.exports = router;

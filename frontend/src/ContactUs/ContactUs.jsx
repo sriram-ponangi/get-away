@@ -44,9 +44,9 @@ class ContactUs extends Component {
       alert("Please enter Message.");
     }
     else {
-      const id = await axios.post("http://localhost:4000/api/contactus/send",
+      const id = await axios.post("contactus/send",
                                       {name:this.state.name, email:this.state.email, message:this.state.message});
-      alert("Email sent successfully.");  
+      alert("your message is sent to admin. GetAway team will contact you shortly.");  
     }
   }
   
