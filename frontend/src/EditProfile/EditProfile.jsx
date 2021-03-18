@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Sriram, Ponangi
+*/
 import React, { Component } from 'react';
 import './EditProfile.css';
 import logo from '../logo.png';

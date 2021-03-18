@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Sriram, Ponangi
+*/
 import logo from '../profileLogoBlackBG.png';
 import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
