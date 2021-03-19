@@ -6,10 +6,6 @@ import { Component } from 'react';
 
 
 class AboutUs extends Component {
-  state = {
-      topdestinationsList: []
-  }
-  
   render() {
     return (
       <section>

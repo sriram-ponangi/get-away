@@ -6,10 +6,6 @@ import { Component } from 'react';
 
 
 class WhyUs extends Component {
-  state = {
-      topdestinationsList: []
-  }
-  
   render() {
     return (
       <section>
