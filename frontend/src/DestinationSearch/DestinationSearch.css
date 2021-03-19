@@ -1,0 +1,22 @@
+.search-card {
+    max-width: 500px;
+    margin: auto;
+}
+
+.no-border {
+    border: 0px;
+}
+
+.paper-plane-dest {
+    offset-path: path('M20,20 C20,100 50,0 100,300');
+    animation: move 2000ms infinite alternate ease-in-out;
+}
+
+@keyframes move {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
+}
