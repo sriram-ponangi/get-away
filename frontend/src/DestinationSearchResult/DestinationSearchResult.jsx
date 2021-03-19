@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Sriram, Ponangi
+*/
 import { Component } from 'react';
 import DestinationSearchResultCard from '../DestinationSearchResultCard/DestinationSearchResultCard';
 import { Redirect } from 'react-router-dom';

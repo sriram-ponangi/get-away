@@ -1,4 +1,7 @@
-
+/*
+* Authors: 
+    - Sriram, Ponangi
+*/
 import './Register.css';
 import axios from 'axios';
 import React, { Component } from 'react';

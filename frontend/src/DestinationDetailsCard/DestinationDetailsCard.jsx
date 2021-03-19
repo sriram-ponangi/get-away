@@ -1,3 +1,8 @@
+/*
+* Authors: 
+    - Sriram, Ponangi
+*/
+
 import { Component } from 'react';
 import './DestinationDetailsCard.css';
 

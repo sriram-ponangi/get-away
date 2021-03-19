@@ -28,6 +28,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5O
 ### GET COMMENTS IN GROUP
 #####################################
 
+
+#* Authors: 
+##    - Rajni, Puni
+
 ###
 
 GET http://localhost:4000/api/group/comment

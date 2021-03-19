@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Sriram, Ponangi
+*/
 const Joi = require('joi');
 
 const groupMembersValidator = (data) => {

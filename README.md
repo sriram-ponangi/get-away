@@ -26,6 +26,14 @@ https://git.cs.dal.ca/ponangi/csci-5709-winter-2021-group-2
 ---
 For the deploument of both the react.js frontend and the express.js backend applications into Heroku, we have used the CI/CD functionality in gitlab through the **.gitlab-ci.yml** file.
 
+
+## Source Code Folder Structure
+### 1.] Frontend
+- We are developing our application using react.js. Therefore instead of using a common folders for styles(for example /css), javascript files and images, we have followed the component based approach. Here we put all the files related to a particular component in their respective folders.
+
+### 1.] Backend
+- We are developing our application using node.js(express.js). So we have created our folders based on resources, which will internally have folders for models, routes and validations. 
+- The “models” folder contains logic related to the CRUD operations on the object stored in the database. The “routes” folder contains the logic related to the API endpoints and the "validations" folder contains the logic for validations on the incoming request bodies to the APIs in the routes.
 ## Sources Used
 ---
 
@@ -70,7 +78,7 @@ app.listen(process.env.PORT || 8080, () => {
 
 ```
 
-The code above was created by adapting the code in [T3V1 - Code Management and Deployment - Slide 10](https://dal.brightspace.com/d2l/le/content/143362/viewContent/2217354/View) as shown below: 
+- The code above was created by adapting the code in [T3V1 - Code Management and Deployment - Slide 10](https://dal.brightspace.com/d2l/le/content/143362/viewContent/2217354/View) as shown below: 
 
 ```js
 const express = require('express');
@@ -143,7 +151,7 @@ app.listen(process.env.PORT || 8080);
         </nav>   
 ```
 
-The code above was created by adapting the code in [Bootstrap - 4 Official Doccumentation](https://getbootstrap.com/docs/4.0/components/navbar/#supported-content) as shown below: 
+- The code above was created by adapting the code in [Bootstrap - 4 Official Doccumentation](https://getbootstrap.com/docs/4.0/components/navbar/#supported-content) as shown below: 
 
 ```HTML
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -197,4 +205,73 @@ The code above was created by adapting the code in [Bootstrap - 4 Official Doccu
 - The GIF image used was taken from this source [link](https://giphy.com/gifs/travel-holiday-journey-toelXGUsYD6vtCN408)
 
 
+---
+### 4.]  csci-5709-winter-2021-group-2/backend/utils/SendEmail.js
 
+*Lines 05 - 40*
+```js
+var nodemailer = require('nodemailer');
+
+module.exports = function (req) {
+    const forgotPasswordEmailTemplate = '<!DOCTYPE html><html lang="en"><head><title>GetAway Forgot Password</title></head><body><div style="font-size: larger;"><div style="background-color: rgb(238, 252, 255)"><div style=" font-size: x-large; background-color: rgba(0, 60, 128, 0.644);"><img src="https://csci-5709.herokuapp.com/highlights/logo.png" alt="Logo" /></div><div><hr /><h3>Temporarty Password:</h3><hr /><br /><p><b>Greetings '+req.firstName+' ' +req.lastName+', </b></p><p>Please use this temporary password to login:</p><p> <b>'+req.tempPassword+' </b></p><p>You can change your password from the update profile page anytime.</p><p><a href="https://csci-5709.herokuapp.com/profile/login" style="background-color: whitesmoke; font-size: large; border: 2px solid rgb(4, 72, 88); "> <b>Click Here To Login</b></a> </p><p>Thanks & Regards,</p></br><p>GetAway Team.</p><div><a href="https://csci-5709.herokuapp.com/aboutus"> <b>About Us</b></a> |<a href="https://csci-5709.herokuapp.com/whyus"> <b>Why Us</b> </a> |<a href="https://csci-5709.herokuapp.com/contactus"> <b>Contact Us</b> </a> |</div></div></div></div></body></html>';
+
+    
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_ID,
+            pass: process.env.EMAIL_PASSWORD
+        }
+    });
+
+    var mailOptions = {
+        from: process.env.EMAIL_ID,
+        to: req.to,
+        subject: req.subject,
+        html: forgotPasswordEmailTemplate
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+            return {
+                errors: error
+            };
+        } else {
+            console.log('Email sent: ',req.to , info.response);
+            return{
+                email: info.response
+            };
+            
+        }
+    });
+}
+```
+- The code above was created by adapting the code in [W3Shools example of "Node.js Send an Email"](https://www.w3schools.com/nodejs/nodejs_email.asp) as shown below: 
+```js
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'youremail@gmail.com',
+    pass: 'yourpassword'
+  }
+});
+
+var mailOptions = {
+  from: 'youremail@gmail.com',
+  to: 'myfriend@yahoo.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+```
+- The code was modifies by adding the credentials via the environment variables instead of hard-coding. Then the HTML template of email body was also created and mailoptions were changed to html from text.

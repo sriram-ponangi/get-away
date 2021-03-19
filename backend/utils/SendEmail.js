@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Sriram, Ponangi
+*/
 var nodemailer = require('nodemailer');
 
 module.exports = function (req) {
