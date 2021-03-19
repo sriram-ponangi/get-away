@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Rajni, Puni  
+*/
 const mongoose = require('mongoose');
 
 const photosSchema = new mongoose.Schema({

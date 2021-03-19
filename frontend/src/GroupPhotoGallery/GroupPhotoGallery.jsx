@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Rajni, Puni
+*/
 import { Component } from 'react';
 //import "./GroupPhotoGallery.css";
 import axios from "axios";

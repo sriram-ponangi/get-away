@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Rajni, Puni
+*/
 import { Component } from 'react';
 //import "./GroupComments.css";
 import axios from "axios";
@@ -125,6 +129,7 @@ class GroupComments extends Component {
                               </div>
                             </form>
                             <div class="mb-4 mt-4">
+                              {this.state.comments==''?<div className="text-center">No comments</div>:<div></div>}
                           {this.state.comments
                           .map((comments)=>(
                             

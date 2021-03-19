@@ -1,3 +1,8 @@
+
+/*
+* Authors: 
+    - Rajni, Puni
+*/
 var nodemailer = require('nodemailer');
 
 module.exports = function (req) {
@@ -10,9 +15,9 @@ module.exports = function (req) {
             pass: process.env.EMAIL_PASSWORD
         }
     });
-
+console.log(req.email);
     var mailOptions = {
-        from: process.env.EMAIL_ID,
+        from: req.email,
         to: process.env.EMAIL_ID,
         subject: req.subject,
         html: forgotPasswordEmailTemplate

@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Rajni, Puni
+*/
 import { Component } from 'react';
 import axios from "axios";
 import loading from "../loading.gif"
@@ -55,7 +59,7 @@ class ContactUs extends Component {
         email:this.state.email, 
         message:this.state.message})
         .then(res => {
-          this.setState({successMessage: "your message is sent to admin. GetAway team will contact you shortly."});
+          this.setState({successMessage: "Your message is sent to admin. GetAway team will contact you shortly."});
           this.setState({isLoading: false});
           this.setState({errorMessage: ""});
           this.setState({name: ""});

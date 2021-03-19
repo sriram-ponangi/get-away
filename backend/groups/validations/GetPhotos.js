@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Rajni, Puni  
+*/
 const Joi = require('joi');
 
 const getPhotosValidator = (data) => {
