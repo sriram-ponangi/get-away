@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import axios from "axios";
+import loading from "../loading.gif"
 
 class ContactUs extends Component {
   constructor(props) {
@@ -7,7 +8,10 @@ class ContactUs extends Component {
     this.state = {
       name: '',
       email: '',
-      message: ''
+      message: '',
+      isLoading: false,
+      errorMessage:'',
+      successMessage:''
     };
 
     this.txtNameHandler = this.txtNameHandler.bind(this);
@@ -34,84 +38,100 @@ class ContactUs extends Component {
   };
   
   async sendHandler() {   
+    this.setState({successMessage: ""});
     if(this.state.name == ""){
-      alert("Please enter Name.");
+      this.setState({errorMessage: "Please enter Name."});
     }
     else if(this.state.email == ""){
-      alert("Please enter Email.");
+      this.setState({errorMessage: "Please enter Email."});
     }
     else if(this.state.message == ""){
-      alert("Please enter Message.");
+      this.setState({errorMessage: "Please enter Message."});
     }
     else {
-      const id = await axios.post("contactus/send",
-                                      {name:this.state.name, email:this.state.email, message:this.state.message});
-      alert("your message is sent to admin. GetAway team will contact you shortly.");  
+      this.setState({isLoading: true});
+      const id = await axios.post("contactus/send",{
+        name:this.state.name, 
+        email:this.state.email, 
+        message:this.state.message})
+        .then(res => {
+          this.setState({successMessage: "your message is sent to admin. GetAway team will contact you shortly."});
+          this.setState({isLoading: false});
+          this.setState({errorMessage: ""});
+          this.setState({name: ""});
+          this.setState({email: ""});
+          this.setState({message: ""});
+          //alert("your message is sent to admin. GetAway team will contact you shortly.");  
+          document.getElementById("fullName").value = ""; 
+          document.getElementById("userEmail").value = ""; 
+          document.getElementById("message").value = ""; 
+          
+        })
+        .catch(error => {
+          this.setState({errorMessage: "your message is sent to admin. GetAway team will contact you shortly."});
+        });
+     
     }
   }
-  
+  showErrorMessage = () => {
+    if (this.state.errorMessage) {
+        return (
+         <div className="alert alert-danger" role="alert">
+           {this.state.errorMessage}
+         </div>             
+        );        
+    } else {
+        return (<div></div>);
+    }
+  }
+  showSuccessMessage = () => {
+    if (this.state.successMessage) {
+        return (
+         <div className="alert alert-success" role="alert">
+           {this.state.successMessage}
+         </div>             
+        );        
+    } else {
+        return (<div></div>);
+    }
+  }
   render() {
     return (
-      <section class="">
-        <div class="container mt-5">
-          <div class="row">
-            <div class="col-sm">
-              <h3>Contact Us</h3>
-              <small class="text-height-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</small>
-              <form className="form-signin" onSubmit={this.handleSubmit}>
-              <div class="mt-4">
-                <div class="row">
-                  <div class="col-sm">
-                    Name:
-                    <div class="col-mt-1"><input class="form-control"  onChange={this.txtNameHandler} placeholder="Name"></input></div>
-                  </div>
-                  <div class="col-sm">
-                    Email:
-                    <div class="col-mt-1"><input type="email" class="form-control"  onChange={this.txtEmailHandler} placeholder="name@example.com"></input></div>
-                  </div>  
-                </div>
-                <div class="row mt-3">
-                  <div class="col-sm">
-                    Message:
-                    <div class="col-mt-1"><textarea class="form-control"  onChange={this.txtMessageHandler} rows="3"></textarea></div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm mt-2 float-right">
-                  <button type="submit" class="btn btn-primary float-right">Send</button>
-                  </div>
-                </div>
-              </div>
-              </form>
-            </div>
-            <div class="col-sm ml-4">
-              <div class="p-3 mb-2 bg-light text-dark">
-                <div class="mt-2 ml-4">
-                <div class="col-sm">
-                    <h6>Email:</h6>
-                    <div class="col-mt-1"><p>lorem@ipsum.com</p></div>
-                  </div>
-                  <div class="col-sm mt-4">
-                    <h6>Telephone:</h6>
-                    <div class="col-mt-1">123 456 7890</div>
-                  </div> 
-                  <div class="col-sm mt-4">
-                    <h6>Address:</h6>
-                    <div class="col-mt-1">Lorem Ipsum</div>
-                    <div class="col-mt-1">Lorem Ipsum</div>
-                    <div class="col-mt-1">Lorem</div>
-                  </div>  
-                  <div class="col-sm mt-4">
-                    <img src="/facebook.ico"></img>
-                    <img class="ml-2" src="/instagram.ico"></img>
-                    <img class="ml-2" src="/twitter.ico"></img>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section>
+        <div className="container bg-white pb-80">
+          
+         
+          <h2 className="display-4 text-center pt-5"><span className="text-pink">Contact Us</span></h2>
+          <div className="row form-row mb-80 mt-5">
+                        <div className="col-md-3"></div>
+                        <div className="col-md-6">
+                        {this.showErrorMessage()}
+                        {this.showSuccessMessage()}
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="form-group">
+                                <label for="firstName">Full Name</label>
+                                <input type="text" className="form-control" name="firstName" id="fullName" onChange={this.txtNameHandler} placeholder="First Name"/>
+                               
+                            </div>
+                            <div className="form-group">
+                                <label for="userEmail">Email address</label>
+                                <input type="email" className="form-control" id="userEmail" onChange={this.txtEmailHandler} aria-describedby="emailHelp" placeholder="Enter email" />
+                                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div className="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea className="form-control" id="message" rows="5" onChange={this.txtMessageHandler} placeholder="Enter your message"></textarea>
+                            </div>
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                            {this.state.isLoading?<img className="ml-1" src={loading}></img>:<div></div>}
+                            </form>
+                        </div>
+                        <div className="col-md-3"></div>
+                    </div>
           </div>
-        </div>  
-        </section>        
+            
+      
+              </section>        
     )    
   }
 

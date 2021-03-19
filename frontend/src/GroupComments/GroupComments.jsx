@@ -1,13 +1,17 @@
 import { Component } from 'react';
-import "./GroupComments.css";
+//import "./GroupComments.css";
 import axios from "axios";
+import loading from "../loading.gif"
+
 
 class GroupComments extends Component {
   constructor(props) {
     super(props);
     this.state = {
       postedComment: '',
-      comments: []
+      comments: [],
+      isLoading: false,
+      errorMessage:''
     };
 
     this.txtCommentHandler = this.txtCommentHandler.bind(this);
@@ -21,7 +25,9 @@ class GroupComments extends Component {
   handleSubmit(event) { 
     //alert('handleSubmit');
     event.preventDefault();
+    this.setState({isLoading: true});
     this.submitCommentHandler();
+    this.setState({isLoading: false});
   }
 
   txtCommentHandler = event => {
@@ -33,13 +39,10 @@ class GroupComments extends Component {
     const txtCommentval = this.state.postedComment;
    // alert(txtCommentval);
     if(txtCommentval == ""){
-      alert("Please enter some comment.");
+      this.setState({errorMessage: "Please enter some comment."});
     }
     else {
-      // const id = await axios.post("http://localhost:4000/api/groupComments/addcomment",
-      //                                 {groupId:'2',comment:txtCommentval,userName:'jessy'});
-
-
+      this.setState({isLoading: true});
       await axios.post('group/comment', {groupId:'604a7bfc7d497d9bc813b607',text:txtCommentval})
       .then(res => {
           console.log(res);
@@ -47,12 +50,14 @@ class GroupComments extends Component {
               successMessage: res.data.message,
               errorMessage: ""
           });
+          this.getComments();   
+          this.setState({postedComment:""});
+          this.setState({isLoading: false});
       }).catch(error => {
-          alert(error.response);
+          this.setState({errorMessage: "Error posting comments"});
       });
-      //alert("Comment submitted successfully.");   
-      this.getComments();   
-      this.setState({postedComment:""});
+        
+      
     }   
   }
 
@@ -76,41 +81,64 @@ class GroupComments extends Component {
     return new Date(string).toLocaleDateString([],options);
   }
 
+  showMessage = () => {
+    if (this.state.errorMessage) {
+        return (
+         <div className="alert alert-danger" role="alert">
+           {this.state.errorMessage}
+         </div>             
+        );        
+    } else {
+        return (<div></div>);
+    }
+  }
+
+
   render() {
     return (
-      <section class="gallery-block cards-gallery">
-        <div class="container">
-          
-          <div class="comment-heading border border-right-0  border-top-0  border-left-0">
-            <h2>Comments</h2>
-          </div>
+      <section>
+        <div className="container bg-white pb-80">
+        <div className="border border-right-0  border-top-0  border-left-0">
+        <h3 className="display-5 mb-10"><span className="text-primary"> Comments</span></h3>
+        </div>
               <div class="d-flex justify-content-center row">
                   <div class="d-flex flex-column col-md-8">
                       
-                      <div class="coment-bottom bg-white p-2 px-4">
-                          <div class="d-flex flex-row add-comment-section mt-4 mb-4">
-                            <img class="img-fluid img-responsive rounded-circle mr-2" src="/dummyCommentprofile.jpg" width="38"  alt="" />
+                      <div class="mt-5">
+                          {this.showMessage()}
                             
-                            <form className="form-signin" onSubmit={this.handleSubmit}>
-                              <input id="txtComment" value={this.state.postedComment} type="text" class="form-control mr-3" 
-                                    placeholder="Add comment"  onChange={this.txtCommentHandler} />
-                              <button class="btn btn-primary">Comment</button>
+                            
+                            <form onSubmit={this.handleSubmit}>
+                            <div class="form-row ml-2">
+                              <div class="form-group col-md-1">
+                              <img class="img-fluid img-responsive rounded-circle" src="/dummyCommentprofile.jpg" width="40"  alt="" />
+                              </div>
+                              <div class="form-group col-md-9">
+                              <input id="txtComment" value={this.state.postedComment} type="text" class="form-control" 
+                                  placeholder="Add comment"  onChange={this.txtCommentHandler} />
+                              </div>
+                              <div class="form-group col-md-2">
+                              <button class="btn btn-primary">Send</button>
+                              {this.state.isLoading?<img className="ml-1" src={loading}></img>:<div></div>}
+                              </div>
+                              
+                              </div>
                             </form>
-                          </div>
+                            <div class="mb-4 mt-4">
                           {this.state.comments
                           .map((comments)=>(
-                          <div class="commented-section mt-2">
-                            <b>{comments._id}</b>
-                              <div class="d-flex flex-row align-items-center commented-user">
-                                  <h5 class="mr-2 comment-user-name">{comments.userId.firstName}</h5>
-                                  <span class="dot mb-1"></span>
-                                  <span class="mb-1 ml-2 comment-date">{this.formatDate(comments.createdDate)}</span>
+                            
+                          <div class="mb-3 ">
+                            <div class="form-row ml-1">
+                            <div class="col-md-9 pb-0 pl-0 pl-4"><h5 class="text-pink">{comments.userId.firstName}</h5></div>
+                            
+                            <div class="col-md-3 pb-0 mt-1"><h6 class="text-primary">{this.formatDate(comments.createdDate)}</h6></div>
                               </div>
-                              <div class="comment-text-sm"><span>{comments.text}</span></div>
+                              <div class="form-row ml-1 pr-4 pl-4"><p class="mb-0">{comments.text}</p></div>
                               
                           </div>
                           ))}
-                          
+                          </div>
                       </div>
                   </div>
               </div>
