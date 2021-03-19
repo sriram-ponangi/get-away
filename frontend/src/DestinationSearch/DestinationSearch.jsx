@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Sriram, Ponangi
+*/
 import world from '../world_travel.gif';
 import { Component } from 'react';
 

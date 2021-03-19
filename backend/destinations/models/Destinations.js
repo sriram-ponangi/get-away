@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Sriram, Ponangi
+*/
 const mongoose = require('mongoose');
 
 const destinationSchema = new mongoose.Schema({

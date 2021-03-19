@@ -1,3 +1,7 @@
+/*
+* Authors: 
+    - Sriram, Ponangi
+*/
 const router = require('express').Router();
 
 const verifyTokenMiddleware = require('../../utils/VerifyToken');
@@ -86,32 +90,4 @@ router.get('/', verifyTokenMiddleware, async (req, res) => {
 router.use('/member', groupMemberRoutes);
 router.use('/comment', groupCommentRoutes);
 
-
-// To-DO:
-// Add Comments
-// Get Comments
-
-// Add Images
-// Get Images
-
-
-
-
-/*
-router.get('/user/all', verifyTokenMiddleware, (req, res) => {
-    res.json({
-        reqBody: req.body,
-        groups: [
-            {
-                name: "One",
-                country: "India"
-            },
-            {
-                name: "Two",
-                country: "Canada"
-            },
-        ]
-    })
-});
-*/
 module.exports = router;
