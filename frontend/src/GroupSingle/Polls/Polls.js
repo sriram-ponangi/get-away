@@ -1,3 +1,8 @@
+/*
+* Authors: 
+- Jay, Gajjar (UI)    
+- Sriram, Ponangi    
+*/
 import React from 'react';
 import './Polls.css';
 

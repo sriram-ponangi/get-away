@@ -1,4 +1,7 @@
-// import axios from 'axios';
+/*
+* Authors: 
+    - Jay, Gajjar
+*/
 import React, { Component } from 'react';
 import './Home.css';
 

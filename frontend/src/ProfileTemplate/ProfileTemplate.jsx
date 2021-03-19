@@ -1,6 +1,7 @@
 /*
 * Authors: 
     - Sriram, Ponangi
+    - Jay, Gajjar (UI)
 */
 import React from 'react';
 import ForgotPassword from '../ForgotPassword/ForgotPassword';

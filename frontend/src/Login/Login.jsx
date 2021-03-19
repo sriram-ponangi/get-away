@@ -1,6 +1,7 @@
 /*
 * Authors: 
     - Sriram, Ponangi
+    - Jay, Gajjar (UI)
 */
 // import logo from '../logo.png';
 import './Login.css';

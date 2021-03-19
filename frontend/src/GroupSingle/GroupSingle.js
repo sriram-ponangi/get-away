@@ -1,3 +1,8 @@
+/*
+* Authors: 
+- Jay, Gajjar (UI)    
+- Sriram, Ponangi    
+*/
 import './GroupSingle.css';
 import React, { Component } from 'react';
 import Sidebar from './Sidebar/Sidebar';
