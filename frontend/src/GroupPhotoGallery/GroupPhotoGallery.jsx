@@ -139,9 +139,8 @@ class GroupPhotoGallery extends Component {
             
            
               <div className="col-lg-3 col-md-4 col-6" id={photo._id}>
-                {/* <a className="lightbox" href={`https://csci-5709-backend.herokuapp.com/${photo.imageSource}`} > */}
-                <a className="d-block mb-4 h-100" href={`http://localhost:4000/${photo.imageSource}`} >
-                  <img src={`http://localhost:4000/${photo.imageSource}`}
+                <a className="d-block mb-4 h-100" href={`https://csci-5709-backend.herokuapp.com/${photo.imageSource}`} >
+                  <img src={`https://csci-5709-backend.herokuapp.com/${photo.imageSource}`}
                   className="img-fluid img-thumbnail"  alt="" />
                 </a>
               </div>
