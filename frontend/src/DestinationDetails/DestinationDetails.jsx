@@ -103,12 +103,12 @@ class DestinationDetails extends Component {
                                             to="/destination/details/about" activeClassName="active">About</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link text-light" id='destination-details-documents-nav'
-                                            to="/destination/details/documents" activeClassName="active">Tourist Attractions</NavLink>
+                                        <NavLink className="nav-link text-light" id='destination-details-touristAttractions-nav'
+                                            to="/destination/details/touristAttractions" activeClassName="active">Tourist Attractions</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link text-light" id='destination-details-accomodations-nav'
-                                            to="/destination/details/accomodations" activeClassName="active">Essentials</NavLink>
+                                        <NavLink className="nav-link text-light" id='destination-details-essentials-nav'
+                                            to="/destination/details/essentials" activeClassName="active">Essentials</NavLink>
                                     </li>
                                 </ul>
                                 {
@@ -122,9 +122,9 @@ class DestinationDetails extends Component {
                         <br />
                         <Route path="/destination/details/about" exact
                             component={() => <DestinationDetailsCard displayContent={this.state.destinationDetails.about} />} />
-                        <Route path="/destination/details/documents" exact
+                        <Route path="/destination/details/touristAttractions" exact
                             component={() => <DestinationDetailsCard displayContent={this.state.destinationDetails.touristAttractions} />} />
-                        <Route path="/destination/details/accomodations" exact
+                        <Route path="/destination/details/essentials" exact
                             component={() => <DestinationDetailsCard displayContent={this.state.destinationDetails.essentials} />} />
                         <br /><hr /><br />
                     </BrowserRouter>
