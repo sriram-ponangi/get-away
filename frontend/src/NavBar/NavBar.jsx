@@ -30,10 +30,19 @@ class NavBar extends Component {
             </div>
           </li>
           <li className="nav-item">
+          <NavLink className="nav-link active" to={"/aboutus"}>About Us</NavLink>
+          </li>
+          <li className="nav-item">
           <NavLink className="nav-link active" to={"/whyus"}>Why US</NavLink>
           </li>
           <li className="nav-item ">
           <NavLink className="nav-link active" to={"/contactus"}>Contact Us</NavLink>
+          </li>
+          <li className="nav-item ">
+          <NavLink className="nav-link active" to={"/group/comments"}>Comments</NavLink>
+          </li>
+          <li className="nav-item ">
+          <NavLink className="nav-link active" to={"/group/groupPhotos"}>photo Us</NavLink>
           </li>
         </ul>
       )
@@ -52,6 +61,12 @@ class NavBar extends Component {
           </li>
           <li className="nav-item ">
           <NavLink className="nav-link active" to={"/contactus"}>Contact Us</NavLink>
+          </li>
+          <li className="nav-item ">
+          <NavLink className="nav-link active" to={"/group/comments"}>Comments</NavLink>
+          </li>
+          <li className="nav-item ">
+          <NavLink className="nav-link active" to={"/group/groupPhotos"}>photo Us</NavLink>
           </li>
         </ul>
       )
