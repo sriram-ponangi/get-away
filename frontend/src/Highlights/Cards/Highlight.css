@@ -1,5 +1,12 @@
+/*
+* Authors: 
+    - Mandava, Abhinav
+    - Gajjar, Jay
+*/
+
 .img-single {
-    max-height: 120px;
+    max-height: 100%;
+    width: 100%;
 }
 
 .highlight-title {
@@ -15,11 +22,22 @@
 }
 
 .h-card {
-    width: 200px;
-    height: 300px;
+    height: auto !important;
+    border-radius: 1rem !important;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: 1px 5px rgba(0,0,0,0.1) !important;
+    background-color: #e4d7d763 !important
 }
 
 .h-group {
     position: relative;
     top: 5%;
+    margin-bottom: 15px;
+    
+}
+
+.h-card:hover {
+    transform: translateY(-1.5rem);
+    box-shadow: 3px 5px rgba(255, 0, 0, 0.8) !important;
 }

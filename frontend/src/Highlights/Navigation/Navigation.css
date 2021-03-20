@@ -123,3 +123,58 @@ span:before{
     left: 120%;
     top: -25%
   }
+
+  .crsl {
+    position: relative;
+    width: 80%;
+    /* margin: 10px; */
+    padding: 20px;
+    border: 1px solid;
+    margin: 1px;
+    box-shadow: 15px 15px 10px #ccc
+  }
+
+  .side-desc {
+    position: absolute;
+    /* margin-left: 10%; */
+    left: 1%
+  }
+
+  .h-scroll {
+    overflow-y: scroll;
+    max-height: 700px;
+  }
+
+  .highlight-title {
+    position: relative;
+    top: 6%;
+    font-size:30px !important;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    box-shadow: 3px 4px rgba(0,0,0,0.6);
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: brown;
+    color:white;
+    align-content: space-around;
+    padding-left: 10px;
+
+}
+
+.dest-title{
+  position: relative;
+    top: 6%;
+    font-size:60px !important;
+    margin-bottom: 40px;
+    text-align: center !important;
+    box-shadow: 2px 2px rgba(0,0,0,0.2);
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bolder;
+    background-color: brown;
+    color: white;
+}
+
+.bgclr {
+  background-color: paleturquoise;
+
+}

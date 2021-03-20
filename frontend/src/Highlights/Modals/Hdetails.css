@@ -1,8 +1,74 @@
-.img-single {
-    max-height: 120px;
+/*
+* Authors: 
+    - Mandava, Abhinav,
+    - Gajjar, Jay
+*/
+
+.image-single {
+    max-height: 120px !important;
+}
+
+.image-modal {
+    max-width: 60% !important;
+    border: 1px solid;
+    box-shadow: 0 1px rgba(0,0,0,0.3);
+    justify-content: center !important;
+    margin: 3%;
+    margin-left: 18%;
+    margin-bottom: 5%;
+    margin-top: 0px;
+    box-shadow: 3px 5px rgba(0,0,0,0.3);
+    
 }
 
 .large-modal {
     width: 1000px;
     height: 700px;
 }
+
+.centered {
+    position: static;
+    left: auto;
+    padding-right: 40%;
+}
+
+#hdetails .modal-footer{
+    position: relative;
+    background-color: paleturquoise;
+}
+
+#hdetails .modal-body {
+    background-color: paleturquoise;
+}
+
+#hdetails .modal-header{
+    background-color: paleturquoise;
+}
+
+#hdetails .modal-title{
+    position: relative;
+    /* top: 6%; */
+    font-size:20px !important;
+    /* margin-bottom: 40px;
+    margin-left: 10px; */
+    box-shadow: 3px 4px rgba(0,0,0,0.6);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    background-color: brown;
+    color:white;
+    align-content: center;
+    /* left: 30%; */
+    margin-bottom: 0px;
+}
+.single-item{
+    max-width:12%;
+}
+.h-card {
+    cursor: pointer;
+    min-height: 350px;
+}
+
+/* .seperation {
+    margin: 
+} */
+

@@ -1,3 +1,15 @@
 .cs-size {
     height: 10vh;
   }
+
+.crsl-img {
+  width: auto;
+}
+
+.centered {
+  align-content: center;
+}
+
+/* .b-size {
+width: 60% !important;
+} */
