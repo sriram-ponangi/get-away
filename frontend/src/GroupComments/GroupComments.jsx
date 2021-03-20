@@ -1,6 +1,7 @@
 /*
 * Authors: 
     - Rajni, Puni
+    - Jay, Gajjar
 */
 import { Component } from 'react';
 import axios from "axios";
@@ -15,7 +16,7 @@ class GroupComments extends Component {
       comments: [],
       isLoading: false,
       errorMessage:'',
-      groupId: '604a7bfc7d497d9bc813b607'
+      group_id:''
     };
 
     this.txtCommentHandler = this.txtCommentHandler.bind(this);
@@ -24,6 +25,10 @@ class GroupComments extends Component {
 
   //populate comments on page load
   componentWillMount(){
+    this.getComments();
+  }
+
+  componentWillReceiveProps = () =>{
     this.getComments();
   }
 
@@ -46,7 +51,7 @@ class GroupComments extends Component {
     }
     else {
       this.setState({isLoading: true});
-      await axios.post('group/comment', {groupId:this.state.groupId,text:txtCommentval})
+      await axios.post('group/comment', {groupId:this.props.group_id,text:txtCommentval})
       .then(res => {
           console.log(res);
           this.setState({
@@ -64,9 +69,9 @@ class GroupComments extends Component {
 
   //called backend service to get comments
   async getComments(){
-    await axios.get('group/comment', {
+    axios.get('group/comment', {      
       params: {
-        groupId: this.state.groupId
+        groupId: this.props.group_id
       }
     })
     .then(
@@ -98,46 +103,51 @@ class GroupComments extends Component {
   render() {
     return (
       <section>
-        <div className="container bg-white pb-80">
         <div className="border border-right-0  border-top-0  border-left-0">
         <h3 className="display-5 mb-10"><span className="text-primary"> Comments</span></h3>
         </div>
-              <div class="d-flex justify-content-center row">
-                  <div class="d-flex flex-column col-md-8">                      
-                      <div class="mt-5">
-                          {this.showMessage()}                           
+              <div className="row">
+                  <div className="col-md-12">
+                      
+                      <div className="mt-5">
+                          {this.showMessage()}
+                            
                             
                             <form onSubmit={this.handleSubmit}>
-                              <div class="form-row ml-2">
-                                <div class="form-group col-md-1">
-                                  <img class="img-fluid img-responsive rounded-circle" src="/dummyCommentprofile.jpg" width="40"  alt="" />
-                                </div>
-                                <div class="form-group col-md-9">
-                                  <input id="txtComment" value={this.state.postedComment} type="text" class="form-control" 
-                                    placeholder="Add comment"  onChange={this.txtCommentHandler} />
-                                </div>
-                                <div class="form-group col-md-2">
-                                  <button class="btn btn-primary">Send</button>
-                                  {this.state.isLoading?<img className="ml-1" src={loading}></img>:<div></div>}
-                                </div>
+                            <div className="form-row ml-2">
+                              <div className="form-group col-md-1">
+                              <img className="img-fluid img-responsive rounded-circle" src="/dummyCommentprofile.jpg" width="40"  alt="" />
+                              </div>
+                              <div className="form-group col-md-9">
+                              <input id="txtComment" value={this.state.postedComment} type="text" className="form-control" 
+                                  placeholder="Add comment"  onChange={this.txtCommentHandler} />
+                              </div>
+                              <div className="form-group col-md-2">
+                              <button className="btn btn-primary">Send</button>
+                              {this.state.isLoading?<img className="ml-1" src={loading}></img>:<div></div>}
+                              </div>
                               </div>
                             </form>
-                            <div class="mb-4 mt-4">
+                            <div className="mb-4 mt-4">
                               {this.state.comments==''?<div className="text-center">No comments</div>:<div></div>}
-                              {this.state.comments.map((comments)=>(                                
-                              <div class="mb-3 ">
-                                <div class="form-row ml-1">
-                                  <div class="col-md-9 pb-0 pl-0 pl-4"><h5 class="text-pink">{comments.userId.firstName}</h5></div>                                
-                                  <div class="col-md-3 pb-0 mt-1"><h6 class="text-primary">{this.formatDate(comments.createdDate)}</h6></div>
-                                </div>
-                                <div class="form-row ml-1 pr-4 pl-4"><p class="mb-0">{comments.text}</p></div>                                  
+                          {this.state.comments
+                          .map((comments)=>(
+                            
+                          <div className="mb-3 single-comment p-3 rounded">
+                            <div className="form-row ml-1">
+                            <div className="col-md-9 pb-0 pl-0 pl-4"><h5 className="text-pink">{comments.userId.firstName}</h5></div>
+                            
+                            <div className="col-md-3 pb-0 mt-1"><small className="text-white badge badge-info">{this.formatDate(comments.createdDate)}</small></div>
                               </div>
-                              ))}
-                            </div>
+                              <div className="form-row ml-1 pr-4 pl-4"><p className="mb-0">{comments.text}</p></div>
+                              
+                          </div>
+                          ))}
+                          </div>
                       </div>
                   </div>
               </div>
-          </div>
+
         </section>        
     )    
   }

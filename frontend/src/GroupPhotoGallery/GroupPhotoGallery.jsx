@@ -1,6 +1,7 @@
 /*
 * Authors: 
     - Rajni, Puni
+    - Jay, Gajjar
 */
 import { Component } from 'react';
 import "./GroupPhotoGallery.css";
@@ -46,9 +47,11 @@ class GroupPhotoGallery extends Component {
 
   //post call to backend to save the image
   async getphotos(){
+    let gid = this.props.match.params.id;
     await axios.get('group/photos', {
       params: {
-        groupId: this.state.groupId
+        groupId: gid
+
       }
     })
     .then(
@@ -72,10 +75,11 @@ class GroupPhotoGallery extends Component {
   }  
   
   async fileUploadHandler() {
+    let gid = this.props.match.params.id;
     this.setState({isLoading: true});
     const fd = new FormData();
     fd.append('groupPhotos',this.state.selectedFile)
-    fd.append('groupId',this.state.groupId)
+    fd.append('groupId',gid)
     
     await axios.post("group/photos",fd)
       .then( res=>{

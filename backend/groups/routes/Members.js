@@ -11,7 +11,7 @@ const Users = require('../../users/models/Users');
 
 const groupMembersValidator = require('../validations/Members');
 
-router.post('/', verifyTokenMiddleware, async (req, res) => {
+router.post('/', verifyTokenMiddleware, async(req, res) => {
 
     let validationObject = Object.assign({}, req.body);
     delete validationObject.currentUser;
@@ -33,34 +33,29 @@ router.post('/', verifyTokenMiddleware, async (req, res) => {
         const user = await Users.findOne(userFilter);
         const group = await Groups.findOne(validationObject);
         if (group && user) {
-            const savedGroup = await Groups.findOneAndUpdate(validationObject,
-                {
-                    $addToSet: {
-                        members: {
-                            $each: [user]
-                        }
+            const savedGroup = await Groups.findOneAndUpdate(validationObject, {
+                $addToSet: {
+                    members: {
+                        $each: [user]
                     }
-                },
-                { new: true });
-
-            const savedUser = await Users.findOneAndUpdate(userFilter,
-                {
-                    $addToSet: {
-                        groups: {
-                            $each: [group]
-                        }
-                    }
-                },
-                { new: true });
-            return res.send({ group: savedGroup, user: savedUser });
-        }
-        else{
-            return res.status(500)
-            .send({
-                errors: {
-                    messages: ['Invalid Group']
                 }
-            });
+            }, { new: true });
+
+            const savedUser = await Users.findOneAndUpdate(userFilter, {
+                $addToSet: {
+                    groups: {
+                        $each: [group]
+                    }
+                }
+            }, { new: true });
+            return res.send({ group: savedGroup, user: savedUser });
+        } else {
+            return res.status(500)
+                .send({
+                    errors: {
+                        messages: ['Invalid Group']
+                    }
+                });
         }
 
 
@@ -75,11 +70,10 @@ router.post('/', verifyTokenMiddleware, async (req, res) => {
 
 });
 
-router.get('/', verifyTokenMiddleware, async (req, res) => {
+router.get('/', async(req, res) => {
 
     let groupValidationObject = {
-        name: req.query.name,        
-        highlightId: req.query.highlightId,
+        _id: req.query.group_id,
     }
     const { error } = groupMembersValidator(groupValidationObject);
     if (error) {
@@ -94,7 +88,7 @@ router.get('/', verifyTokenMiddleware, async (req, res) => {
 
     try {
         const group = await Groups.findOne(groupValidationObject,
-            'name description imageSource')
+                'name description imageSource')
             .populate({ path: 'members', select: ['email', 'firstName', 'lastName'] });
         return res.status(200).send(group);
     } catch (error) {
@@ -106,7 +100,7 @@ router.get('/', verifyTokenMiddleware, async (req, res) => {
     }
 });
 
-router.delete('/', verifyTokenMiddleware, async (req, res) => {
+router.delete('/', verifyTokenMiddleware, async(req, res) => {
 
     let validationObject = Object.assign({}, req.body);
     delete validationObject.currentUser;
@@ -128,26 +122,21 @@ router.delete('/', verifyTokenMiddleware, async (req, res) => {
         const user = await Users.findOne(userFilter);
         const group = await Groups.findOne(validationObject);
         if (group && user) {
-            const savedGroup = await Groups.findOneAndUpdate(validationObject,
-                {
-                    $pull: { members: user._id }
-                },
-                { new: true });
+            const savedGroup = await Groups.findOneAndUpdate(validationObject, {
+                $pull: { members: user._id }
+            }, { new: true });
 
-            const savedUser = await Users.findOneAndUpdate(userFilter,
-                {
-                    $pull: { groups: group._id }
-                },
-                { new: true });
+            const savedUser = await Users.findOneAndUpdate(userFilter, {
+                $pull: { groups: group._id }
+            }, { new: true });
             return res.send({ group: savedGroup, user: savedUser });
-        }
-        else{
+        } else {
             return res.status(500)
-            .send({
-                errors: {
-                    messages: ['Invalid Group']
-                }
-            });
+                .send({
+                    errors: {
+                        messages: ['Invalid Group']
+                    }
+                });
         }
 
 

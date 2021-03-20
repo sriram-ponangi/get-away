@@ -3,16 +3,36 @@
     - Sriram, Ponangi
     - Jay, Gajjar
 */
-import logo from '../profileLogoBlackBG.png';
+
+import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
 import './NavBar.css';
-// import axios from 'axios';
 
 class NavBar extends Component {
 
+  state = {
+    groups:[
+      {
+        _id: "",
+        name: ""
+      }
+    ]
+  }
+  componentDidMount = () =>{
+    axios.get('user/groups').then(result => {
+      this.setState({
+        groups:result.data.groups
+      })
+    });
+  }
+
+  componentWillReceiveProps = (props) => {
+    console.log(props);
+  }
 
   navLinks = () => {
+    
     if (this.props.currentUser) {
       return (
         <ul className="navbar-nav mr-auto main-nav">
@@ -24,9 +44,11 @@ class NavBar extends Component {
               My Groups
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <NavLink className="nav-link text-dark" to={"/my-groups/halifax-hustle"}>Halifax Hustle</NavLink>
-              <NavLink className="nav-link text-dark disabled" to={"/my-groups/cape-breton-calling"}>Cape Breton Calling</NavLink>
-              <NavLink className="nav-link text-dark disabled" to={"/my-groups/new-brunswick-nostalgia"}>New Brunswick Nostalgia</NavLink>
+              {
+                this.state.groups.map(group => {
+                  return <NavLink to={"/groups/"+group._id} gid={group._id} className="nav-link text-dark" key={group._id}>{group.name}</NavLink>
+                })
+              }
             </div>
           </li>
           <li className="nav-item">
@@ -37,12 +59,6 @@ class NavBar extends Component {
           </li>
           <li className="nav-item ">
           <NavLink className="nav-link active" to={"/contactus"}>Contact Us</NavLink>
-          </li>
-          <li className="nav-item ">
-          <NavLink className="nav-link active" to={"/group/comments"}>Comments</NavLink>
-          </li>
-          <li className="nav-item ">
-          <NavLink className="nav-link active" to={"/group/groupPhotos"}>photo Us</NavLink>
           </li>
         </ul>
       )
@@ -61,12 +77,6 @@ class NavBar extends Component {
           </li>
           <li className="nav-item ">
           <NavLink className="nav-link active" to={"/contactus"}>Contact Us</NavLink>
-          </li>
-          <li className="nav-item ">
-          <NavLink className="nav-link active" to={"/group/comments"}>Comments</NavLink>
-          </li>
-          <li className="nav-item ">
-          <NavLink className="nav-link active" to={"/group/groupPhotos"}>photo Us</NavLink>
           </li>
         </ul>
       )

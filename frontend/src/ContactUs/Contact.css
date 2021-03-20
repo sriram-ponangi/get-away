@@ -1,0 +1,15 @@
+.contact-form {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8)
+}
+
+.contact-form label {
+    color: #fff;
+}
+
+.contact-container {
+    background-size: cover;
+    background-position: left;
+}

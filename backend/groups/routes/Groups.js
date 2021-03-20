@@ -17,7 +17,7 @@ const getGroupsValidator = require('../validations/GetGroups');
 const groupMemberRoutes = require('./Members');
 const groupCommentRoutes = require('./Comments');
 
-router.post('/', verifyAdminTokenMiddleware, async (req, res) => {
+router.post('/', verifyAdminTokenMiddleware, async(req, res) => {
 
     let validationObject = Object.assign({}, req.body);
     delete validationObject.currentUser;
@@ -58,9 +58,9 @@ router.post('/', verifyAdminTokenMiddleware, async (req, res) => {
 
 });
 
-router.get('/', verifyTokenMiddleware, async (req, res) => {
+router.get('/', verifyTokenMiddleware, async(req, res) => {
 
-    let groupValidationObject = {        
+    let groupValidationObject = {
         highlightId: req.query.highlightId,
     }
     const { error } = getGroupsValidator(groupValidationObject);

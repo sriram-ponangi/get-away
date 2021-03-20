@@ -21,10 +21,11 @@ const uri = "mongodb+srv://" + process.env.MONGODB_USERNAME + ":" + process.env.
 // const uri = "mongodb+srv://csci5709_w21_g2:rWGyzieaaDaddCk6@csci5709-project.ed041.mongodb.net/csci5709-project?retryWrites=true&w=majority"
 
 console.log("DB Cluster Name", process.env.MONGODB_CLUSTER_NAME);
-mongoose.connect(uri, { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true,  
-    useFindAndModify: false }, () => {
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+}, () => {
     console.log("Database Connection Successful.");
 });
 
@@ -41,8 +42,8 @@ app.use('/api/group/comments', groupCommentsRoutes);
 app.use('/api/group/photos', groupPhotosRoutes);
 
 
-app.use(express.static('public'));   
-app.use('/uploads', express.static('uploads')); 
+app.use(express.static('public'));
+app.use('/uploads', express.static('uploads'));
 
 app.listen(process.env.PORT || 4000, () => {
     console.log('Auth-Server Running on port : ', process.env.PORT || 4000);
