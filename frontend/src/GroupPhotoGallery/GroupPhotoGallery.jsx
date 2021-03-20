@@ -1,6 +1,7 @@
 /*
 * Authors: 
     - Rajni, Puni
+    - Jay, Gajjar
 */
 import { Component } from 'react';
 //import "./GroupPhotoGallery.css";
