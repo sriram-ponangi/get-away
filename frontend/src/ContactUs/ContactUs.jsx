@@ -4,7 +4,9 @@
 */
 import { Component } from 'react';
 import axios from "axios";
-import loading from "../loading.gif"
+import loading from "../loading.gif";
+// import background from "/img/contact-bg.jpeg";
+import './Contact.css'; 
 
 class ContactUs extends Component {
   constructor(props) {
@@ -101,14 +103,14 @@ class ContactUs extends Component {
   render() {
     return (
       <section>
-        <div className="container bg-white pb-80">
+        <div className="contact-container container pb-80" style={{ backgroundImage: `url("/img/contact-bg.jpeg")` }}>
           <h2 className="display-4 text-center pt-5"><span className="text-pink">Contact Us</span></h2>
           <div className="row form-row mb-80 mt-5">
             <div className="col-md-3"></div>
             <div className="col-md-6">
               {this.showErrorMessage()}
               {this.showSuccessMessage()}
-              <form onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleSubmit} className="contact-form">
                   <div className="form-group">
                       <label for="firstName">Full Name</label>
                       <input type="text" className="form-control" name="firstName" id="fullName" onChange={this.txtNameHandler} placeholder="First Name"/>
@@ -123,7 +125,7 @@ class ContactUs extends Component {
                       <label for="message">Your Message</label>
                       <textarea className="form-control" id="message" rows="5" onChange={this.txtMessageHandler} placeholder="Enter your message"></textarea>
                   </div>
-                  <button type="submit" className="btn btn-primary">Submit</button>
+                  <button type="submit" className="btn btn-primary w-100">Submit</button>
                   {this.state.isLoading?<img className="ml-1" src={loading}></img>:<div></div>}
               </form>
             </div>

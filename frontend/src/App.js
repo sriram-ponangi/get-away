@@ -1,6 +1,9 @@
 /*
 * Authors: 
     - Sriram, Ponangi
+    - Jay Gajjar
+    - Rajni Puni
+    - Abhinav Mandava
 */
 import './App.css';
 

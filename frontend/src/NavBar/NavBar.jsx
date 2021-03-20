@@ -28,6 +28,10 @@ class NavBar extends Component {
     });
   }
 
+  componentWillReceiveProps = (props) => {
+    console.log(props);
+  }
+
   navLinks = () => {
     
     if (this.props.currentUser) {
