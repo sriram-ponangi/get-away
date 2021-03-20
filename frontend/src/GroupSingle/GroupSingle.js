@@ -10,7 +10,7 @@ import Sidebar from './Sidebar/Sidebar';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Poll from './Polls/Polls';
+import GroupComments from '../GroupComments/GroupComments';
 
 
 class GroupSingle extends Component {
@@ -28,15 +28,12 @@ class GroupSingle extends Component {
 
   componentDidMount = () =>{
     let g_id = this.props.match.params._id;
-    console.log("ID: " + g_id);
-
     // Get All Groups
     axios.get('user/groups').then(result => {
       this.setState({
         allgroups: result.data.groups
       })
       result.data.groups.map(groupSingle => {
-        console.log(groupSingle);
         if(groupSingle._id == g_id){
           axios.get('/group/member', { params: { group_id: g_id } }).then(memRes => {
             this.setState({
@@ -96,7 +93,7 @@ class GroupSingle extends Component {
               <a className="btn btn-outline-secondary mr-3"><i className="fas fa-images"></i> View Group Photos</a>
             </div> */}
             <hr className="mb-5 mt-5"/>
-
+            <GroupComments group_id={this.props.match.params._id}/>
           </Col>
           <Col className="sidebar-col pt-5 pb-5 pl-3 pr-3" xs="12" sm="12" md="12" lg="4">
             <Sidebar members={this.state.groupDetails.members}/>

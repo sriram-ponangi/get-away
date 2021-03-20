@@ -41,7 +41,6 @@ class GroupPhotoGallery extends Component {
   }
   async getphotos(){
     let gid = this.props.match.params.id;
-    console.log("Here:" + gid);
     await axios.get('group/photos', {
       params: {
         groupId: gid

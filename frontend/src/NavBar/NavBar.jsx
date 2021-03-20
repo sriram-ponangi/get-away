@@ -22,7 +22,6 @@ class NavBar extends Component {
   }
   componentDidMount = () =>{
     axios.get('user/groups').then(result => {
-      // console.log(result.data.groups);
       this.setState({
         groups:result.data.groups
       })

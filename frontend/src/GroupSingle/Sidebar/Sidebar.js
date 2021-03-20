@@ -9,7 +9,6 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 const sidebar = (props) => {
     let pop = props.members;
-    console.log(props.members);
     return (
         <div className="tb-sidebar">
             <div className="input-group mb-3">
