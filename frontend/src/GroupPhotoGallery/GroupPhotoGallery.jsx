@@ -40,9 +40,11 @@ class GroupPhotoGallery extends Component {
     }
   }
   async getphotos(){
+    let gid = this.props.match.params.id;
+    console.log("Here:" + gid);
     await axios.get('group/photos', {
       params: {
-        groupId: '604a7bfc7d497d9bc813b607'
+        groupId: gid
       }
     })
     .then(
@@ -66,10 +68,11 @@ class GroupPhotoGallery extends Component {
   }  
   
   async fileUploadHandler() {
+    let gid = this.props.match.params.id;
     this.setState({isLoading: true});
     const fd = new FormData();
     fd.append('groupPhotos',this.state.selectedFile)
-    fd.append('groupId',"604a7bfc7d497d9bc813b607")
+    fd.append('groupId',gid)
     
     await axios.post("group/photos",fd)
       .then( res=>{
