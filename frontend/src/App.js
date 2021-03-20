@@ -69,7 +69,7 @@ class App extends Component {
             <Route path="/" exact component={() => <Home currentUser={this.state.currentUser} />} />
             <Route path="/destination/search" exact component={DestinationSearch} />            
             <Route path="/destination/search/result" exact component={DestinationSearchResult} />
-            <Route path="/destination/details/about" exact component={DestinationDetails} />
+            <Route path="/destination/details/"  component={DestinationDetails} />
             <Route path="/groups/:_id" exact component={GroupSingle} />
             <Route path="/destination/highlights" exact component={Highlights} />
             <Route path="/groups/:id/gallery" exact component={GroupPhotoGallery} />

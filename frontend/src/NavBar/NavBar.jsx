@@ -3,7 +3,7 @@
     - Sriram, Ponangi
     - Jay, Gajjar
 */
-import logo from '../profileLogoBlackBG.png';
+
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';

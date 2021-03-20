@@ -1,0 +1,254 @@
+
+###
+POST https://csci-5709-backend.herokuapp.com/api/auth/login
+content-type: application/json
+
+{
+
+    "email" : "admin_one@email.com",
+    "password" : "ADMIN_ONE"
+}
+#######################################################################################
+### TEST DESTINATION API:
+#######################################################################################
+
+
+########################################
+### CREATE DESTINATION API - ADMIN ONLY:
+########################################
+###
+POST https://csci-5709-backend.herokuapp.com/api/destination
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2MjY4NzY2LCJleHAiOjE2MTYyNzIzMDZ9.8TaVTrzQMsIOVtDq8k0PD50C79hzfF9sgm3iG3rbmOs
+
+{
+    "name": "Halifax, Nova Scotia, Canada",
+    "description": "Halifax, an Atlantic Ocean port in eastern Canada, is the provincial capital of Nova Scotia. A major business centre, it’s also known for its maritime history. The city’s dominated by the hilltop Citadel, a star-shaped fort completed in the 1850s. Waterfront warehouses known as the Historic Properties recall Halifax’s days as a trading hub for privateers, notably during the War of 1812.",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "countryName": "Canada",
+    "locationName": "Halifax, Nova Scotia",
+    "about": [
+      {
+        "paragraphs": [
+          "Halifax is a major economic centre in Atlantic Canada, with a large concentration of government services and private sector companies. Major employers and economic generators include the Department of National Defence, Dalhousie University, Saint Mary's University, the Halifax Shipyard, various levels of government, and the Port of Halifax. Agriculture, fishing, mining, forestry, and natural gas extraction are major resource industries found in the rural areas of the municipality.",
+
+          "Halifax, officially known as the Halifax Regional Municipality (HRM), is the capital of the Canadian province of Nova Scotia. It had a population of 403,131 in 2016, with 316,701 in the urban area centred on Halifax Harbour. In July 2020 Statistics Canada estimated the population of the CMA at 448,544. The regional municipality consists of four former municipalities that were amalgamated in 1996: Halifax, Dartmouth, Bedford, and Halifax County."
+        ],
+        "title": "Overview"
+      },
+      {
+        "paragraphs": [
+          "Halifax's tourism industry showcases Nova Scotia's culture, scenery and coastline. There are several museums and art galleries in downtown Halifax. The Canadian Museum of Immigration at Pier 21, an immigrant entry point prominent throughout the 1930s, 1940s, and 1950s, was opened to the public as a National Historic Site of Canada in 1999 and is the only national museum in the Atlantic provinces. The Maritime Museum of the Atlantic is a maritime museum containing extensive galleries including a large exhibit on the famous Titanic, over 70 small craft and a 200-foot (61 m) steamship CSS Acadia. In summertime the preserved World War II corvette HMCS Sackville operates as a museum ship and Canada's naval memorial. The Art Gallery of Nova Scotia is housed in a 150-year-old building containing nearly 19,000 works of art. The Black Cultural Centre for Nova Scotia in Dartmouth reflects the region's rich ethnic heritage."
+        ],
+        "title": "Tourism"
+      }
+    ],
+
+    "touristAttractions": [
+      {
+        "title": "Halifax Waterfront",
+        "paragraphs": [
+          "A must-do in Halifax involves a stroll along the vibrant Halifax Waterfront. Check out the many bars, restaurants, shops, entertainment, and museums or just sit awhile and take in the bustling Harbour activity."
+        ]
+      },
+      {
+        "title": "Peggy's Cove",
+        "paragraphs": [
+          "Built in 1915, Peggy’s Point Lighthouse still keeps watch over surging ocean waves and working lobster boats. No beacon is as photographed or as well known as the one in the vibrant fishing village of Peggy’s Cove."
+        ]
+      }
+
+    ],
+    "essentials": [
+      {
+        "title": "Transportation",
+        "paragraphs": [
+          "Rail Canada provides overnight passenger rail service from the Halifax Railway Station three days a week to Montreal with the Ocean, a train equipped with sleeper cars that stops in major centres along the way, such as Moncton. The Halifax Railway Station also serves as the terminus for Maritime Bus, which serves destinations across the Maritimes.",
+
+          "Halifax Stanfield International Airport serves Halifax and most of the province, providing scheduled flights to domestic and international destinations. The airport served 4,083,188 passengers in 2017, making it Canada's eighth busiest airport by passenger traffic.",
+
+          "Public transit is provided by Halifax Transit, which operates standard bus routes, regional express bus routes, as well as the pedestrian-only Halifax-Dartmouth Ferry Service."
+        ]
+      }
+    ]
+}
+
+
+
+
+###
+POST https://csci-5709-backend.herokuapp.com/api/destination
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2MjcyNzU1LCJleHAiOjE2MTYyNzYyOTV9.-NiqjzCVOZxcrGXoTsHYffpoDpfOWoLAMnjO954VMrw
+
+{
+    "name": "Vancouver, British Columbia, Canada",
+    "description": "Vancouver, a bustling west coast seaport in British Columbia, is among Canada’s densest, most ethnically diverse cities. A popular filming location, it’s surrounded by mountains, and also has thriving art, theatre and music scenes. Vancouver Art Gallery is known for its works by regional artists, while the Museum of Anthropology houses preeminent First Nations collections.",
+    "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Concord_Pacific_Master_Plan_Area.jpg/1920px-Concord_Pacific_Master_Plan_Area.jpg",
+    "countryName": "Canada",
+    "locationName": "Vancouver, British Columbia",
+    "about": [
+      {
+        "paragraphs": [
+          "Vancouver, a bustling west coast seaport in British Columbia, is among Canada’s densest, most ethnically diverse cities. A popular filming location, it’s surrounded by mountains, and also has thriving art, theatre and music scenes. Vancouver Art Gallery is known for its works by regional artists, while the Museum of Anthropology houses preeminent First Nations collections.",
+
+          "It is a major city in western Canada, located in the Lower Mainland region of British Columbia. As the most populous city in the province, the 2016 census recorded 631,486 people in the city, up from 603,502 in 2011. The Greater Vancouver area had a population of 2,463,431 in 2016, making it the third-largest metropolitan area in Canada. Vancouver has the highest population density in Canada, with over 5,400 people per square kilometre, which makes it the fifth-most densely populated city with over 250,000 residents in North America, behind New York City, Guadalajara, San Francisco, and Mexico City. Vancouver is one of the most ethnically and linguistically diverse cities in Canada: 52% of its residents are not native English speakers, 48.9% are native speakers of neither English nor French, and 50.6% of residents belong to visible minority groups.",
+
+          "Vancouver is consistently named as one of the top five worldwide cities for livability and quality of life, and the Economist Intelligence Unit acknowledged it as the first city ranked among the top ten of the world's most well-living cities for ten consecutive years. However, Vancouver also ranks as the most expensive city to live in Canada and as the fourth-most expensive housing market globally. In 2011, the city planned to become the greenest city in the world by 2020. Vancouverism is the city's urban planning design philosophy."
+        ],
+        "title": "Overview"
+      },
+      {
+        "paragraphs": [
+          "The city takes its name from George Vancouver, who explored the inner harbour of Burrard Inlet in 1792 and gave various places British names. The family name \"Vancouver\" itself originates from the Dutch \"van Coevorden\", denoting somebody from the city of Coevorden, Netherlands. The explorer's ancestors came to England \"from Coevorden\", which is the origin of the name that eventually became \"Vancouver\"."
+        ],
+        "title": "Etymology"
+      }
+    ],
+
+    "touristAttractions": [
+      {
+        "paragraphs": [
+          "Stanley Park is a lush peninsula of huge trees adjacent to Downtown Vancouver. If you are looking to get outside and enjoy some nature, this is the best place to visit in Vancouver. A paved seawall path encircles the green space and is a wonderful place to explore on foot or by bicycle.",
+
+          "Inland, the park offers many things to do, and you can spend a full day exploring attractions like the totem poles at Brockton Point or the Vancouver Aquarium. Spectacular views are a standard throughout the park either back towards the city or out to the ocean.",
+
+          "Come spring, the park's gardens and shrubs burst into a rainbow of beautiful colors, led by the cherry trees and closely followed by the rhododendrons.",
+
+          "In the summer, an outdoor pool operates right at the edge of the ocean. This 80-meter pool is heated and is a popular spot for families because of its gently sloped entry."
+        ],
+        "title": "Stanley Park"
+      },
+      {
+        "paragraphs": [
+          "The waters off Vancouver's coastline, known as the Salish Sea, are an excellent place to see whales. Humpback and gray whales, along with smaller minke and orcas swim in these waters.",
+
+          "The main whale watching season runs from March through October. Options for seeing the whales range from aerial viewing from a float plane to Zodiac boats, or for those looking for a more stable platform, larger tour boats. If you are lucky, you might even spot a few whales from the BC ferries that transit between Vancouver and Victoria.",
+
+          "Strict regulations are in place that limit how close the boats can get to the whales. A popular option leaves from in front of the Westin Hotel in downtown Vancouver. The Half-Day Whale Watching Adventure from Vancouver takes you out on a 62-foot vessel that holds 74 people. Along the way, interesting commentary is provided. You'll have a good chance of sighting a whale from one of the multiple viewing decks."
+
+        ],
+        "title": "Whale Watching"
+      }
+    ],
+    "essentials": []
+}
+
+###
+POST https://csci-5709-backend.herokuapp.com/api/destination
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2MjcyNzU1LCJleHAiOjE2MTYyNzYyOTV9.-NiqjzCVOZxcrGXoTsHYffpoDpfOWoLAMnjO954VMrw
+
+{
+    "name": "Hyderabad, Telangana, India",
+    "description": "Hyderabad is the capital of southern India's Telangana state. A major center for the technology industry, it's home to many upscale restaurants and shops. Its historic sites include Golconda Fort, a former diamond-trading center that was once the Qutb Shahi dynastic capital. The Charminar, a 16th-century mosque whose 4 arches support towering minarets, is an old city landmark near the long-standing Laad Bazaar. ",
+    "imageSource": "https://realtyplusmag.com/wp-content/uploads/2018/02/Hyderabad-office-stock-doubles-to-56-mn-sq.-ft.-in-last-decade-CBRE.jpg",
+    "countryName": "India",
+    "locationName": "Hyderabad, Telangana",
+    "about": [
+      {
+        "paragraphs": [
+          "Hyderabad is the capital and largest city of the Indian state of Telangana and the de jure capital of Andhra Pradesh. It occupies 650 square kilometres (250 sq mi) on the Deccan Plateau along the banks of the Musi River, in the northern part of South India. With an average altitude of 542 metres (1,778 ft), much of Hyderabad is situated on hilly terrain around artificial lakes, including the Hussain Sagar lake, predating the city's founding, in the north of the city centre. According to the 2011 Census of India, Hyderabad is the fourth-most populous city in India with a population of 6.9 million residents within the city limits, and has a population of 9.7 million residents in the metropolitan region, making it the sixth-most populous metropolitan area in India. With an output of US$74 billion, Hyderabad has the fifth-largest urban economy in India.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "Overview"
+      }
+    ],
+    "touristAttractions": [],
+    "essentials": [
+    ]
+}
+
+
+
+
+###
+POST https://csci-5709-backend.herokuapp.com/api/destination
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2MjcyNzU1LCJleHAiOjE2MTYyNzYyOTV9.-NiqjzCVOZxcrGXoTsHYffpoDpfOWoLAMnjO954VMrw
+
+{
+    "name": "New Delhi, India",
+    "description": "New Delhi is the capital of India and an administrative district of NCT Delhi. New Delhi is also the seat of all three branches of the government of India, hosting the Rashtrapati Bhavan, Parliament House, and the Supreme Court of India.",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "countryName": "India",
+    "locationName": "New Delhi",
+    "about": [
+      {
+        "paragraphs": [
+          "New Delhi is the capital of India and an administrative district of NCT Delhi. New Delhi is also the seat of all three branches of the government of India, hosting the Rashtrapati Bhavan, Parliament House, and the Supreme Court of India.",
+
+          "As of 2011, New Delhi district (the area under NDMC) has a population of 257,803. Hindi is the most widely spoken language in New Delhi and the lingua franca of the city. English is primarily used as the formal language by business and government institutes. New Delhi has a literacy rate of 89.38% according to 2011 census, which is the highest in Delhi."
+        ],
+        "title": "Overview"
+      }
+    ],
+    "touristAttractions": [
+      {
+        "paragraphs": [
+          "The beautiful Red Fort was built by Shah Jahan in 1648 and served as the seat of Mughal power until 1857. This stunning structure, with its tall, red sandstone walls covers an area of more than two square kilometers, the entirety of which is crescent shaped and surrounded by a moat. The impressive main entrance, the Lahore Gate, is so named as it faces towards Lahore in Pakistan, while the even grander Delhi Gate was used by the emperor for ceremonial processions.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu augue ut lectus arcu bibendum at."
+        ],
+        "title": "The Red Fort"
+      },
+      {
+        "paragraphs": [
+          "Completed in the 12th century, the beautiful Qutub Minar-India's tallest minaret and now a UNESCO Word Heritage Site-attracts many international visitors eager to climb to the top for its breathtaking views of the surrounding area.",
+
+          "This ornate five-story tower rises more than 70 meters and is covered with intricate carvings featuring the history of Qutub along with inscriptions from the Koran. It's also notable for being constructed of a number of different types of stone (the first three stories are made of red sandstone, while the fourth and fifth stories were built with marble and sandstone)."
+        ],
+        "title": "Qutub Minar"
+      },
+      {
+        "paragraphs": [
+          "Looking a little like the famous Arc de Triomphe in Paris, the equally impressive India Gate is a magnificent stone arch built as a memorial to Indian soldiers killed in WWI. An eternal flame burns beneath the massive structure, and its walls are inscribed with the names of more than 90,000 soldiers who died in the conflict.",
+
+          "Standing on a base of red stone and featuring a shallow domed bowl on top that is occasionally filled with burning oil (usually only on important anniversaries), the structure dominates the parkland around it, an always busy area with crowds of tourists and locals alike enjoying a picnic or simply relaxing. For a real treat, try to see the India Gate at night, considered one of the top free things to do in New Delhi; it's a spectacular sight when it and nearby fountains are floodlit."
+        ],
+        "title": "India Gate"
+      }
+    ],
+    "essentials": [
+      {
+        "paragraphs": [
+          "Public transport in the metropolis includes the Delhi Metro, the Delhi Transport Corporation (DTC) bus system, auto-rickshaws, cycle-rickshaws, e-rickshaws, Grameen Seva and taxis. With the introduction of Delhi Metro, a rail-based mass rapid transit system, rail-based transit systems have gained ground. Other means of transit include suburban railways, inter-state bus services and private taxis which can be rented for various purposes. However, buses continue to be the most popular means of transportation for intra-city travel, catering to about 60% of the total commuting requirements",
+
+          "Currently, the only international rail service in Delhi is the Samjhauta Express to Lahore, while it is possible to change trains to board rail services to Bangladesh and Nepal which commence in other cities of India. For the future, a high-speed rail link is being considered that would link New Delhi with Kunming, China via Myanmar"
+        ],
+        "title": "Transportation"
+      }
+    ]
+}
+
+###
+
+
+########################################
+### GET DESTINATIONS BY COUNTRY NAME:
+########################################
+###
+GET https://csci-5709-backend.herokuapp.com/api/destination
+?countryName=i
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjJhNDUzNDk0ZWYyYTRiZjk3YmQiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDkwMzc5LCJleHAiOjE2MTU0OTM5MTl9.2vn19YoqadkkPNvtI3BaktnNn6Rwsft5_O3ExNukZIw
+
+###
+GET https://csci-5709-backend.herokuapp.com/api/destination
+?countryName=an
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5OTUzNDk0ZWYyYTRiZjk3YmEiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoidXNlck9uZUBlbWFpbC5jb20iLCJpYXQiOjE2MTU5MDMwNzMsImV4cCI6MTYxNTkwNjYxM30.HqUR7FuTtwjrMv6wk0pehVTk78EQYnFZp7rIWdTayc8
+
+########################################
+### GET FULL DETAILS OF DESTINATIONS BY:
+# COUNTRY NAME
+# LOCATION NAME
+# DESTIANTION NAME
+########################################
+###
+GET https://csci-5709-backend.herokuapp.com/api/destination/details
+?countryName=India
+&locationName=Hyderabad, Telangana
+&name=Hyderabad, Telangana, India
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjJhNDUzNDk0ZWYyYTRiZjk3YmQiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDkwMzc5LCJleHAiOjE2MTU0OTM5MTl9.2vn19YoqadkkPNvtI3BaktnNn6Rwsft5_O3ExNukZIw
+
