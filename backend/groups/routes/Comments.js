@@ -41,7 +41,6 @@ router.post('/', verifyTokenMiddleware, async (req, res) => {
             });
             const savedComment = await commentModel.save();
 
-
             const savedGroup = await Groups.findOneAndUpdate({ _id: group._id },
                 {
                     $addToSet: {
@@ -63,9 +62,6 @@ router.post('/', verifyTokenMiddleware, async (req, res) => {
                     }
                 });
         }
-
-
-
     } catch (error) {
         console.log(error);
         return res.status(500)
@@ -91,7 +87,6 @@ router.get('/', async (req, res) => {
                 }
             });
     }
-    console.log("hello")
     
     try {
         const group = await Groups.findOne({ _id: groupValidationObject.groupId }, 'name')

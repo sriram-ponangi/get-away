@@ -4,7 +4,6 @@
     - Jay, Gajjar
 */
 import { Component } from 'react';
-//import "./GroupComments.css";
 import axios from "axios";
 import loading from "../loading.gif"
 
@@ -24,6 +23,7 @@ class GroupComments extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  //populate comments on page load
   componentWillMount(){
     this.getComments();
   }
@@ -33,7 +33,6 @@ class GroupComments extends Component {
   }
 
   handleSubmit(event) { 
-    //alert('handleSubmit');
     event.preventDefault();
     this.setState({isLoading: true});
     this.submitCommentHandler();
@@ -41,13 +40,12 @@ class GroupComments extends Component {
   }
 
   txtCommentHandler = event => {
-    //alert('txtCommentHandler');
     this.setState({postedComment: event.target.value})
   }  
   
+  //calling backend service to submit comments
   async submitCommentHandler() {
     const txtCommentval = this.state.postedComment;
-   // alert(txtCommentval);
     if(txtCommentval == ""){
       this.setState({errorMessage: "Please enter some comment."});
     }
@@ -66,11 +64,10 @@ class GroupComments extends Component {
       }).catch(error => {
           this.setState({errorMessage: "Error posting comments"});
       });
-        
-      
     }   
   }
 
+  //called backend service to get comments
   async getComments(){
     axios.get('group/comment', {      
       params: {
@@ -103,7 +100,6 @@ class GroupComments extends Component {
     }
   }
 
-
   render() {
     return (
       <section>
@@ -130,7 +126,6 @@ class GroupComments extends Component {
                               <button className="btn btn-primary">Send</button>
                               {this.state.isLoading?<img className="ml-1" src={loading}></img>:<div></div>}
                               </div>
-                              
                               </div>
                             </form>
                             <div className="mb-4 mt-4">

@@ -41,6 +41,7 @@ class ContactUs extends Component {
     this.setState({message: event.target.value})
   };
   
+  //called backend service to send email to the admin of this application
   async sendHandler() {   
     this.setState({successMessage: ""});
     if(this.state.name == ""){
@@ -64,8 +65,7 @@ class ContactUs extends Component {
           this.setState({errorMessage: ""});
           this.setState({name: ""});
           this.setState({email: ""});
-          this.setState({message: ""});
-          //alert("your message is sent to admin. GetAway team will contact you shortly.");  
+          this.setState({message: ""}); 
           document.getElementById("fullName").value = ""; 
           document.getElementById("userEmail").value = ""; 
           document.getElementById("message").value = ""; 
@@ -73,8 +73,7 @@ class ContactUs extends Component {
         })
         .catch(error => {
           this.setState({errorMessage: "your message is sent to admin. GetAway team will contact you shortly."});
-        });
-     
+        });     
     }
   }
   showErrorMessage = () => {
@@ -103,39 +102,35 @@ class ContactUs extends Component {
     return (
       <section>
         <div className="container bg-white pb-80">
-          
-         
           <h2 className="display-4 text-center pt-5"><span className="text-pink">Contact Us</span></h2>
           <div className="row form-row mb-80 mt-5">
-                        <div className="col-md-3"></div>
-                        <div className="col-md-6">
-                        {this.showErrorMessage()}
-                        {this.showSuccessMessage()}
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="form-group">
-                                <label for="firstName">Full Name</label>
-                                <input type="text" className="form-control" name="firstName" id="fullName" onChange={this.txtNameHandler} placeholder="First Name"/>
-                               
-                            </div>
-                            <div className="form-group">
-                                <label for="userEmail">Email address</label>
-                                <input type="email" className="form-control" id="userEmail" onChange={this.txtEmailHandler} aria-describedby="emailHelp" placeholder="Enter email" />
-                                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                            </div>
-                            <div className="form-group">
-                                <label for="message">Your Message</label>
-                                <textarea className="form-control" id="message" rows="5" onChange={this.txtMessageHandler} placeholder="Enter your message"></textarea>
-                            </div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
-                            {this.state.isLoading?<img className="ml-1" src={loading}></img>:<div></div>}
-                            </form>
-                        </div>
-                        <div className="col-md-3"></div>
-                    </div>
+            <div className="col-md-3"></div>
+            <div className="col-md-6">
+              {this.showErrorMessage()}
+              {this.showSuccessMessage()}
+              <form onSubmit={this.handleSubmit}>
+                  <div className="form-group">
+                      <label for="firstName">Full Name</label>
+                      <input type="text" className="form-control" name="firstName" id="fullName" onChange={this.txtNameHandler} placeholder="First Name"/>
+                    
+                  </div>
+                  <div className="form-group">
+                      <label for="userEmail">Email address</label>
+                      <input type="email" className="form-control" id="userEmail" onChange={this.txtEmailHandler} aria-describedby="emailHelp" placeholder="Enter email" />
+                      <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div className="form-group">
+                      <label for="message">Your Message</label>
+                      <textarea className="form-control" id="message" rows="5" onChange={this.txtMessageHandler} placeholder="Enter your message"></textarea>
+                  </div>
+                  <button type="submit" className="btn btn-primary">Submit</button>
+                  {this.state.isLoading?<img className="ml-1" src={loading}></img>:<div></div>}
+              </form>
+            </div>
+            <div className="col-md-3"></div>
           </div>
-            
-      
-              </section>        
+        </div>
+      </section>        
     )    
   }
 

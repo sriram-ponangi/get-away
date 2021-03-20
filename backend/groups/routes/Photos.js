@@ -15,6 +15,7 @@ const getPhotosValidator = require('../validations/GetPhotos');
 
 const multer  = require('multer');
 
+// Multer is used to store uploaded images in uploads folder.
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null,'./uploads/');
@@ -25,6 +26,8 @@ const storage = multer.diskStorage({
         cb(null,str + file.originalname);
     },
 });
+
+// Validation: Only jpg and png image is allowed to upload
 const filefilter = (req, file, cb)=>{
     if(file.mimetype === "image/jpeg" || file.mimetype === "image/png"){
         cb(null,true);
@@ -53,10 +56,8 @@ router.post('/', verifyTokenMiddleware,upload.single('groupPhotos'), async (req,
 
 
     try {
-        console.log('hiiiii');
         const group = await Groups.findOne({ _id: validationObject.groupId });
-        console.log(group); 
-
+        
         if (group) {
             const photoModel = new Photos({
                 imageSource: "uploads/" + req.file.filename
@@ -72,7 +73,6 @@ router.post('/', verifyTokenMiddleware,upload.single('groupPhotos'), async (req,
                 },
                 { new: true });
 
-
             return res.send({ group: savedGroup, savedPhoto: savedPhoto });
         }
         else {
@@ -83,9 +83,6 @@ router.post('/', verifyTokenMiddleware,upload.single('groupPhotos'), async (req,
                     }
                 });
         }
-
-
-
     } catch (error) {
         console.log(error);
         return res.status(500)
@@ -111,16 +108,13 @@ router.get('/', async (req, res) => {
                 }
             });
     }
-    console.log("hello")
     
     try {
         const group = await Groups.findOne({ _id: groupValidationObject.groupId }, 'name description')
             .populate({
-                path: 'photos',
-                
+                path: 'photos',                
                 options:{ sort:{"createdDate" : "descending"}}
             });
-            console.log(group)
         return res.status(200).send(group);
     } catch (error) {
         console.log(error);

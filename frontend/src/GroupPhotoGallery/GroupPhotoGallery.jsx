@@ -4,7 +4,7 @@
     - Jay, Gajjar
 */
 import { Component } from 'react';
-//import "./GroupPhotoGallery.css";
+import "./GroupPhotoGallery.css";
 import axios from "axios";
 import loading from "../loading.gif"
 
@@ -17,16 +17,20 @@ class GroupPhotoGallery extends Component {
       groupName: '',
       description: '',
       isLoading: false,
-      errorMessage: ''
+      errorMessage: '',
+      groupId: '604a7bfc7d497d9bc813b607'
     };
 
     this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  //get all the images in photo gallery on page load
   componentWillMount(){
     this.getphotos();     
   }
 
+  //Called on click of submit button od upload images
   handleSubmit(event) { 
     event.preventDefault();
     if (this.state.selectedFile!=""){
@@ -40,11 +44,14 @@ class GroupPhotoGallery extends Component {
     });
     }
   }
+
+  //post call to backend to save the image
   async getphotos(){
     let gid = this.props.match.params.id;
     await axios.get('group/photos', {
       params: {
         groupId: gid
+
       }
     })
     .then(
@@ -76,7 +83,6 @@ class GroupPhotoGallery extends Component {
     
     await axios.post("group/photos",fd)
       .then( res=>{
-        //alert("Photo submitted Successfully")
         this.getphotos();    
         document.getElementById("myFile").value = ""; 
         this.setState({errorMessage:""})
@@ -91,6 +97,7 @@ class GroupPhotoGallery extends Component {
     this.setState({isLoading: false});
   }
   
+  //show error messages
   showMessage = () => {
     if (this.state.errorMessage) {
         return (
@@ -115,18 +122,15 @@ class GroupPhotoGallery extends Component {
     return (
       <section>
         <div className="container bg-white pb-80">
-          
-         
           <h2 className="display-4 text-center pt-5"><span className="text-pink">{this.state.groupName}</span></h2>
-            
-            <div className="card-body text-center"> {this.state.description}</div>
+          <div className="card-body text-center"> {this.state.description}</div>
           
           <div className="border border-right-0  border-top-0  border-left-0">
           <h3 className="display-5 mb-10"><span className="text-primary"> Upload photos</span></h3>
           </div>
 
           <div className="row mt-4 mb-5">
-          <div className="col-sm-3"></div>
+          <div className="col-sm-4"></div>
           <div className="col-sm-5">
           {
             this.showMessage()
@@ -143,24 +147,18 @@ class GroupPhotoGallery extends Component {
           <div className="row text-center text-lg-left">
             {
             this.state.photos.map((photo)=>(
-            
-           
               <div className="col-lg-3 col-md-4 col-6" id={photo._id}>
                 <a className="d-block mb-4 h-100" href={`https://csci-5709-backend.herokuapp.com/${photo.imageSource}`} >
                   <img src={`https://csci-5709-backend.herokuapp.com/${photo.imageSource}`}
-                  className="img-fluid img-thumbnail"  alt="" />
+                  className="img-fluid thumbnail transform-on-hover"  alt="" />
                 </a>
               </div>
-                    
             ))}
-           
           </div>
-
           </div>
         </section>        
     )    
   }
-
 }
 
 export default GroupPhotoGallery;
