@@ -8,7 +8,6 @@ import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
 import './NavBar.css';
-// import axios from 'axios';
 
 class NavBar extends Component {
 
@@ -61,12 +60,6 @@ class NavBar extends Component {
           <li className="nav-item ">
           <NavLink className="nav-link active" to={"/contactus"}>Contact Us</NavLink>
           </li>
-          <li className="nav-item ">
-          <NavLink className="nav-link active" to={"/group/comments"}>Comments</NavLink>
-          </li>
-          <li className="nav-item ">
-          <NavLink className="nav-link active" to={"/group/groupPhotos"}>photo Us</NavLink>
-          </li>
         </ul>
       )
     }
@@ -84,12 +77,6 @@ class NavBar extends Component {
           </li>
           <li className="nav-item ">
           <NavLink className="nav-link active" to={"/contactus"}>Contact Us</NavLink>
-          </li>
-          <li className="nav-item ">
-          <NavLink className="nav-link active" to={"/group/comments"}>Comments</NavLink>
-          </li>
-          <li className="nav-item ">
-          <NavLink className="nav-link active" to={"/group/groupPhotos"}>photo Us</NavLink>
           </li>
         </ul>
       )
