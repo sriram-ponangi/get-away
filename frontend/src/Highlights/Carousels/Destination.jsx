@@ -1,3 +1,8 @@
+/*
+* Authors: 
+    - Mandava, Abhinav
+*/
+
 import React, { Component } from 'react';
 import './Destination.css'
 

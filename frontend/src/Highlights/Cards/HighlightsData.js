@@ -1,3 +1,8 @@
+/*
+* Authors: 
+    - Mandava, Abhinav
+*/
+
 export const highlightsData = {
   "Fishing": [
     {

@@ -1,9 +1,11 @@
+
+/*
+* Authors: 
+    - Mandava, Abhinav
+*/
+
 import React, { Component } from 'react';
 import './Highlight.css'
-import { Container } from 'react-bootstrap'
-import { Row } from 'react-bootstrap'
-import { Col } from 'react-bootstrap'
-import { highlightsData } from './HighlightsData.js'
 import HDetails from '../Modals/HDetails.js'
 
 class HighlightGroup extends Component {
