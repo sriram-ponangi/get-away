@@ -15,7 +15,7 @@ class GroupComments extends Component {
       comments: [],
       isLoading: false,
       errorMessage:'',
-      groupId: this.props.groupId
+      groupId: '604a7bfc7d497d9bc813b607'
     };
 
     this.txtCommentHandler = this.txtCommentHandler.bind(this);
