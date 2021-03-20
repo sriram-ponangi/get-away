@@ -4,6 +4,7 @@
     - Jay, Gajjar
 */
 import logo from '../profileLogoBlackBG.png';
+import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import React, { Component } from 'react';
 import './NavBar.css';
@@ -11,8 +12,25 @@ import './NavBar.css';
 
 class NavBar extends Component {
 
+  state = {
+    groups:[
+      {
+        _id: "",
+        name: ""
+      }
+    ]
+  }
+  componentDidMount = () =>{
+    axios.get('user/groups').then(result => {
+      // console.log(result.data.groups);
+      this.setState({
+        groups:result.data.groups
+      })
+    });
+  }
 
   navLinks = () => {
+    
     if (this.props.currentUser) {
       return (
         <ul className="navbar-nav mr-auto main-nav">
@@ -24,9 +42,11 @@ class NavBar extends Component {
               My Groups
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <NavLink className="nav-link text-dark" to={"/my-groups/halifax-hustle"}>Halifax Hustle</NavLink>
-              <NavLink className="nav-link text-dark disabled" to={"/my-groups/cape-breton-calling"}>Cape Breton Calling</NavLink>
-              <NavLink className="nav-link text-dark disabled" to={"/my-groups/new-brunswick-nostalgia"}>New Brunswick Nostalgia</NavLink>
+              {
+                this.state.groups.map(group => {
+                  return <NavLink to={"/groups/"+group._id} gid={group._id} className="nav-link text-dark" key={group._id}>{group.name}</NavLink>
+                })
+              }
             </div>
           </li>
           <li className="nav-item">

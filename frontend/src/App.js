@@ -67,9 +67,9 @@ class App extends Component {
             <Route path="/destination/search" exact component={DestinationSearch} />            
             <Route path="/destination/search/result" exact component={DestinationSearchResult} />
             <Route path="/destination/details/about" exact component={DestinationDetails} />
-            <Route path="/my-groups/halifax-hustle" exact component={GroupSingle} />
+            <Route path="/groups/:_id" exact component={GroupSingle} />
             <Route path="/destination/highlights" exact component={Highlights} />
-            <Route path="/group/groupPhotos" exact component={GroupPhotoGallery} />
+            <Route path="/groups/:id/gallery" exact component={GroupPhotoGallery} />
             <Route path="/group/comments" exact component={GroupComments} />
             <Route path="/aboutus" exact component={aboutus} />
             <Route path="/contactus" exact component={contactus} />

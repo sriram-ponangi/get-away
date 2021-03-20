@@ -17,36 +17,15 @@ const sidebar = (props) => {
                 </div>
             </div>
             <hr className="bg-dark mx-5 my-4"/>
-            <h3 className="text-left mb-3">Pending Requests</h3>
-            <ListGroup className="text-left">
-                <ListGroup.Item>
-                    <div className="row">
-                        <div className="col-md-5">Harry Potter</div>
-                        <div className="text-right col-md-7">
-                            <a href="#approve" className="btn btn-sm btn-success mr-3">Approve</a>
-                            <a href="#reject" className="btn btn-outline-danger btn-sm">Reject</a> 
-                        </div> 
-                    </div>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <div className="row">
-                        <div className="col-md-5">Neville L.</div>
-                        <div className="text-right col-md-7">
-                            <a href="#approve" className="btn btn-sm btn-success mr-3">Approve</a>
-                            <a href="#reject" className="btn btn-outline-danger btn-sm">Reject</a> 
-                        </div> 
-                    </div>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <div className="row">
-                        <div className="col-md-5">Ronald K. Weasley</div>
-                        <div className="text-right col-md-7">
-                            <a href="#approve" className="btn btn-sm btn-success mr-3">Approve</a>
-                            <a href="#reject" className="btn btn-outline-danger btn-sm">Reject</a> 
-                        </div> 
-                    </div>
-                </ListGroup.Item>
-            </ListGroup>
+            <h4>Rules:</h4>
+            <ul>
+              <li className="text-success">Please be respectful</li>
+              <li className="text-danger">No Racism or Misogny Allowed or Tolerated</li>
+              <li>Please be kind and considerate</li>
+              <li>Try to help everyone</li>
+              <li>Need to keep up with the pace of the group</li>
+              <li>Required to install <b>SplitWise</b> App to manage finances</li>
+            </ul>
             <hr className="bg-dark mx-5 my-4"/>
             <h3 className="text-left mb-3">Members</h3>
             <ListGroup className="text-left">
