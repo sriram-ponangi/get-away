@@ -1,6 +1,6 @@
 /*
 * Authors: 
-- Jay, Gajjar (UI)    
+- Jay, Gajjar   
 - Sriram, Ponangi    
 */
 import './GroupSingle.css';
@@ -38,12 +38,15 @@ class GroupSingle extends Component {
       result.data.groups.map(groupSingle => {
         console.log(groupSingle);
         if(groupSingle._id == g_id){
-          this.setState({
-            groupDetails:{
-              _id: g_id,
-              name: groupSingle.name,
-              description: groupSingle.description,
-            }
+          axios.get('/group/member', { params: { group_id: g_id } }).then(memRes => {
+            this.setState({
+              groupDetails:{
+                _id: g_id,
+                name: groupSingle.name,
+                description: groupSingle.description,
+                members: memRes.data.members
+              }
+            })
           })
         }
       })
@@ -56,21 +59,18 @@ class GroupSingle extends Component {
 
     let newId = props.match.params._id;
 
-    axios.get('/group/member', { params: { group_id: newId } }).then(result => {
-      console.log(result);
-    })
-
-
     if( newId != this.state.groupDetails._id){
       this.state.allgroups.map(single => {
         if(single._id == newId){
-          this.setState({
-            groupDetails:{
-              _id: newId,
-              name: single.name,
-              description: single.description,
-              members: single.members
-            }
+          axios.get('/group/member', { params: { group_id: newId } }).then(result => {
+            this.setState({
+              groupDetails:{
+                _id: newId,
+                name: single.name,
+                description: single.description,
+                members: result.data.members
+              }
+            })
           })
         }
       })
@@ -99,7 +99,7 @@ class GroupSingle extends Component {
 
           </Col>
           <Col className="sidebar-col pt-5 pb-5 pl-3 pr-3" xs="12" sm="12" md="12" lg="4">
-            <Sidebar/>
+            <Sidebar members={this.state.groupDetails.members}/>
           </Col>
         </Row>
       </Container>

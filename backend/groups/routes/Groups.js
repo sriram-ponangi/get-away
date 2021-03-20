@@ -13,7 +13,6 @@ const Highlights = require('../../highlights/models/Highlights');
 const createGroupValidator = require('../validations/CreateGroup');
 
 const getGroupsValidator = require('../validations/GetGroups');
-const getGroupByIdValidator = require('../validations/GetGroupById');
 
 const groupMemberRoutes = require('./Members');
 const groupCommentRoutes = require('./Comments');
@@ -65,35 +64,6 @@ router.get('/', verifyTokenMiddleware, async(req, res) => {
         highlightId: req.query.highlightId,
     }
     const { error } = getGroupsValidator(groupValidationObject);
-
-    if (error) {
-        console.log(error.details);
-        return res.status(400)
-            .send({
-                errors: {
-                    messages: error.details.map(e => e.message)
-                }
-            });
-    }
-
-    try {
-        const groups = await Groups.find(groupValidationObject, 'name description');
-        return res.status(200).send(groups);
-    } catch (error) {
-        console.log(error);
-        return res.status(500)
-            .send({
-                errors: error
-            });
-    }
-});
-
-router.get('/:id', verifyTokenMiddleware, async(req, res) => {
-
-    let groupValidationObject = {
-        _id: req.params.id,
-    }
-    const { error } = getGroupByIdValidator(groupValidationObject);
 
     if (error) {
         console.log(error.details);

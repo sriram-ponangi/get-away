@@ -71,7 +71,6 @@ router.post('/', verifyTokenMiddleware, async(req, res) => {
 });
 
 router.get('/', async(req, res) => {
-    console.log("GHELLLOOO");
 
     let groupValidationObject = {
         _id: req.query.group_id,

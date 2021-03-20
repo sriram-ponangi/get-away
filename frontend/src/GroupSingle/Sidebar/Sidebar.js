@@ -8,6 +8,8 @@ import './Sidebar.css';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 const sidebar = (props) => {
+    let pop = props.members;
+    console.log(props.members);
     return (
         <div className="tb-sidebar">
             <div className="input-group mb-3">
@@ -28,33 +30,18 @@ const sidebar = (props) => {
             </ul>
             <hr className="bg-dark mx-5 my-4"/>
             <h3 className="text-left mb-3">Members</h3>
+            
             <ListGroup className="text-left">
-                <ListGroup.Item variant="info">
-                    <div className="row">
-                        <div className="col-md-7">C. Ronaldo</div>
-                        <div className="text-right col-md-5">
-                            <a href="#reject" className="btn btn-danger btn-sm">Vote Out</a> 
-                        </div> 
-                    </div>
-                </ListGroup.Item>
-                <ListGroup.Item variant="info">
-                    <div className="row">
-                        <div className="col-md-7">
-                        Eden Hazard <div className="ml-3 badge badge-pill badge-primary">Admin</div>
-                        </div>
-                        <div className="text-right col-md-5">
-                            <a href="#reject" className="btn btn-danger btn-sm disabled">Vote Out</a> 
-                        </div> 
-                    </div>
-                </ListGroup.Item>
-                <ListGroup.Item variant="info">
-                    <div className="row">
-                        <div className="col-md-7">Lionel Messi</div>
-                        <div className="text-right col-md-5">
-                            <a href="#reject" className="btn btn-danger btn-sm">Vote Out</a> 
-                        </div> 
-                    </div>
-                </ListGroup.Item>
+            {
+                Object.values(props.members).map(single => {
+                    return (
+                        <ListGroup.Item variant="info" key={single._id}>
+                            <span>{single.firstName}</span>
+                            <span> {single.lastName}</span>
+                        </ListGroup.Item>
+                    )
+                })
+            }
             </ListGroup>
         </div>
     );
