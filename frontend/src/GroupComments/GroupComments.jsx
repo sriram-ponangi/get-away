@@ -15,7 +15,8 @@ class GroupComments extends Component {
       postedComment: '',
       comments: [],
       isLoading: false,
-      errorMessage:''
+      errorMessage:'',
+      groupId: this.props.groupId
     };
 
     this.txtCommentHandler = this.txtCommentHandler.bind(this);
@@ -47,7 +48,7 @@ class GroupComments extends Component {
     }
     else {
       this.setState({isLoading: true});
-      await axios.post('group/comment', {groupId:'604a7bfc7d497d9bc813b607',text:txtCommentval})
+      await axios.post('group/comment', {groupId:this.state.groupId,text:txtCommentval})
       .then(res => {
           console.log(res);
           this.setState({
@@ -68,7 +69,7 @@ class GroupComments extends Component {
   async getComments(){
     await axios.get('group/comment', {
       params: {
-        groupId: '604a7bfc7d497d9bc813b607'
+        groupId: this.state.groupId
       }
     })
     .then(

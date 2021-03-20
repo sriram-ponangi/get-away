@@ -3,7 +3,7 @@
     - Rajni, Puni
 */
 import { Component } from 'react';
-//import "./GroupPhotoGallery.css";
+import "./GroupPhotoGallery.css";
 import axios from "axios";
 import loading from "../loading.gif"
 
@@ -145,7 +145,7 @@ class GroupPhotoGallery extends Component {
               <div className="col-lg-3 col-md-4 col-6" id={photo._id}>
                 <a className="d-block mb-4 h-100" href={`https://csci-5709-backend.herokuapp.com/${photo.imageSource}`} >
                   <img src={`https://csci-5709-backend.herokuapp.com/${photo.imageSource}`}
-                  className="img-fluid img-thumbnail"  alt="" />
+                  className="img-fluid thumbnail transform-on-hover"  alt="" />
                 </a>
               </div>
                     
