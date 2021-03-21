@@ -57,8 +57,8 @@ class DestinationDetails extends Component {
 
         this.props.history.push(
             {
-                pathname: '/destination/highlights'
-                // countryName: this.state.counrtyName
+                pathname: '/destination/highlights',
+                destinationId: this.props.location.destinationId
             }
         );
 

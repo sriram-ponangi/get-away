@@ -10,23 +10,47 @@ import HighlightGroup from '../Cards/HighlightGroup.jsx'
 import './Navigation.css';
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
-import { highlightsData } from '../Cards/HighlightsData.js'
+// import { this.props.highlightsData } from '../Cards/this.props.highlightsData.js'
 import Destination from '../Carousels/Destination.jsx';
 import { Container } from 'react-bootstrap'
+import axios from 'axios';
 
 class SideNav extends Component {
   state = {
-    category: 'Fishing'
+    data: this.props.highlightsData,
+    category: this.props.highlightsData[0].category,
+    locations: this.props.highlightsData[0].locations,
+    destinationId: this.props.destinationId
   }
+
+  displayLocations = (title) => {
+    let i
+    axios.get('highlight/locations', {
+      params: {
+        destinationId: this.state.destinationId,
+        category: title.toLowerCase()
+      }
+    }).then(
+      res => {
+        this.setState({ category: title, locations: res.data.locations });
+
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
   render() {
     let locationDecks = [];
     let i = 0;
-    while (i < highlightsData[this.state.category].length) {
+    while (i < this.state.locations.length) {
       locationDecks.push(
-        highlightsData[this.state.category].slice(i, i + 7)
+        this.state.locations.slice(i, i + 7)
       );
       i = i + 7;
     }
+    console.log(locationDecks)
     let locations = (
       <div className='h-scroll'>
         {locationDecks.map((item) => {
@@ -47,7 +71,7 @@ class SideNav extends Component {
                   {SideNavItems.map((item) => {
                     return (
                       <li className={item.cName}>
-                        <Link to={item.path} onClick={() => { this.setState({ category: `${item.title}` }) }}>
+                        <Link to={item.path} onClick={() => { this.displayLocations(item.title) }}>
                           <span className='nav-items-span'>{item.title}</span>
                         </Link>
                       </li>

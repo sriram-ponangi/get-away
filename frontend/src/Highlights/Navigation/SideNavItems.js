@@ -30,11 +30,6 @@ export const SideNavItems = [
     cName: 'nav-text'
   },
   {
-    title: 'Cruise',
-    path: '/cruise',
-    cName: 'nav-text'
-  },
-  {
     title: 'Nightlife',
     path: '/nightlife',
     cName: 'nav-text'
