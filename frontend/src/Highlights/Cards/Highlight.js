@@ -1,3 +1,9 @@
+/*
+* Authors: 
+    - Mandava, Abhinav
+*/
+
+
 import React, { Component } from 'react';
 import './Highlight.css'
 import {Container} from 'react-bootstrap'
