@@ -17,8 +17,7 @@ class GroupPhotoGallery extends Component {
       groupName: '',
       description: '',
       isLoading: false,
-      errorMessage: '',
-      groupId: '604a7bfc7d497d9bc813b607'
+      errorMessage: ''
     };
 
     this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
@@ -86,6 +85,7 @@ class GroupPhotoGallery extends Component {
         this.getphotos();    
         document.getElementById("myFile").value = ""; 
         this.setState({errorMessage:""})
+        this.setState({selectedFile:""})
       })
       .catch(error => {
         console.log(error.body);
