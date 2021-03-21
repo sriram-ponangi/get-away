@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
@@ -13,12 +13,10 @@ const contactusRoutes = require('./contactus/routes/contactus');
 const groupCommentsRoutes = require('./groups/routes/Comments');
 const groupPhotosRoutes = require('./groups/routes/Photos');
 
-dotenv.config();
+// dotenv.config();
 
 const uri = "mongodb+srv://" + process.env.MONGODB_USERNAME + ":" + process.env.MONGODB_PASSWORD +
     "@csci5709-project.ed041.mongodb.net/" + process.env.MONGODB_CLUSTER_NAME + "?retryWrites=true&w=majority";
-
-// const uri = "mongodb+srv://csci5709_w21_g2:rWGyzieaaDaddCk6@csci5709-project.ed041.mongodb.net/csci5709-project?retryWrites=true&w=majority"
 
 console.log("DB Cluster Name", process.env.MONGODB_CLUSTER_NAME);
 mongoose.connect(uri, {

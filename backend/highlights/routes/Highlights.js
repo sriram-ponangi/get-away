@@ -35,12 +35,27 @@ router.post('/', verifyAdminTokenMiddleware, async (req, res) => {
     }
 });
 
-router.get('/locations', verifyTokenMiddleware, async (req, res) => {
+router.get('/locations', /*verifyTokenMiddleware*/ async (req, res) => {
     const destinationId = req.query.destinationId
     const category = req.query.category.toLowerCase()
     try {
         const locations = await Highlights.findOne({ destinationId: destinationId, category: category });
         return res.send(locations);
+    }
+    catch (error) {
+        console.log(error);
+        return res.status(500)
+            .send({
+                errors: error
+            });
+    }
+});
+
+router.get('/highlights', /*verifyTokenMiddleware*/ async (req, res) => {
+    const destinationId = req.query.destinationId
+    try {
+        const data = await Highlights.find({ destinationId: destinationId});
+        return res.send(data);
     }
     catch (error) {
         console.log(error);

@@ -53,12 +53,11 @@ const highlihtsSchema = new mongoose.Schema({
     }
 })
 
-highlihtsSchema.index({
-    name: 1,
-    destinationId: 1
-}, {
-    unique: true,
-});
+// highlihtsSchema.index({
+//     destinationId: 1
+// }, {
+//     unique: false,
+// });
 
 const Highlights = mongoose.model('highlights', highlihtsSchema);
 
