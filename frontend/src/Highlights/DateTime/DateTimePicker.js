@@ -26,8 +26,11 @@ const DateTimePicker = () => {
         }
     }
     return (
-        <div>
-            <DatePicker selected={startDate} onChange={date => handleChange(date)} />
+        <div className="w-100 text-center">
+            <div className="d-block mb-3">
+                <h6>Select a date to join others!</h6>
+                <DatePicker selected={startDate} onChange={date => handleChange(date)} />
+            </div>
             <button type="button join-grp" className="btn btn-primary" onClick={() => { joinGroup(startDate) }}>Join a Group</button>
         </div>
     );

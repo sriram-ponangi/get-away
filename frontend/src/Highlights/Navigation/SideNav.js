@@ -41,7 +41,7 @@ class SideNav extends Component {
         <Container fluid>
           <Row>
             <Col className="bg-dark" xs={12} md={2}>
-              <nav className='nav-menu'>
+              <nav className='nav-menu sideNav'>
                 <h3 className='d-block nav-head'>What are you looking for?</h3>
                 <ul className='nav-menu-items d-block' >
                   {SideNavItems.map((item) => {
