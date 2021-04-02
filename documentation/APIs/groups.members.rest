@@ -30,11 +30,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5O
 
 DELETE http://localhost:4000/api/group/member
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5ZjUzNDk0ZWYyYTRiZjk3YmMiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IkEiLCJsYXN0TmFtZSI6ImEiLCJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE2MTU0OTY5MjksImV4cCI6MTYxNTUwMDQ2OX0.XBHd1pSMFU-ACf_49LKDTi7Zc7XPNmYOZ4V4DIJDQjs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY3NGYwMGFmZmMyZDIzMmU1Yzk0MzIiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IkpheSIsImxhc3ROYW1lIjoiR2FqamFyIiwiZW1haWwiOiJnYWpqYXJqYXkyM0BnbWFpbC5jb20iLCJpYXQiOjE2MTczODYzNDEsImV4cCI6MTYxNzM4OTg4MX0.d6ZcUI7MeNotoZx3WURguhkFwsVg6P176ttHhTLdJfI
 
 {
-    "name" : "Cycling-3 Group",
-    "highlightId" : "604a76bb76ae0491fc212f75"
+    "_id" : "606745956a2514c4b425da0f"
 }
 
 ###
@@ -53,7 +52,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5O
 
 ###
 GET http://localhost:4000/api/group/member
-?group_id=604a7cbe7d497d9bc813b609
+?group_id=60674c305ba247ef3003b04c
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5ZjUzNDk0ZWYyYTRiZjk3YmMiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IkEiLCJsYXN0TmFtZSI6ImEiLCJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE2MTU0OTY5MjksImV4cCI6MTYxNTUwMDQ2OX0.XBHd1pSMFU-ACf_49LKDTi7Zc7XPNmYOZ4V4DIJDQjs
 

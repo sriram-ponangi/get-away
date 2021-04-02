@@ -31,7 +31,7 @@ class HDetails extends Component {
                             <p>{this.props.desc}</p>
                         </div>
                         <div className="modal-footer">
-                                <DateTimePicker></DateTimePicker>
+                                <DateTimePicker category={this.props.cat} title={this.props.title} loc_id={this.props.id}></DateTimePicker>
                         </div>
                     </div>
                 </div>

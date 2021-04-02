@@ -31,7 +31,7 @@ class HighlightGroup extends Component {
                                             </div>
                                         </div>
                                     </a>
-                                    <HDetails imSrc={this.state.location['imSrc']} desc={this.state.location['desc']} title={this.state.location['title']}></HDetails>
+                                    <HDetails cat={this.props.hTitle} imSrc={this.state.location['imSrc']} desc={this.state.location['desc']} title={this.state.location['title']} id={this.state.location['_id']}></HDetails>
                                 </div>
                             );
                         })}

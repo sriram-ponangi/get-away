@@ -11,6 +11,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import GroupComments from '../GroupComments/GroupComments';
+import {Redirect} from 'react-router-dom';
 
 
 class GroupSingle extends Component {
@@ -24,6 +25,15 @@ class GroupSingle extends Component {
         description: "",
         members: ""
       }
+  }
+
+  leaveGroup = () => {
+    console.log(this.state.groupDetails._id);
+    axios.delete('group/member', {data: {_id:this.state.groupDetails._id}}).then(res=>{
+      window.location.href = "/";
+    }).catch(error=>{
+      console.log(error);
+    })
   }
 
   componentDidMount = () =>{
@@ -87,7 +97,7 @@ class GroupSingle extends Component {
             <h4 className="font-weight-light mb-3">{this.state.groupDetails.description}</h4>
             <div className="d-block mb-3s">
                 <a className="btn btn-outline-secondary mr-3" href={galleryUri}><i className="fas fa-images"></i> View Group Photos</a>
-                <a href="#" className="btn btn-danger"><i className="fas fa-sign-out-alt"></i> Leave Group</a>
+                <a onClick={this.leaveGroup} className="btn btn-danger"><i className="fas fa-sign-out-alt"></i> Leave Group</a>
             </div>
             {/* <div className="d-block">
               <a className="btn btn-outline-secondary mr-3"><i className="fas fa-images"></i> View Group Photos</a>

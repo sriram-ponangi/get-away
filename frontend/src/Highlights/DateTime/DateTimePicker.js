@@ -5,9 +5,15 @@
 
 import React, { Component, useState } from 'react';
 import DatePicker from "react-datepicker";
+import { Redirect } from 'react-router-dom';
 import "react-datepicker/dist/react-datepicker.css";
+import axios from 'axios';
 
-const DateTimePicker = () => {
+const DateTimePicker = (props) => {
+    const groupName = props.category + " " + props.title;
+    const loc_id = props.loc_id;
+    console.log("Loc ID: " + loc_id);
+
     const [startDate, setStartDate] = useState(new Date());
     let handleChange = (date) => {
         setStartDate(date)
@@ -22,7 +28,12 @@ const DateTimePicker = () => {
             setStartDate(new Date())
         }
         else {
-            window.alert('Thank you! You will be notified with the information of other users going on the same date');
+            axios.post('group/member', {name: groupName, highlightId: loc_id}).then(res=>{
+                console.log(res);
+                window.alert('Thank you! You will be notified with the information of other users going on the same date');
+            }).catch(error=>{
+                console.log(error);
+            })
         }
     }
     return (

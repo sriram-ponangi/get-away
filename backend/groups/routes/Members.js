@@ -10,6 +10,8 @@ const Groups = require('../models/Groups');
 const Users = require('../../users/models/Users');
 
 const groupMembersValidator = require('../validations/Members');
+const groupDetailsPerMember = require('../validations/GetGroupDetailsPerMember');
+const leaveGroupMember = require('../validations/LeaveGroupByMember');
 
 router.post('/', verifyTokenMiddleware, async(req, res) => {
 
@@ -77,7 +79,7 @@ router.get('/', async(req, res) => {
     let groupValidationObject = {
         _id: req.query.group_id,
     }
-    const { error } = groupMembersValidator(groupValidationObject);
+    const { error } = groupDetailsPerMember(groupValidationObject);
     if (error) {
         console.log(error.details);
         return res.status(400)
@@ -106,7 +108,7 @@ router.delete('/', verifyTokenMiddleware, async(req, res) => {
 
     let validationObject = Object.assign({}, req.body);
     delete validationObject.currentUser;
-    const { error } = groupMembersValidator(validationObject);
+    const { error } = leaveGroupMember(validationObject);
     if (error) {
         console.log(error.details);
         return res.status(400)

@@ -18,8 +18,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://csci-5709-backend.herokuapp.com/api/'; 
-// axios.defaults.baseURL = 'http://localhost:4000/api/'; 
+// axios.defaults.baseURL = 'https://csci-5709-backend.herokuapp.com/api/'; 
+axios.defaults.baseURL = 'http://localhost:4000/api/'; 
 axios.defaults.headers.common['Authorization'] = 'Bearer '+ localStorage.getItem('jwt');
 
 
