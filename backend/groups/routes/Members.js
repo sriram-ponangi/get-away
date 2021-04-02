@@ -26,12 +26,12 @@ router.post('/', verifyTokenMiddleware, async(req, res) => {
             });
     }
 
-
     try {
         const userFilter = { email: req.body.currentUser.email };
 
         const user = await Users.findOne(userFilter);
         const group = await Groups.findOne(validationObject);
+        console.log("Success-2", group);
         if (group && user) {
             const savedGroup = await Groups.findOneAndUpdate(validationObject, {
                 $addToSet: {
@@ -67,6 +67,8 @@ router.post('/', verifyTokenMiddleware, async(req, res) => {
                 errors: error
             });
     }
+
+
 
 });
 

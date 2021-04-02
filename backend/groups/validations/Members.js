@@ -6,7 +6,12 @@ const Joi = require('joi');
 
 const groupMembersValidator = (data) => {
     const groupSchema = Joi.object({
-        _id: Joi.string()
+        name: Joi.string()
+            .max(100)
+            .min(1)
+            .required(),
+
+        highlightId: Joi.string()
             .max(100)
             .min(24)
             .required()

@@ -17,24 +17,109 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDk0MDg5LCJleHAiOjE2MTU0OTc2Mjl9.D_pFmULVpMQVxeXSC8QaOmtAVUpGLWnbiSr8k_iu8o8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
 
 {
-    "name": "Cycling-3",
+    "name": "fishing Waterfront",
     "description": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as \"cyclists\", \"bicyclists\", or \"bikers\"",
     "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
-    "highlightId": "604a76bb76ae0491fc212f75"
+    "highlightId": "60568c3f5b693541706b93e7"
 }
 
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDk0MDg5LCJleHAiOjE2MTU0OTc2Mjl9.D_pFmULVpMQVxeXSC8QaOmtAVUpGLWnbiSr8k_iu8o8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
 
 {
-    "name": "Jogging",
-    "description": "Jogging is a form of trotting or running at a slow or leisurely pace. The main intention is to increase physical fitness with less stress on the body than from faster running but more than walking, or to maintain a steady speed for longer periods of time",
+    "name": "fishing Peggy's Cove",
+    "description": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as \"cyclists\", \"bicyclists\", or \"bikers\"",
     "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
-    "highlightId": "604a755cddad4af1482a1ad1"
+    "highlightId": "60568c3f5b693541706b93e8"
 }
 
+###
+POST http://localhost:4000/api/group/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+
+{
+    "name": "fishing Terence Bay",
+    "description": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as \"cyclists\", \"bicyclists\", or \"bikers\"",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "highlightId": "60568c3f5b693541706b93e9"
+}
+
+###
+POST http://localhost:4000/api/group/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+
+{
+    "name": "fishing Frog Pond Park",
+    "description": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as \"cyclists\", \"bicyclists\", or \"bikers\"",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "highlightId": "60568c3f5b693541706b93ea"
+}
+
+###
+### Photography Groups of Halifax
+###
+POST http://localhost:4000/api/group/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+
+{
+    "name": "photography Point Pleasant",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eros in cursus turpis massa tincidunt. Egestas diam in arcu cursus. Augue eget arcu dictum varius duis. Mi sit amet mauris commodo. Vitae nunc sed velit dignissim sodales ut. Sed augue lacus viverra vitae. Amet cursus sit amet dictum sit. Dolor magna eget est lorem ipsum dolor. Cras ornare arcu dui vivamus. Cras tincidunt lobortis feugiat vivamus at augue. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Varius sit amet mattis vulputate. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Senectus et netus et malesuada. Mauris in aliquam sem fringilla ut morbi tincidunt augue.",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "highlightId": "60568c455b693541706b93ec"
+}
+
+###
+POST http://localhost:4000/api/group/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+
+{
+    "name": "photography Peggy's Cove",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eros in cursus turpis massa tincidunt. Egestas diam in arcu cursus. Augue eget arcu dictum varius duis. Mi sit amet mauris commodo. Vitae nunc sed velit dignissim sodales ut. Sed augue lacus viverra vitae. Amet cursus sit amet dictum sit. Dolor magna eget est lorem ipsum dolor. Cras ornare arcu dui vivamus. Cras tincidunt lobortis feugiat vivamus at augue. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Varius sit amet mattis vulputate. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Senectus et netus et malesuada. Mauris in aliquam sem fringilla ut morbi tincidunt augue.",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "highlightId": "60568c455b693541706b93ed"
+}
+
+###
+POST http://localhost:4000/api/group/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+
+{
+    "name": "photography Terence Bay",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eros in cursus turpis massa tincidunt. Egestas diam in arcu cursus. Augue eget arcu dictum varius duis. Mi sit amet mauris commodo. Vitae nunc sed velit dignissim sodales ut. Sed augue lacus viverra vitae. Amet cursus sit amet dictum sit. Dolor magna eget est lorem ipsum dolor. Cras ornare arcu dui vivamus. Cras tincidunt lobortis feugiat vivamus at augue. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Varius sit amet mattis vulputate. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Senectus et netus et malesuada. Mauris in aliquam sem fringilla ut morbi tincidunt augue.",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "highlightId": "60568c455b693541706b93ee"
+}
+
+###
+POST http://localhost:4000/api/group/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+
+{
+    "name": "photography Frog Pond Park",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eros in cursus turpis massa tincidunt. Egestas diam in arcu cursus. Augue eget arcu dictum varius duis. Mi sit amet mauris commodo. Vitae nunc sed velit dignissim sodales ut. Sed augue lacus viverra vitae. Amet cursus sit amet dictum sit. Dolor magna eget est lorem ipsum dolor. Cras ornare arcu dui vivamus. Cras tincidunt lobortis feugiat vivamus at augue. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Varius sit amet mattis vulputate. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Senectus et netus et malesuada. Mauris in aliquam sem fringilla ut morbi tincidunt augue.",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "highlightId": "60568c455b693541706b93ef"
+}
+
+###
+POST http://localhost:4000/api/group/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+
+{
+    "name": "photography Fleming Park",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eros in cursus turpis massa tincidunt. Egestas diam in arcu cursus. Augue eget arcu dictum varius duis. Mi sit amet mauris commodo. Vitae nunc sed velit dignissim sodales ut. Sed augue lacus viverra vitae. Amet cursus sit amet dictum sit. Dolor magna eget est lorem ipsum dolor. Cras ornare arcu dui vivamus. Cras tincidunt lobortis feugiat vivamus at augue. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Varius sit amet mattis vulputate. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Senectus et netus et malesuada. Mauris in aliquam sem fringilla ut morbi tincidunt augue.",
+    "imageSource": "https://csci-5709.herokuapp.com/destination-images/Canada/Halifax/topview.jpg",
+    "highlightId": "60568c455b693541706b93f0"
+}

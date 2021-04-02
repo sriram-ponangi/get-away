@@ -3,6 +3,7 @@
     - Sriram, Ponangi
 */
 const router = require('express').Router();
+const mongoose = require('mongoose');
 
 const verifyTokenMiddleware = require('../../utils/VerifyToken');
 const verifyAdminTokenMiddleware = require('../../utils/VerifyAdminToken');
@@ -17,7 +18,7 @@ const getGroupsValidator = require('../validations/GetGroups');
 const groupMemberRoutes = require('./Members');
 const groupCommentRoutes = require('./Comments');
 
-router.post('/', verifyAdminTokenMiddleware, async(req, res) => {
+router.post('/', verifyAdminTokenMiddleware, async (req, res) => {
 
     let validationObject = Object.assign({}, req.body);
     delete validationObject.currentUser;
@@ -31,12 +32,15 @@ router.post('/', verifyAdminTokenMiddleware, async(req, res) => {
                 }
             });
     }
-    try {
-        const highlightDetials = await Highlights.findOne({ _id: validationObject.highlightId });
-        validationObject.highlightId = highlightDetials;
-        console.log(validationObject.highlightId);
-        const groupsModel = new Groups(validationObject);
+    // console.log("Success-1 validationObject", validationObject);
 
+    try {
+        // const highlightDetials = await Highlights.findOne({ _id: validationObject.highlightId });
+        const highlightDetials = await Highlights.findOne({ "locations._id": validationObject.highlightId });
+        validationObject.highlightId = highlightDetials;
+        // console.log('validationObject.highlightId ', validationObject.highlightId);
+        const groupsModel = new Groups(validationObject);
+        // console.log("Success-2 groupsModel");
         try {
             const savedGroup = await groupsModel.save();
             return res.send(savedGroup);
@@ -58,7 +62,7 @@ router.post('/', verifyAdminTokenMiddleware, async(req, res) => {
 
 });
 
-router.get('/', verifyTokenMiddleware, async(req, res) => {
+router.get('/', verifyTokenMiddleware, async (req, res) => {
 
     let groupValidationObject = {
         highlightId: req.query.highlightId,
