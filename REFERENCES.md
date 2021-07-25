@@ -1,6 +1,12 @@
+## Authors
+---
+* [Abhinav, Mandava](abhinavm@dal.ca)
+* [Jay, Gajjar](jy386888@dal.ca)
+* [Rajni, Puni](rj364202@dal.ca)
+* [Sriram, Ponangi](sriram.ponangi@gmail.com)
+
 ## Sources Used
 ---
-
 
 ### 1.] csci-5709-winter-2021-group-2/frontend/app-server/server.js
 ---

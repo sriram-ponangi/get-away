@@ -10,13 +10,6 @@ https://csci-5709.herokuapp.com/
 #### Backend:
 https://csci-5709-backend.herokuapp.com/
 
-## Authors
----
-* [Abhinav, Mandava](abhinavm@dal.ca)
-* [Jay, Gajjar](jy386888@dal.ca)
-* [Rajni, Puni](rj364202@dal.ca)
-* [Sriram, Ponangi](sriram.ponangi@dal.ca)
-
 ## Deployment
 ---
 For the deploument of both the react.js frontend and the express.js backend applications into Heroku, we have used the CI/CD functionality in gitlab through the **.gitlab-ci.yml** file.
