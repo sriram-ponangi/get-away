@@ -49,6 +49,6 @@ content-type: application/json
 
 {
 
-    "email" : "sriram.ponangi@dal.ca",
+    "email" : "sriram.ponangi@gmail.ca",
     "password" : "0123456789"
 }

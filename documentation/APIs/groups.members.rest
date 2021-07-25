@@ -2,6 +2,31 @@
 #####################################
 ### JOIN GROUP
 #####################################
+
+
+###
+
+POST http://localhost:4000/api/group/member
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY4YzllODgzMDlhM2VjMTRiZDJlMGEiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZ21haWwuY2EiLCJpYXQiOjE2MTc0ODAxOTgsImV4cCI6MTYxNzQ4MzczOH0.EhSXk-HqgupmPUUaXb829WvXLU29J26knzZD8Xr3I2M
+
+{
+    "name" : "fishing Waterfront",
+    "highlightId" : "60568c3f5b693541706b93e7"
+}
+
+###
+
+POST http://localhost:4000/api/group/member
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY4YzllODgzMDlhM2VjMTRiZDJlMGEiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaXJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZ21haWwuY2EiLCJpYXQiOjE2MTc0ODAxOTgsImV4cCI6MTYxNzQ4MzczOH0.EhSXk-HqgupmPUUaXb829WvXLU29J26knzZD8Xr3I2M
+
+{
+    "name" : "fishing Peggy's Cove",
+    "highlightId" : "60568c3f5b693541706b93e8"
+}
+
+
 ###
 
 POST http://localhost:4000/api/group/member
