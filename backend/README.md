@@ -1,0 +1,10 @@
+## Required Environment Varables:
+
+- MONGODB_PASSWORD 
+- MONGODB_USERNAME 
+- MONGODB_CLUSTER_NAME 
+
+- JWT_SECRET 
+
+- EMAIL_PASSWORD 
+- EMAIL_ID 
