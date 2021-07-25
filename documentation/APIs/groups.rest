@@ -17,7 +17,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "fishing Waterfront",
@@ -29,7 +29,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "fishing Peggy's Cove",
@@ -41,7 +41,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "fishing Terence Bay",
@@ -53,7 +53,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "fishing Frog Pond Park",
@@ -67,7 +67,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "photography Point Pleasant",
@@ -79,7 +79,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "photography Peggy's Cove",
@@ -91,7 +91,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "photography Terence Bay",
@@ -103,7 +103,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "photography Frog Pond Park",
@@ -115,7 +115,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/group/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE3Mzc5MTcwLCJleHAiOjE2MTczODI3MTB9.tp7eKU4gIAeqULWnJTE4EF9yW94Sel-tS3O0hAMGJT4
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "photography Fleming Park",

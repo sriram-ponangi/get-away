@@ -10,7 +10,7 @@
 ###
 POST http://localhost:4000/api/destination
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDg5NDkyLCJleHAiOjE2MTU0OTMwMzJ9.dwedMSTcHseA_kM77IzqbSMGJZFi-JxfcgqlhUzpi2o
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "Halifax, Nova Scotia, Canada",
@@ -44,7 +44,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/destination
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDg5NDkyLCJleHAiOjE2MTU0OTMwMzJ9.dwedMSTcHseA_kM77IzqbSMGJZFi-JxfcgqlhUzpi2o
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "Vancouver, British Columbia, Canada",
@@ -91,7 +91,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/destination
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDg5NDkyLCJleHAiOjE2MTU0OTMwMzJ9.dwedMSTcHseA_kM77IzqbSMGJZFi-JxfcgqlhUzpi2o
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "Hyderabad, Telangana, India",
@@ -141,7 +141,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/destination
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE1NDg5NDkyLCJleHAiOjE2MTU0OTMwMzJ9.dwedMSTcHseA_kM77IzqbSMGJZFi-JxfcgqlhUzpi2o
+Authorization: Bearer <Valid JWT Token>
 
 {
     "name": "New Delhi, India",
@@ -209,13 +209,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 GET http://localhost:4000/api/destination
 ?countryName=i
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjJhNDUzNDk0ZWYyYTRiZjk3YmQiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDkwMzc5LCJleHAiOjE2MTU0OTM5MTl9.2vn19YoqadkkPNvtI3BaktnNn6Rwsft5_O3ExNukZIw
+Authorization: Bearer <Valid JWT Token>
 
 ###
 GET http://localhost:4000/api/destination
 ?countryName=an
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5OTUzNDk0ZWYyYTRiZjk3YmEiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoidXNlck9uZUBlbWFpbC5jb20iLCJpYXQiOjE2MTU5MDMwNzMsImV4cCI6MTYxNTkwNjYxM30.HqUR7FuTtwjrMv6wk0pehVTk78EQYnFZp7rIWdTayc8
+Authorization: Bearer <Valid JWT Token>
 
 ########################################
 ### GET FULL DETAILS OF DESTINATIONS BY:
@@ -229,5 +229,5 @@ GET http://localhost:4000/api/destination/details
 &locationName=Hyderabad, Telangana
 &name=Hyderabad, Telangana, India
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjJhNDUzNDk0ZWYyYTRiZjk3YmQiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoic3JpcmFtLnBvbmFuZ2lAZGFsLmNhIiwiaWF0IjoxNjE1NDkwMzc5LCJleHAiOjE2MTU0OTM5MTl9.2vn19YoqadkkPNvtI3BaktnNn6Rwsft5_O3ExNukZIw
+Authorization: Bearer <Valid JWT Token>
 

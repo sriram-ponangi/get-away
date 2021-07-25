@@ -7,7 +7,7 @@
 
 POST http://localhost:4000/api/group/photos
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5OTUzNDk0ZWYyYTRiZjk3YmEiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoidXNlck9uZUBlbWFpbC5jb20iLCJpYXQiOjE2MTU5NDg2MzIsImV4cCI6MTYxNTk1MjE3Mn0.PxEicj-_yzJBIOsrCxWc3Hprj8Q28tBgg4ogWoro2Eg
+Authorization: Bearer <Valid JWT Token>
 
 {
     "groupId" : "604a7bfc7d497d9bc813b607",
@@ -19,7 +19,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5O
 
 POST http://localhost:4000/api/group/comment
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5OTUzNDk0ZWYyYTRiZjk3YmEiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoidXNlck9uZUBlbWFpbC5jb20iLCJpYXQiOjE2MTU4Njc0NDEsImV4cCI6MTYxNTg3MDk4MX0.7DExJjE4Pa9ae8E_jjFg_x0bsuWjTWglKW3Jksknunw
+Authorization: Bearer <Valid JWT Token>
 
 {
     "groupId" : "604a7bfc7d497d9bc813b607",
@@ -34,5 +34,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5O
 GET http://localhost:4000/api/group/photos
 ?groupId=604a7bfc7d497d9bc813b607
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5OTUzNDk0ZWYyYTRiZjk3YmEiLCJyb2xlIjoiVVNFUiIsImZpcnN0TmFtZSI6IlNyaVJhbSIsImxhc3ROYW1lIjoiUG9uYW5naSIsImVtYWlsIjoidXNlck9uZUBlbWFpbC5jb20iLCJpYXQiOjE2MTU5NTUyNzUsImV4cCI6MTYxNTk1ODgxNX0.XPQylICgzb4mscqUrkLoS9MsfZ6Nf51yukz8lAbFpfQ
+Authorization: Bearer <Valid JWT Token>
 

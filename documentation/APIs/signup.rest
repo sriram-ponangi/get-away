@@ -1,5 +1,5 @@
 #######################################################################################
-### REGISTRATION
+### REGISTRATION - Sample Test Users
 #######################################################################################
 POST http://localhost:4000/api/auth/register
 content-type: application/json

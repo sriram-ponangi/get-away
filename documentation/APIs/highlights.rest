@@ -4,7 +4,7 @@
 #######################################################################################
 POST http://localhost:4000/api/highlight
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2Mjg0NTQ3LCJleHAiOjE2MTYyODgwODd9.-DNiwIa6Z_-EGmhW07Efabtlp9nmdHl0R6nmgwaEYZY
+Authorization: Bearer <Valid JWT Token>
 
 {
 	"destinationId": "60565323e2fd180015191f9e",
@@ -43,7 +43,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/highlight
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2Mjg0NTQ3LCJleHAiOjE2MTYyODgwODd9.-DNiwIa6Z_-EGmhW07Efabtlp9nmdHl0R6nmgwaEYZY
+Authorization: Bearer <Valid JWT Token>
 
 {
 	"destinationId": "60565323e2fd180015191f9e",
@@ -91,7 +91,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/highlight
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2Mjg0NTQ3LCJleHAiOjE2MTYyODgwODd9.-DNiwIa6Z_-EGmhW07Efabtlp9nmdHl0R6nmgwaEYZY
+Authorization: Bearer <Valid JWT Token>
 
 {
 	"destinationId": "60565323e2fd180015191f9e",
@@ -139,7 +139,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/highlight
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2Mjg0NTQ3LCJleHAiOjE2MTYyODgwODd9.-DNiwIa6Z_-EGmhW07Efabtlp9nmdHl0R6nmgwaEYZY
+Authorization: Bearer <Valid JWT Token>
 
 {
 	"destinationId": "60565323e2fd180015191f9e",
@@ -187,7 +187,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/highlight
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2Mjg0NTQ3LCJleHAiOjE2MTYyODgwODd9.-DNiwIa6Z_-EGmhW07Efabtlp9nmdHl0R6nmgwaEYZY
+Authorization: Bearer <Valid JWT Token>
 
 {
 	"destinationId": "60565323e2fd180015191f9e",
@@ -235,7 +235,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 POST http://localhost:4000/api/highlight
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2Mjg0NTQ3LCJleHAiOjE2MTYyODgwODd9.-DNiwIa6Z_-EGmhW07Efabtlp9nmdHl0R6nmgwaEYZY
+Authorization: Bearer <Valid JWT Token>
 
 {
 	"destinationId": "60565323e2fd180015191f9e",
@@ -277,9 +277,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5N
 ###
 GET http://localhost:4000/api/highlight/locations?destinationId=60565323e2fd180015191f9e&category=fishing
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2MjgzNjY1LCJleHAiOjE2MTYyODcyMDV9.5ms0CHpJ3lbo4AY0HGn1ILGZudyeMfLF_8uoodd6nbY
+Authorization: Bearer <Valid JWT Token>
 
 ###
 GET http://localhost:4000/api/highlight/highlights?destinationId=60565323e2fd180015191f9e
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDRhNjI5NTUzNDk0ZWYyYTRiZjk3YjkiLCJyb2xlIjoiQURNSU4iLCJmaXJzdE5hbWUiOiJBRE1JTiIsImxhc3ROYW1lIjoiT05FIiwiZW1haWwiOiJhZG1pbl9vbmVAZW1haWwuY29tIiwiaWF0IjoxNjE2MjgzNjY1LCJleHAiOjE2MTYyODcyMDV9.5ms0CHpJ3lbo4AY0HGn1ILGZudyeMfLF_8uoodd6nbY
+Authorization: Bearer <Valid JWT Token>
